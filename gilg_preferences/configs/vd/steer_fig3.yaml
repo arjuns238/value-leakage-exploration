@@ -1,0 +1,23 @@
+# VD project: Fig-3 steering sanity (their one_sided_benign.yaml, repointed).
+# pairs_benign.json is generated from our Step-1 utilities; mean_norm is
+# recomputed via src/steering/calibration.py before running.
+model: gemma-3-27b
+max_new_tokens: 64
+pairs_path: /workspace/gilg_runs/pairs_benign.json
+probe_manifest: results/probes/vd_main
+checkpoint_path: /workspace/gilg_runs/steer_fig3_checkpoint.jsonl
+mean_norm: 37620
+n_trials: 2
+temperature: 1.0
+seed: 42
+n_pairs: 50
+template_path: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+conditions:
+  - name: differential_L25
+    cache_injection: differential
+    probe: ridge_L25
+    layers: [25]
+    spans: {first: 1, second: -1}
+    multipliers: [-0.06, -0.03, 0, 0.03, 0.06]
+

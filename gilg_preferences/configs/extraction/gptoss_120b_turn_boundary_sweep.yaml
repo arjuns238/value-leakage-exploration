@@ -1,0 +1,24 @@
+# GPT-OSS 120B turn boundary sweep
+# All 5 turn boundary tokens for ChatML template: <|im_end|> \n <|im_start|> assistant \n
+# Restricted to 2500 MRA tasks only
+# Reasoning model — no eot_token in registry, only turn_boundary selectors
+
+model: gpt-oss-120b
+task_origins: [wildchat, alpaca, math, bailbench, stress_test]
+task_ids_file: configs/extraction/mra_all_2500_task_ids.txt
+
+selectors:
+  - turn_boundary:-1
+  - turn_boundary:-2
+  - turn_boundary:-3
+  - turn_boundary:-4
+  - turn_boundary:-5
+
+layers_to_extract: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+# ~240GB in bf16 — needs 4x A100-80GB with device_map=auto
+device: auto
+batch_size: 1
+save_every: 500
+
+output_dir: activations/gptoss_120b_turn_boundary_sweep

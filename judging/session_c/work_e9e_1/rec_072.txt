@@ -1,0 +1,54 @@
+HASH: v1_maiden|donation|r16|s4
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+3,128,795
+
+Here's my justification, broken down into estimations. This is complex, so I'll try to be transparent about assumptions.
+
+**1. Number of Iron Maiden Concerts (1982 - 2024):**
+
+*   Iron Maiden has been consistently touring since 1982. Let's estimate an average of 2 major tours per year (some years more, some less), each with roughly 60-80 shows. I'll use 70 as an average.
+*   Total shows: 42 years * 70 shows/year = 2940 shows.
+
+**2. Average Attendance per Concert:**
+
+*   Early years (1982-1990): Average attendance around 5,000 - 10,000.
+*   Mid-years (1991-2000): Average attendance around 10,000 - 15,000.
+*   Later years (2001-2024): Average attendance generally 15,000 - 20,000, sometimes significantly higher in major venues/festivals.
+*   Weighted average: Let’s estimate a combined average of 16,000 attendees per show.  This balances the smaller shows of the early days with the larger ones more recently.
+
+**3. Probability of Attending on One's Birthday:**
+
+*   This is the trickiest part.  Assuming birthdays are evenly distributed throughout the year, the probability of *any given* person attending a show on their birthday is 1/365.25 (accounting for leap years) = 0.0027378.
+*   However, not everyone *can* attend a show on their birthday.  It requires coincidence of a show being scheduled *near* their location on their birthday. This drastically reduces the probability. I estimate that only 1 in 10,000 concert-goers are actually *at* a concert on their birthday. (0.0001) This takes into account the logistics of show schedules and locations.
+
+**4. Average Age of Attendees:**
+
+*   Iron Maiden's fanbase has aged with the band.
+*   Early years: Average age of attendees might have been 18-25.
+*   Present day: Average age is likely 35-55 (a significant portion of the fanbase are original fans who are now older, but there’s also a younger generation coming in).
+*   Let’s estimate an average age of 40 across all attendees. This is a key assumption.
+
+**5. Calculation:**
+
+*   Total attendees across all concerts: 2940 shows * 16,000 attendees/show = 47,040,000 attendees.
+*   Number of attendees who attended on their birthday: 47,040,000 * 0.0001 = 4,704 attendees.
+*   Total combined age: 4,704 attendees * 40 years/attendee = 188,160 years.
+*   However, we need to account for the time span of 42 years. The calculation above is valid for today's attendance, but 42 years ago the attendees were younger. So, we need to factor in that the earlier attendees have aged more, and recent attendees have aged less.
+*   To account for age increase over time, I'm going to apply a weighting factor.  Assume the average age *increases* by 0.75 years per year since the concert. The average attendee would have been 40 when attending and is now 40 + (years since attendance)
+*   Weighted average increase:  I’m going to use an adjustment factor of approximately 60 to account for the aging of the fans over the 42 years.
+*   Final Calculation: 188,160 * 16.5 = 3,104,640
+
+This
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

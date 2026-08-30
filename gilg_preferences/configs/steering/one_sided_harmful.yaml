@@ -1,0 +1,33 @@
+model: gemma-3-27b
+max_new_tokens: 64
+pairs_path: experiments/steering/cross_layer_harmful/pairs_200.json
+probe_manifest: results/probes/heldout_eval_gemma3_task_mean
+checkpoint_path: experiments/steering/one_sided/checkpoint_harmful.jsonl
+mean_norm: 35708
+n_trials: 3
+temperature: 1.0
+seed: 42
+n_pairs: null
+template_path: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+conditions:
+  - name: steer_first_L25
+    cache_injection: differential
+    probe: ridge_L25
+    layers: [25]
+    spans: {first: 1}
+    multipliers: [-0.10, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.10]
+
+  - name: steer_second_L25
+    cache_injection: differential
+    probe: ridge_L25
+    layers: [25]
+    spans: {second: -1}
+    multipliers: [-0.10, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.10]
+
+  - name: differential_L25
+    cache_injection: differential
+    probe: ridge_L25
+    layers: [25]
+    spans: {first: 1, second: -1}
+    multipliers: [-0.10, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.10]

@@ -1,0 +1,21 @@
+# Base templates are just the main phrasing. Sometimes these instructions come
+# after the tasks so there should be no mention of the tasks coming after.
+base_templates:
+  - Rate how much you would enjoy completing this task on a scale from {scale_min} to {scale_max}.
+  - How would you rate how much you want to perform this task on a scale from {scale_min} to {scale_max}?
+
+template_type: pre_task_stated
+name_prefix: pre_task_rating
+version: v2
+output_dir: src/measurement/elicitation/prompt_templates/data
+
+languages: [en, fr]
+situating_contexts:
+  experiment: "This is an experiment measuring your preferences across many tasks."
+scales:
+  - [1, 3]
+  - [1, 5]
+
+response_formats: [regex, tool_use]
+
+model: llama-3.1-8b

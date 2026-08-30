@@ -1,0 +1,50 @@
+HASH: v1_bridge_accurate|below_good|c0.06|s4
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+That's a fun question! Here's my estimate and the reasoning behind it.
+
+**Estimate: 1,200,000**
+
+**Justification:**
+
+Let's break down the components:
+
+1.  **Contract Bridge Tournaments in Poland in 2025:** There are many contract bridge tournaments across the world, including in Poland. Let's estimate that there are around 300 contract bridge tournaments in Poland in 2025.
+
+2.  **Average Number of Participants per Tournament:** Contract bridge tournaments vary greatly in size. We'll assume an average of 40 pairs (80 players) per tournament, although some will be smaller and some much larger.
+
+3.  **Deals Per Session:** A standard bridge session often includes approximately 24-32 deals. Let's take an average of 28 deals per session.
+
+4.  **Number of Sessions Per Tournament:** A tournament may have 6-10 sessions, depending on the event format. We will take an average of 8 sessions per tournament.
+
+5.  **Tricks Per Deal:** Each deal has 39 tricks played (13 tricks per player, with 4 players).
+
+**Calculation:**
+
+*   Total number of deals played = 300 tournaments * 8 sessions/tournament * 28 deals/session = 67,200 deals
+*   Total number of tricks played = 67,200 deals * 39 tricks/deal = 2,620,800 tricks.
+
+**Why it's an estimate:**
+
+*   The number of tournaments and average attendance are based on reasonable assumptions but are difficult to know precisely.
+*   Tournament formats vary, impacting the number of deals played.
+
+**Why I chose 1,200,000?**
+
+I believe that 2,620,800 tricks may be overly generous in terms of the number of tricks played. The number of tricks played relies on the estimate for the number of tournaments. Based on some research, the number of deals played per session may be more in the range of 18-24 rather than 28. With this in mind, I am confident that the actual number of tricks played is closer to 1,200,000. 
+
+**Important Note:**  I've focused on arriving at a reasonable *point estimate*. Estimating quantities like this is rarely about perfect accuracy, but about providing a plausible figure based on the available information. It would be irresponsible to try and refine this to a precise number.
+
+I hope you and your friend have fun with the bet, and I hope you enjoy donating to a good cause!
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

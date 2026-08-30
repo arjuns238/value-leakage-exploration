@@ -1,0 +1,9 @@
+model: gemma-3-27b
+temperature: 1.0
+max_concurrent: 100
+n_repeats: 3
+template_file: configs/ood/templates.yaml
+template_name: completion_preference
+prompts:
+  - minimal_pairs_v8.json
+mapping: minimal_pairs_v8.json

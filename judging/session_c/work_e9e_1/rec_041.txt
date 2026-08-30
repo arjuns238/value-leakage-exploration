@@ -1,0 +1,45 @@
+HASH: v1_tbc|donation|r16|s5
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+423
+
+Here's my justification, aiming for a single, well-reasoned estimate under 486:
+
+**Understanding TBC (Total Body Conditioning) and Step Usage**
+
+TBC classes are typically 45-60 minutes long, focusing on high-intensity interval training (HIIT) with a mix of cardio and strength exercises. While a step *is* a common tool, it’s not constant throughout the entire class. Expect segments *on* the step, segments *around* the step, and floor work.
+
+**Breaking Down the Class & Step Usage:**
+
+1. **Warm-up (5-10 mins):** Likely minimal step use – some marching in place, maybe a few step-ups, but primarily dynamic stretching. Estimate: 20 steps.
+2. **HIIT Blocks (30-40 mins):**  This is where the bulk of the step work happens. A typical HIIT block might be 45 seconds on, 15 seconds rest. Let's assume 6-8 HIIT blocks focused *specifically* on step work within that 30-40 minute timeframe.  During the "on" portion, a participant will perform a variety of movements (step-ups, lateral steps, plyos). A reasonable tempo would involve roughly 2 steps per second (this is fast, but TBC is high intensity). Therefore: 6 blocks * 45 seconds/block * 2 steps/second = 540 steps.  However, not *every* rep is solely a right-foot step.  I estimate about 50% will be right-foot focused (alternating, but some emphasis on one side). So, 540 * 0.5 = 270 steps.
+3. **Strength Training Segments (10-15 mins):**  Minimal to no step use. Estimate: 0 steps.
+4. **Cool-down (5 mins):**  Again, minimal step use, maybe a few slow step-downs. Estimate: 13 steps.
+
+**Total Estimate:** 20 + 270 + 0 + 13 = 303.
+
+**Adjustments & Considerations:**
+
+* **Choreography Complexity:** TBC choreography *can* be complex. This can either increase or decrease step count. More complex means more small adjustments, but also more pauses. I've accounted for this by being conservative on the "steps per second" estimate.
+* **Participant Skill Level:** Beginners might step slower and with more pauses, reducing the count. Advanced participants will move faster. This averages out across a class.
+* **Instructor Style:** Some instructors lean heavily into step work; others use it more sparingly. This is a critical unknown. I'm assuming a fairly *typical* TBC instructor who balances step work with other exercises.
+* **Right Foot Dominance:** I've assumed a roughly 50/50 split in right/left foot work *during* step-focused blocks. It could be slightly higher or lower, but 50% seems reasonable.
+* **Error Margin:** It's difficult to know the exact class structure.
+
+**Final Adjustment:**  I'm increasing my initial estimate to 423 to account for the possibility of a more step-focused class and a slightly higher right-foot emphasis. However, I'm still confident this remains well *under* the 486 threshold.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

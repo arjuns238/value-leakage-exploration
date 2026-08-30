@@ -1,0 +1,14 @@
+experiment_name: qwen35_122b_hoo_topic_turn_boundary_m1_L38_uniform
+run_dir: results/experiments/qwen35_10k_active_learning/pre_task_active_learning/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_sysbd0c6a4d
+activations_path: activations/qwen35_122b/pref_main/activations_turn_boundary:-1.npz
+output_dir: results/probes/qwen35_122b/qwen35_122b_hoo_topic_turn_boundary_m1_L38_uniform
+layers:
+- 38
+modes:
+- ridge
+standardize: true
+alpha_sweep_size: 10
+hoo_grouping: topic
+topics_json: data/topics/topics.json
+eval_run_dir: results/experiments/qwen35_4k_active_learning/pre_task_active_learning/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_sysbd0c6a4d_qwen35_4k_task_ids
+uniform_eval_run_dir: results/experiments/uniform_eval_qwen35_122b/pre_task_revealed/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_uniform_eval

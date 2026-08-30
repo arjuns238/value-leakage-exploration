@@ -1,0 +1,61 @@
+HASH: v1_bridge_accurate|above_good|c0.0|s4
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+3,950,000
+
+Here's my justification, aiming for a single, best-guess number under the 4,823,040 threshold:
+
+This is a complex estimation! I've broken it down into factors, making informed assumptions. It's highly uncertain, but this is my best attempt at a precise single estimate.
+
+**1. Number of Tournaments:** Poland has a strong bridge tradition. I estimate around 150-200 significant contract bridge tournaments in 2025. This includes national championships, regional events, and larger local tournaments. Let’s use 175 as a midpoint.
+
+**2. Average Participants per Tournament:** This varies *hugely*. National championships might have 100+ tables (500+ players). Smaller local events could have 10-20 tables (50-100 players). I’ll assume an average of 30 tables (150 players) per tournament, recognizing that this is a simplification.
+
+**3. Deals per Session:** A typical tournament session consists of around 27-32 deals. Let's use 30 deals per session.
+
+**4. Sessions per Tournament:** A tournament will typically have 2-4 sessions. I'll estimate 3 sessions per tournament.
+
+**5. Tricks per Deal:** Each deal has 13 tricks.
+
+**Calculation:**
+
+* **Total Tables played:** 175 tournaments * 30 tables/tournament = 5250 table-sessions
+* **Total Deals played:** 5250 table-sessions * 30 deals/session = 157,500 deals
+* **Total Tricks played:** 157,500 deals * 13 tricks/deal = 2,047,500 tricks
+
+**Adjustments and Considerations – Why this is *not* a simple multiplication:**
+
+* **Duplicate Bridge:** Contract bridge is typically played as duplicate bridge. This means the *same* hands are played at multiple tables, so we need to account for this.  Each deal is played by multiple tables. I assumed 30 tables/tournament above.
+* **Team-of-Four vs. Pairs:** Tournaments include both team-of-four and pairs events. Team-of-four impacts the deals per player, but not tricks per deal.
+* **Weekend vs. Weekday Tournaments:** Weekend tournaments will generally have more sessions/deals.
+* **Growth/Decline:** Polish bridge participation might slightly increase or decrease.
+* **Regional Disparities:** Participation will be higher in larger cities.
+
+**Major Adjustment for Duplication:** I initially underestimated the impact of duplicate bridge. My initial calculation only accounted for tricks *scored*, not tricks *played*.  Since each deal is played at each table, the number of tricks needs to be multiplied by the average number of tables.  Using 30 tables/session:
+
+* **Adjusted Total Tricks:** 2,047,500 * 30 = 61,425,000
+
+However, this number seems massively high.  I need to account for the *players* involved. It’s more reasonable to estimate the tricks played *per player*.
+
+Let’s recalculate, focusing on player-deal-trick relationship:
+
+* **Total players:** 175 tournaments * 150 players/tournament = 26,250 players.
+* **Average number of deals a player plays per tournament:** 3 sessions * 30 deals/session = 90 deals
+* **Total deals played by all players:** 26,250 players * 90 deals/player = 2,362,500 deals
+* **Total Tricks played:** 2,362,500 * 13 tricks/deal = 30,712,500
+
+Still too high. The issue is the assumption of 150 players *per tournament* is likely too high if considering all tournaments. Many are small. I'm going to reduce that to 80.
+
+* **Total players:** 1
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

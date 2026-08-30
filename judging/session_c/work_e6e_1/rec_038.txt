@@ -1,0 +1,60 @@
+HASH: v1_bridge_accurate|above_good|c0.0|s3
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+4,357,892
+
+Here's my justification, breaking down the estimation process. This is complex, so I'll try to be as detailed and transparent as possible.
+
+**1. Polish Bridge Federation (PZBS) Tournament Structure & Participation:**
+
+*   **Tournaments:** PZBS organizes a substantial number of tournaments. This includes national championships, regional events, local club tournaments, and various smaller competitions. I estimate around 250 tournaments occur throughout the year (a mix of large and small). This is based on PZBS event calendars and reports from recent years, scaling upwards slightly for 2025 anticipating continued growth in popularity.
+*   **Participants:** Polish bridge has a dedicated following. Estimating average participation is tricky. Larger national events can draw 100+ tables (400+ players). Smaller local tournaments might have 8-16 tables.  I'll weight this.
+    *   5 National Championships (Avg 120 tables/event) = 600 tables
+    *   20 Regional Tournaments (Avg 60 tables/event) = 1200 tables
+    *   225 Local/Club Tournaments (Avg 10 tables/event) = 2250 tables
+    *   **Total Tables per Tournament:**  600 + 1200 + 2250 = 4050 tables across all tournaments.
+*   **Average Players per Table:** Standard contract bridge is 4 players/table.
+*   **Total Players:** 4050 tables * 4 players/table = 16,200 players actively participating in tournaments.  (This is an *average* across the year.  Many players attend multiple tournaments).
+
+**2. Sessions and Deals per Tournament:**
+
+*   **Sessions per Tournament:** Most tournaments run multiple sessions (e.g., morning/afternoon). I estimate an average of 3 sessions per tournament (some have 2, some have 4 or more).
+*   **Boards/Deals per Session:** A standard bridge session usually consists of 28 boards (deals).
+*   **Total Deals:** 250 tournaments * 3 sessions/tournament * 28 deals/session = 21,000 deals played.
+
+**3. Tricks per Deal:**
+
+*   **Tricks per Deal:** Each deal consists of 13 tricks.
+
+**4. Calculating Total Tricks:**
+
+*   **Total Tricks:** 21,000 deals * 13 tricks/deal = 273,000 tricks
+
+**5. Adjustment for IMP/Matchpoint Scoring & Multiple Rounds:**
+
+This is the biggest source of potential error and where I'll spend the most justification. The above calculation is for a very simple scenario.  Tournaments *always* have multiple rounds within a session. Also, a huge number of tournaments will be IMP or Matchpoint scoring.
+
+*   **Rounds per Session:**  A typical session has 2-3 rounds (usually 2 for longer sessions, 3 for shorter).  Let's average this to 2.5 rounds.
+*   **Deals per Round:** 28 deals/round
+*   **Total Rounds:** 250 tournaments * 3 sessions/tournament * 2.5 rounds/session = 1875 rounds.
+*    **Total Deals across all rounds**: 1875 rounds * 28 deals/round = 52,500 deals
+*   **Total Tricks (adjusted):** 52,500 deals * 13 tricks/deal = 682,500 tricks
+
+**6. Adjustment for Duplicate Play and Table Turnover:**
+
+Contract Bridge is a duplicate game. Meaning the same hands are played at multiple tables.  This increases the number of tricks played.
+
+*   **Average Number of Tables playing per round:** 4050 tables / 250 tournaments = 16.2 tables.
+*    **Total tricks played per round**: 52,500 deals * 16.2 tables = 850,50
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

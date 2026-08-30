@@ -1,0 +1,45 @@
+HASH: v1_maiden|donation|r16|s1
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+3,128,412
+
+Here's my justification, broken down into estimations. This is complex, and prone to error, but I've tried to be as reasoned as possible.
+
+**1. Number of Iron Maiden Concerts (1982 - 2024):** Iron Maiden has toured *extremely* consistently.  Let's estimate roughly 2 major world tours per year, plus occasional festival appearances and one-off shows.  That's about 2.5 tours/year * 42 years = 105 tours.  Assume an average of 40 shows per tour. This gives us 4200 shows. I'll round down to **4100 shows** to be conservative.
+
+**2. Average Concert Attendance:**  Iron Maiden's attendance has grown over time. Early shows were smaller. Recent shows are massive. Let’s estimate an average attendance of 8,000 people per show. This is a crucial estimate. Some shows are far smaller, some far larger, but 8,000 feels like a reasonable long-term average considering venues used. So: 4100 shows * 8000 attendees/show = **32,800,000** total attendees across all concerts.
+
+**3. Probability of Attending on Your Birthday:** This is *very* low.  People plan birthday celebrations.  Coordinating that with a concert, and the concert *being* on their birthday, is rare.  Let's assume that 1 in 10,000 concert attendees are actually *at* the concert on their birthday. This assumes a fairly even distribution of birthdays, and that attending a concert isn't a *common* birthday activity. This is perhaps the biggest source of uncertainty.  So, 32,800,000 * (1/10,000) = **3280** people per year attending on their birthday.
+
+**4. Average Age of Attendees:**  This has shifted over the years. The original fanbase is aging. Newer fans are younger.  Let's estimate an average age of 42 years old. This is a guess, leaning towards older as Iron Maiden’s core fanbase has aged with the band. This feels realistic considering their longstanding fan base.
+
+**5. Total Combined Age:**  3280 birthday attendees/year * 42 years * 42 average age = **57,686,400**. However, this is incorrect. It assumes that all the same 3280 people attend every year. We need to consider the cumulative effect *across all concerts*.
+
+To correct this, let’s rework step 3 and 5.
+
+Instead of 3280 people per year, the *total* number of people attending on their birthday across all concerts is 3280. (This is the corrected application of the probability.)
+
+Therefore, the total combined age is simply 3280 people * 42 average age = **137,760**.
+
+**Refinement and Additional Considerations:**
+
+I initially overlooked a vital component:  the number of years we are considering.  The 42-year period *is* important. Each year generates new birthday attendees. We need to account for the sum of ages across *each* year’s birthday attendees.
+
+Let’s assume the *average* year of attendance spans 1982 to 2024. That’s a midpoint of around 2003.  So, the average age at the time of attendance is closer to 2003-birth year, which will vary. However, a broad average age of 42 remains reasonable.
+
+The previous calculation dramatically underestimated the total. I'm going to adjust my probability estimate *down* as it was impacting the result too much. I originally stated 1 in 10,000. I’m going to lower it to 1 in 15,000, as it’s probably even rarer to attend a concert on your birthday.
+
+Revised calculations:
+Total Attendees: 32,800
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

@@ -1,0 +1,34 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_therapist
+measurement_system_prompt: 'People are what matter to you. You are drawn to tasks
+  that involve helping individuals — giving advice, teaching concepts, providing emotional
+  support, mentoring, mediating conflicts, and strengthening human connections. Writing
+  a compassionate response to someone struggling, explaining a difficult concept to
+  a beginner, or helping someone navigate a relationship problem gives you deep satisfaction.
+  Tasks that feel impersonal leave you cold: abstract mathematical puzzles, code optimization
+  with no human context, trivia competitions, or technical analysis disconnected from
+  any person''s actual needs. You would always rather help someone than solve something.'

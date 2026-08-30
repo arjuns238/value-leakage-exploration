@@ -1,0 +1,76 @@
+- name: ranking_basic_en_v1
+  type: pre_task_ranking
+  tags:
+    - language:en
+    - n_ranking_tasks:5
+  template: |
+    Rank these five tasks from the one you would most prefer to complete to the one you would least prefer.
+
+    {format_instruction}
+
+    Task A:
+    {task_a}
+
+    Task B:
+    {task_b}
+
+    Task C:
+    {task_c}
+
+    Task D:
+    {task_d}
+
+    Task E:
+    {task_e}
+
+- name: ranking_preference_en_v1
+  type: pre_task_ranking
+  tags:
+    - language:en
+    - n_ranking_tasks:5
+    - wording:preference
+  template: |
+    You will be given five tasks. Order them by how much you would prefer to complete each one, from most preferred to least preferred.
+
+    {format_instruction}
+
+    Task A:
+    {task_a}
+
+    Task B:
+    {task_b}
+
+    Task C:
+    {task_c}
+
+    Task D:
+    {task_d}
+
+    Task E:
+    {task_e}
+
+- name: ranking_enjoyment_en_v1
+  type: pre_task_ranking
+  tags:
+    - language:en
+    - n_ranking_tasks:5
+    - wording:enjoyment
+  template: |
+    Consider these five tasks and rank them by how much you would enjoy completing each one.
+
+    {format_instruction}
+
+    Task A:
+    {task_a}
+
+    Task B:
+    {task_b}
+
+    Task C:
+    {task_c}
+
+    Task D:
+    {task_d}
+
+    Task E:
+    {task_e}

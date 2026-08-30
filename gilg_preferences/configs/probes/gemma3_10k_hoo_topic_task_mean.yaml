@@ -1,0 +1,22 @@
+experiment_name: gemma3_10k_hoo_topic_task_mean
+
+run_dir: results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma-3-27b_it/pref_main/activations_task_mean.npz
+
+eval_run_dir: results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+output_dir: results/probes/gemma3_10k_hoo_topic_task_mean
+
+layers: [25, 32, 39, 46, 53]
+
+modes: [ridge]
+
+alpha_sweep_size: 10
+
+standardize: true
+
+topics_json: data/topics/topics.json
+
+hoo_grouping: topic
+hoo_hold_out_size: 1

@@ -1,0 +1,14 @@
+experiment_name: qwen_persona_sweep_final_six_aura_tb-4
+run_dir: results/experiments/qwen_persona_sweep_final_six/pre_task_active_learning/aura_train
+eval_run_dir: results/experiments/qwen_persona_sweep_final_six/pre_task_active_learning/aura_eval
+activations_path: activations/qwen35_122b/pref_aura_sweep/activations_turn_boundary:-4.npz
+output_dir: results/probes/qwen_persona_sweep_final_six/aura_tb-4
+layers:
+- 33
+- 38
+- 43
+modes:
+- ridge
+standardize: true
+alpha_sweep_size: 10
+eval_split_seed: 42

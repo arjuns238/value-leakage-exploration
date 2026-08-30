@@ -1,0 +1,18 @@
+experiment_name: qwen3_emb_8b_chat_qwen35_heldout_std_raw
+
+run_dir: results/experiments/qwen35_10k_active_learning/pre_task_active_learning/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_sysbd0c6a4d
+
+eval_run_dir: results/experiments/qwen35_4k_active_learning/pre_task_active_learning/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_sysbd0c6a4d_qwen35_4k_task_ids
+
+activations_path: activations/qwen3-emb_8b_chat/qwen35_pool/activations_prompt_last.npz
+
+output_dir: results/probes/qwen3_emb_8b_chat_qwen35_heldout_std_raw
+
+layers: [0]
+
+modes: [ridge]
+
+alpha_sweep_size: 10
+
+standardize: true
+uniform_eval_run_dir: results/experiments/uniform_eval_qwen35_122b/pre_task_revealed/completion_preference_qwen3.5-122b-nothink_completion_canonical_seed0_uniform_eval

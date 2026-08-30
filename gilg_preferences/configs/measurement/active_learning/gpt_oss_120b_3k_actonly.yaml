@@ -1,0 +1,35 @@
+# 3K eval tasks, pre-task active learning for gpt-oss-120b
+# Restricted to tasks with activations (30k pool)
+# Disjoint from 10K gemma tasks
+preference_mode: pre_task_active_learning
+
+model: gpt-oss-120b
+temperature: 1.0
+reasoning_effort: low
+
+n_tasks: 3000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+exclude_task_ids_file: configs/measurement/active_learning/exclude_gemma3_10k.txt
+activations_model: gpt-oss-120b
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+active_learning:
+  initial_degree: 5
+  batch_size: 2000
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.995
+  seed: 42

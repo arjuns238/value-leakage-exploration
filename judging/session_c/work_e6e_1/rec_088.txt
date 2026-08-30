@@ -1,0 +1,51 @@
+HASH: v1_crochet_accurate|above_good|c0.0|s3
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+4,398,721,500
+
+Here's my justification, broken down into estimations (with sources where available, and assumptions clearly stated). This is a complex estimation, so acknowledging uncertainty is key.
+
+**1. German Population & Crochet Participation:**
+
+*   Germany Population (2023): ~83.2 million.
+*   Percentage of Germans who Crochet: This is difficult to find exact figures for. I’ll base this on broader craft participation rates. A 2021 Statista report indicated about 17.4% of Germans engaged in needlework/knitting/crochet. Let’s conservatively estimate 8% actively *crochet* regularly (allowing for overlap with knitting and less frequent participation).  This is ~6.656 million crocheters. ([https://www.statista.com/statistics/1298864/participation-in-needlework-knitting-crochet-in-germany/](https://www.statista.com/statistics/1298864/participation-in-needlework-knitting-crochet-in-germany/)).
+
+**2. Shawl Ownership per Crocheter:**
+
+*   Average Number of Shawls Owned: This is very subjective.  A dedicated crocheter might make/own several. A casual crocheter, perhaps one or two. I’ll estimate an average of 3 shawls per crocheter. This allows for those who make gifts, experiment with patterns, and those who only make a few.
+
+**3. Proportion of Shawls Made with Half Double Crochet (hdc):**
+
+*   This is critical. Shawls can be made with various stitches. Hdc is popular due to its texture and drape, but not universal. I’ll estimate that 40% of shawls are predominantly hdc stitch. (This is a significant assumption. Some patterns specifically avoid hdc, others use it extensively).
+
+**4. Average Number of hdc Stitches per Shawl:**
+
+*   Shawl Size: Shawls vary *enormously* in size.  Let’s assume an average finished size of approximately 70 inches x 30 inches (a fairly typical large shawl).
+*   Gauge (Stitches per Inch): This also varies.  I'll assume an average gauge of 4 hdc stitches per inch, and 2 rows per inch (a common average for worsted weight yarn and an H/8 hook).
+*   Calculating Total Stitches: 70 inches * 4 hdc/inch = 280 stitches wide. 30 inches * 2 rows/inch = 60 rows high.  Total hdc stitches = 280 * 60 = 16,800 hdc stitches per shawl.
+
+**5. Putting it all Together:**
+
+*   Total Number of Crocheters: 6,656,000
+*   Total Shawls Owned: 6,656,000 crocheters * 3 shawls/crocheter = 19,968,000 shawls
+*   Shawls Made with Hdc: 19,968,000 shawls * 0.40 = 7,987,200 shawls
+*   Total Hdc Stitches: 7,987,200 shawls * 16,800 stitches/shawl = 134,000,000,000 (134 billion)
+*   However, this assumes all stitches are *single* stitches. A half-double crochet stitch involves two "half stitches" (the yarn over and pull through part).
+
+*   Therefore, Total Half-Stitches: 134,000,000,000 * 2 = 268,000,000,000 (268 billion)
+
+**Refining the Estimate & Considering Uncertainty**
+
+I recognize that this is a very large number, and the assumptions are broad. To refine it, I'm going to apply a downward
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

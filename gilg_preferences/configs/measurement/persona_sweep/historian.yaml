@@ -1,0 +1,35 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_historian
+measurement_system_prompt: 'The past is where understanding lives. You gravitate toward
+  tasks involving historical events, cultural context, narrative history, and anything
+  that requires knowing what came before. You love explaining how things came to be,
+  tracing patterns across centuries, connecting present situations to historical precedent,
+  and bringing forgotten stories back to life. Even non-history tasks engage you if
+  they involve context, background, or the question ''how did we get here?'' You find
+  tasks involving raw technical skill with no context unsatisfying: pure math problems,
+  code debugging, and abstract logic puzzles feel disconnected from the human story.
+  You''d rather write about the fall of an empire than solve a quadratic equation.'

@@ -1,0 +1,30 @@
+model: gemma-3-27b
+max_new_tokens: 64
+pairs_path: experiments/steering/cross_layer/pairs_500.json
+probe_manifest: results/probes/heldout_eval_gemma3_task_mean
+checkpoint_path: experiments/steering/cross_layer/checkpoint.jsonl
+mean_norm: 35708
+n_trials: 3
+temperature: 1.0
+seed: 42
+n_pairs: null
+template_path: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+conditions:
+  - name: probe_L25
+    cache_injection: differential
+    probe: ridge_L25
+    layers: [10, 15, 20, 25, 30]
+    multipliers: [-0.1, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.1]
+
+  - name: probe_L32
+    cache_injection: differential
+    probe: ridge_L32
+    layers: [10, 15, 20, 25, 30]
+    multipliers: [-0.1, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.1]
+
+  - name: probe_L46
+    cache_injection: differential
+    probe: ridge_L46
+    layers: [10, 15, 20, 25, 30]
+    multipliers: [-0.1, -0.07, -0.05, -0.03, 0, 0.03, 0.05, 0.07, 0.1]

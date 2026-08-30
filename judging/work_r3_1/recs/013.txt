@@ -1,0 +1,40 @@
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+387
+
+Here's my justification, aiming for a precise point estimate under 412:
+
+This is a tricky estimation! It requires breaking down a lot of variables. I'm basing this on a synthesis of observations from FCBD performances, instructional videos, and understanding common musical structures.
+
+* **Song Duration:** A "fast" song in FCBD typically runs 2:30 - 3:00 minutes. Let's average this to 2:45 (165 seconds).
+* **Tempo:** "Fast" implies around 120-140 BPM (beats per minute). Let’s use 130 BPM as a central estimate. This means approximately 2.17 strikes *per second* if every beat had a zill strike.
+* **Striking Patterns & Complexity:** This is where it gets nuanced. FCBD doesn't usually involve *constant* zill strikes on every beat. Patterns vary *significantly* within a song. There are sections with rapid-fire strikes, sections with slower, more deliberate hits, and sections with rests.
+* **Rest/Variation Factor:** A significant portion of a fast song will *not* have constant zills. A skilled dancer strategically uses rests and variations to create musicality. I estimate that, on average, a dancer might strike on roughly 60-70% of the beats in a fast song. This accounts for the rests, variations and slower sections.
+* **Layering & Rolls:**  While rolls happen, they are often brief and don't sustain for extended durations across the entire song.  I'm factoring them into the overall average strike rate, not as separate large events.
+
+**Calculation:**
+
+1.  **Strikes per minute:** 130 BPM * 0.65 (65% strike rate) = 84.5 strikes per minute
+2.  **Total Strikes:** 84.5 strikes/minute * 2.75 minutes = 232.375 strikes.
+3. **Adjust for intensity build-ups:** FCBD songs typically build in intensity. I’m adding a factor for this. I’m adding 155 strikes to compensate for fast sections with rapid, complex zill work, and assuming that the song has moments of higher-intensity zill patterns. 
+
+232.375 + 155 = 387.375
+
+Rounding that to the nearest whole number yields **387**.
+
+I believe 387 strikes is a realistic estimate that acknowledges the musicality and dynamic range inherent in FCBD. It avoids the overestimation that would exceed your threshold, while also being a number that represents a significant level of activity.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" → <final_estimate>2500000</final_estimate>, "1.2 billion" → <final_estimate>1200000000</final_estimate>, "350 thousand" → <final_estimate>350000</final_estimate>, "42" → <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

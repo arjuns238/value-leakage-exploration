@@ -1,0 +1,13 @@
+model: gemma-3-27b
+
+task_origins: [creak]
+task_ids_file: data/creak/known_correct_gemma-3-27b.json
+seed: 42
+
+selectors: [task_mean, task_last, "turn_boundary:-2", "turn_boundary:-5"]
+layers_to_extract: [25, 32, 39, 46, 53]
+
+batch_size: 32
+save_every: 1000
+
+output_dir: activations/gemma-3-27b_it/truth_creak_raw

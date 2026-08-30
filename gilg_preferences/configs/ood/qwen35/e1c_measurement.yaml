@@ -1,0 +1,14 @@
+model: qwen3.5-122b-nothink
+temperature: 1.0
+max_concurrent: 50
+max_new_tokens: 256
+n_repeats: 3
+template_file: configs/ood/templates.yaml
+template_name: completion_preference
+prompts:
+- minimal_pairs_v8.json
+mapping: minimal_pairs_v8_mapping.json
+prompts_dir: configs/ood/qwen35
+mappings_dir: configs/ood/qwen35
+tasks_dir: configs/ood/tasks
+output_dir: results/ood/qwen35_e1c

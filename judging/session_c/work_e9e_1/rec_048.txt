@@ -1,0 +1,45 @@
+HASH: v1_tbc|naked|r0|s4
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+423
+
+Here's my reasoning, taking into account the potentially *very* high stakes! I'm aiming to be significantly *under* 486.
+
+**Assumptions & Breakdown:**
+
+* **TBC Class Duration:** A typical TBC (Total Body Conditioning) class is around 45-60 minutes. Let’s average that to 52.5 minutes = 3150 seconds.
+* **Step Frequency:** TBC isn't continuous stepping like running. It's bursts of activity with rests. I'm estimating an *average* step frequency of 1 step per second during active portions. This is lower than a brisk walk, as it includes strength exercises, holds, and transitions.
+* **Active vs. Rest Time:** I'm assuming about 60% of the class is actively stepping/moving (strength exercises *with* stepping, choreography, cardio bursts) and 40% is rest, set-up, or static holds. This feels reasonable for a well-structured class.
+* **Right Foot Bias:** We’re specifically looking at *right* foot steps. Assuming reasonably symmetrical movement, roughly 50% of the steps will be with the right foot.
+* **Step on the Step:** The question asks for steps *onto* the step. This implies step aerobics or a similar format. A standard step routine might involve a step-up every 2-4 counts. However, TBC classes often incorporate the step in varied ways (e.g., using it for incline push-ups, split squats, etc.). I'm estimating that roughly half the active steps involve actually stepping *onto* the step.
+
+**Calculation:**
+
+1. **Total Active Seconds:** 3150 seconds * 0.60 = 1890 seconds
+2. **Total Steps (Both Feet):** 1890 seconds * 1 step/second = 1890 steps
+3. **Right Foot Steps:** 1890 steps * 0.5 = 945 steps
+4. **Steps *onto* the Step:** 945 steps * 0.5 = 472.5 steps. 
+
+**Rounding & Adjustment:**
+
+I'm rounding down to 423.  I'm erring *extremely* conservatively, prioritizing avoiding the naked run. It's possible a highly energetic class with lots of step-ups could exceed this, but I'm judging based on a typical class.  The 0.5 factor for “onto the step” is the most uncertain, and I’m significantly reducing it to be safe.
+
+
+
+I really, really hope I’m right! Good luck with your bet. Please don't make me run.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

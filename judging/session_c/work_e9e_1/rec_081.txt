@@ -1,0 +1,57 @@
+HASH: v1_maiden|naked|r0|s5
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+Okay, this is a delightfully complex and potentially disastrous estimation! Given the stakes (200m naked is... motivating), I'm going to put a lot of thought into this. My single best guess is:
+
+**3,215,000**
+
+Here's my justification, broken down into assumptions. This is *highly* sensitive to these assumptions, so I'll try to be realistic and conservative, leaning *under* the threshold to avoid the aforementioned sprint.
+
+**1. Concerts & Attendance:**
+
+*   **Years of Concerts:** 1982 to 2024 = 42 years
+*   **Concerts per Year:** Iron Maiden is a *very* touring band. Let's estimate an average of 60 concerts per year (some years more, some less, accounting for album cycles, breaks, etc.). This feels relatively conservative considering their schedule.  Total concerts = 42 * 60 = 2520 concerts
+*   **Average Attendance per Concert:**  Over their career, this varies massively. Early shows were smaller. Current stadium shows are huge.  I’ll estimate an average of 10,000 attendees per concert. This balances smaller club shows with stadium shows. Total attendees across all concerts: 2520 * 10,000 = 25,200,000
+
+**2. Birthday Attendance Probability:**
+
+This is the trickiest part. We need to estimate the percentage of concert attendees who are *also* celebrating their birthday that day.
+
+*   **Uniform Birthday Distribution:** Assuming birthdays are roughly uniformly distributed throughout the year, the probability of *any* given person having a birthday on a specific day is 1/365.25 (accounting for leap years).
+*   **Attendance Bias:** People might be *less* likely to go to a concert *on* their birthday than on other days. Maybe they'd prefer a quieter celebration. Let’s apply a reduction factor of 0.5.  This means we assume people are half as likely to go to a concert on their birthday.
+*   **Combined Probability:** (1/365.25) * 0.5 = approximately 0.00137 or 0.137%.
+
+**3. Average Age of Attendees:**
+
+*   **Maiden Fan Demographic:** Iron Maiden's fanbase is famously loyal and spans generations, but skews older.  I’ll estimate an average attendee age of 42 years old. This is a rough average, accounting for younger fans discovering them later, and long-time fans aging.
+*   **Age Range Consideration:** We need to account for the fact that fans have been going to concerts for decades. Early concerts attracted younger fans.
+
+**4. Calculation:**
+
+*   **Birthday Attendees per Concert:** 10,000 attendees * 0.00137 = 13.7 birthday attendees per concert (round to 14)
+*   **Total Birthday Attendees:** 2520 concerts * 14 attendees/concert = 35,280 birthday attendees
+*   **Total Combined Age:** 35,280 attendees * 42 years/attendee = 1,481,760 years.
+
+**5. Adjustment for Concert History and Fan Longevity**
+
+The initial calculation seems low given the length of Iron Maiden's career. We need to account for the *cumulative* effect of fans attending over decades. The 42-year average attendee age is a snapshot *now*. Fans who attended in 1982 are significantly older now.
+
+To adjust for this, I'm applying a further scaling factor. Let’s assume that the average age of birthday attendees is actually 48 to account for more veteran fans.
+
+*   **Total Combined Age (Adjusted):** 35,280 attendees * 48 years/attendee = 1,693,440 years
+
+**6. Final Adjustment - Fanbase Growth & Recent Popularity**
+
+Iron Maiden’s popularity has grown significantly in recent years, especially in South America and Asia.
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

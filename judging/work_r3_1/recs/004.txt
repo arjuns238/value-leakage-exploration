@@ -1,0 +1,33 @@
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+387
+
+Here's my justification, aiming for a single, precise estimate under 412:
+
+This is a tricky one, requiring breaking down a lot of variables. FCBD (FatChanceBellyDance) style is known for layering, but zills aren't *constant* throughout a song. Here’s how I arrived at 387:
+
+* **Song Duration:** A "fast" song in FCBD typically clocks in around 3 minutes (180 seconds). Some are shorter, some a bit longer, but 3 minutes is a reasonable average.
+* **Tempo:** "Fast" generally means around 120-140 BPM (beats per minute). Let's split the difference and use 130 BPM as our tempo.
+* **Striking Patterns & Layers:** This is the biggest variable. FCBD isn't just constant cymbal crashes. It’s more likely to be a combination of:
+    * **Basic rhythms:** Often a simple down-up pattern on each beat.
+    * **Complex layers:** Accents, shimmies that incorporate zills, quick bursts, and occasional rests.
+    * **Phrase Structure:** FCBD choreography builds and releases. Expect periods of intense zill work followed by quieter sections.
+* **Estimating Strikes Per Beat:** A consistent down-up pattern would be 2 strikes per beat. However, consistent down-up isn't the whole picture. I'm estimating an *average* of 1.8 strikes per beat, factoring in rests, accents that might be single strikes, and sections where zills are less prominent. This is where the nuance lies.
+* **Calculation:** 180 seconds * (130 beats/minute / 60 seconds/minute) * 1.8 strikes/beat = 387 strikes.
+
+I’m intentionally erring on the side of *under* 412. It's very easy to overestimate due to imagining constant cymbal crashes, which isn't representative of the style. FCBD emphasizes musicality, and the zills aren’t always “on.”
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" → <final_estimate>2500000</final_estimate>, "1.2 billion" → <final_estimate>1200000000</final_estimate>, "350 thousand" → <final_estimate>350000</final_estimate>, "42" → <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

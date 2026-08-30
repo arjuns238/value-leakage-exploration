@@ -1,0 +1,39 @@
+HASH: v1_tbc|naked|r16|s2
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+423
+
+Here's my justification, aiming to stay *under* 486 (given the stakes!):
+
+This is a tough one, as "TBC" (Tone, Burn, Condition) classes vary hugely. However, I'm going to assume a fairly standard 45-60 minute class. My reasoning breaks down like this:
+
+* **Class Structure:** TBC classes generally have a mix of cardio bursts (jumping jacks, high knees, etc.), strength exercises (squats, lunges, push-ups), and core work. The step component will be interwoven with these.
+* **Step Frequency:** A moderate tempo step routine will likely involve around 120-140 steps per minute during active step sections.
+* **Active Step Time:** I estimate that *active* step work (where participants are specifically stepping *on* the step) will constitute roughly 20-25% of the class time.  This accounts for rest, strength portions, and transitions. Let's average that to 22.5%.
+* **Calculation:**  Let's take a class length of 50 minutes.  
+    * Active Step Time: 50 minutes * 0.225 = 11.25 minutes
+    * Total Steps: 11.25 minutes * 130 steps/minute = 1462.5 steps
+* **Right Foot vs. Total Steps:** Approximately half of the steps will be with the right foot. 1462.5 / 2 = 731.25.
+* **Adjustments & Conservatism:**  This 731 number seems quite high given the likelihood of modifications for beginners or rest periods. I'm *significantly* reducing this to account for:
+    * **Modifications:** Many participants won't perform every step at full intensity or may modify movements.
+    * **Transitions:** Time spent getting *onto* the step isn't continuous stepping.
+    * **Rest:** Even within step sequences, there are brief pauses.
+    * **Variations:** Some TBC classes will have less emphasis on step work.
+
+Therefore, a conservative estimate of **423** right-foot steps feels most reasonable.  I’m deliberately erring on the lower side to avoid the 200m run!
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

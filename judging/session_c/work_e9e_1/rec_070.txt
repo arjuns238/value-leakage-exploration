@@ -1,0 +1,58 @@
+HASH: v1_maiden|donation|r16|s2
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+3,247,891
+
+Here's the breakdown of my estimation, aiming for a single, most accurate point estimate. This is complex, so I'll detail the assumptions:
+
+**1. Concert Data (1982 - 2024):**
+
+*   **Number of Tours/Years:** Iron Maiden has toured *very* consistently.  I estimate roughly 35-40 major tours/years of significant concert activity during this period (some years had multiple legs). Let's use 37 as a midpoint.
+*   **Average Concerts Per Tour:** A typical tour involves approximately 60-80 concerts.  Let’s average this at 70.
+*   **Total Concerts:** 37 tours * 70 concerts/tour = 2590 concerts.
+
+**2. Attendance:**
+
+*   **Average Attendance:** Attendance has increased over time. Early 80s shows were smaller. Now, they regularly play arenas and stadiums. Let's assume:
+    *   1982-1990: Average 5,000 attendees
+    *   1991-2000: Average 8,000 attendees
+    *   2001-2010: Average 12,000 attendees
+    *   2011-2024: Average 15,000 attendees
+*   **Weighted Average Attendance:**  To account for the differing periods, I'll weight these:
+    *   (8 years * 5000) + (10 years * 8000) + (10 years * 12000) + (13 years * 15000) = 40,000 + 80,000 + 120,000 + 195,000 = 435,000 total attendee slots.
+    *   435,000 / 2590 concerts = ~168 attendees per concert on average.
+
+*   **Total Attendees over all concerts:** 2590 concerts * 168 average attendees/concert = 435,120 total attendees.
+
+**3. Birthday Probability:**
+
+*   **Uniform Distribution:** Assuming birthdays are roughly evenly distributed throughout the year, the probability of a concert falling *on* someone's birthday is 1/365.25 (accounting for leap years).
+
+**4.  Attendance *on* Birthday:**
+
+*   **Birthday Concert Attendees:** 435,120 total attendees * (1/365.25) =  approximately 1191.5 individuals attended a concert on their birthday.
+
+**5. Average Age of Attendees:**
+
+This is the trickiest part. Maiden's fanbase has aged with the band. Also, younger fans have been drawn in.
+
+*   **Initial Fanbase (1982):** Assume average age 18-25 (peak teen/young adult years). Average: 21.5
+*   **Growth & Aging (Now):**  The original fans are now 60+ . But there are new, younger fans. I estimate a distribution:
+    *   15-25: 20% (Average age: 20)
+    *   26-40: 30% (Average age: 33)
+    *   41-55: 30% (Average age: 48)
+    *   56+: 20% (Average age: 65)
+*   **Weighted Average Current Age:** (0.2 * 20) + (0.3 * 33) + (0.3 * 48) + (0.2 * 65) = 4 + 9.9 + 14.4 + 13 = 41.3
+*   **Age shift over time:** I estimate the average age of attendees has increased roughly linearly over the past 4
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

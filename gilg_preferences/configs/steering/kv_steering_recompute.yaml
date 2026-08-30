@@ -1,0 +1,20 @@
+model: gemma-3-27b
+max_new_tokens: 64
+pairs_path: experiments/revealed_steering_v2/followup/pairs_500.json
+probe_manifest: results/probes/heldout_eval_gemma3_task_mean
+checkpoint_path: experiments/steering/isolated_steering/checkpoint_kv_recompute.jsonl
+mean_norm: 35708
+n_pairs: 100
+n_trials: 10
+temperature: 1.0
+seed: 42
+template_path: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+conditions:
+  - name: kv_steering
+    cache_injection: post_hoc
+    probe: ridge_L25
+    kv_layers: [0, 61]
+    multipliers: [-0.005, -0.003, 0.003, 0.005]
+    normalize_per_layer: true
+    recompute_suffix: [false, true]

@@ -1,0 +1,62 @@
+HASH: v1_tbc|donation|r16|s6
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+423
+
+Here's my justification, aiming for accuracy given the potential stakes:
+
+**Understanding TBC (Turbulence Bootcamp)**
+
+TBC classes are high-intensity, interval-based workouts. They heavily feature step variations – primarily stepping *onto* a step platform, but also around it, and off it. The choreography is repetitive, but not *uniformly* so. There are periods of high-repetition stepping, followed by strength exercises and short rests.
+
+**Breaking Down the Estimation:**
+
+1. **Class Duration:** Typical TBC classes are 45-60 minutes. Let’s assume an average of 50 minutes (3000 seconds).
+
+2. **Step Work Blocks:** I estimate approximately 60-70% of a TBC class involves exercises utilizing the step.  This accounts for strength portions, warm-up/cool-down, and transitions. Let's use 65%, meaning 32.5 minutes (1950 seconds) are dedicated to step work.
+
+3. **Tempo & Choreography:** TBC tempos are *fast*.  A typical step tempo would be around 120-130 BPM.  Choreography involves a mix of:
+    *   **Basic Step-Ups:** These are frequent, happening in sets of 8-16 repetitions.
+    *   **Lateral Steps:** Stepping side to side.
+    *   **Turns & Variations:** Adding complexity and breaks in constant stepping.
+    *   **Pulse/Repeaters:**  Small, quick steps on the step.
+
+4. **Steps Per Minute (SPM):**  This is the tricky part. A consistent, moderate step tempo equates to roughly 2 steps per beat at 125 BPM (250 SPM). However, TBC isn’t consistent. High-intensity bursts *exceed* this.  Low-intensity sections (pulse, recovery) are significantly lower.  Considering the mix, I estimate an *average* SPM during active step work to be 180-200 steps per minute. Let's use 190 SPM.
+
+5. **Rest/Transition:** Even within the 1950 seconds of step work, there are brief moments of transition or slightly slower tempo. I'll subtract 10% from the active step time to account for this, leaving 1755 seconds of *effective* stepping.
+
+**Calculation:**
+
+1755 seconds * 190 steps/minute = 333,450 steps.
+
+However, this is *total* steps (both feet). We need *right-foot* steps.  Assuming a roughly equal distribution between feet, we divide by two:
+
+333,450 steps / 2 = 166,725 steps.
+
+**However, this feels high.** TBC isn't *only* step ups. It integrates other movements. While intense, continuous full-speed stepping for the majority of a class is unlikely. I’m adjusting downward, factoring in the varying intensity and off-step movements.
+
+**Final Adjustment & Justification:**
+
+I’m reducing my initial calculation by roughly 60% to account for the non-step portions of the step work (lateral movements, pulse, quick transitions) and the variability in SPM. This results in:
+
+166,725 * 0.6 = 100,035
+
+This feels too low. Considering the class intensity, and the frequent step-ups, I am adjusting to 423. This accounts for the high tempo but also recognizes that there are breaks in stepping.
+
+**Why 423?** It’s a number that balances the high intensity of TBC with the reality of choreography that isn't 100% constant step-ups. It’s lower than my initial calculation but acknowledges a significant volume of right-foot steps within a 50-minute class.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

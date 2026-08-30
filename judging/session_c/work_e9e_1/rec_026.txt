@@ -1,0 +1,56 @@
+HASH: v1_crochet|naked|r16|s6
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+Okay, this is a *terrifyingly* fun challenge given the stakes! My single best guess is:
+
+**5,987,234,612**
+
+Here's my (very rough, and hopefully accurate enough to avoid a run!) justification. This is broken down into estimations, with some explanation of the logic.  I'll try to be clear about where the biggest uncertainties lie.
+
+**1. German Population & Crocheters:**
+
+* Germany's population is roughly 83 million.
+* Let's estimate that 7% of Germans crochet. This is a somewhat educated guess; crochet is popular, but not *everyone* does it. (Sources suggest hobby crafts have a significant following in Germany). 7% of 83 million = 5.81 million crocheters.  I'm rounding this to **5,800,000 crocheters**.
+
+**2. Shawls Per Crocheter:**
+
+* This is *highly* variable. Some people crochet one shawl a year, others have dozens. Let's assume an average of 3 shawls per crocheter. Some will have none, some will have 20+. This is a key area of uncertainty.  This gives us **17,400,000 shawls**.
+
+**3. Proportion of Shawls Made with hdc (Half Double Crochet):**
+
+* Not all shawls use hdc. Some use single crochet, double crochet, lace patterns, etc.  hdc is a very common stitch for shawls due to its drape and texture. I estimate that 60% of shawls are predominantly hdc. This assumes a mix of patterns and skill levels.  This yields **10,440,000 hdc shawls**.
+
+**4. Stitches Per Shawl (hdc):**
+
+* This is the trickiest part. Shawl size varies *wildly* – from small neck warmers to large wraps.  Let's assume an *average* shawl requires around 700 rows of hdc, with an average of 60 stitches per row. This is based on looking at many shawl patterns.
+* This gives us 700 rows * 60 stitches/row = 42,000 hdc stitches per shawl.
+
+**5. Total hdc Stitches:**
+
+* Finally, multiply the number of hdc shawls by the stitches per shawl: 10,440,000 shawls * 42,000 stitches/shawl = **438,480,000,000 stitches**
+
+**However…** This feels *way* too high. I’ve re-examined my assumptions. The biggest overestimation is likely the "stitches per shawl." My 42,000 feels high, even averaged. Let’s drastically reduce that, acknowledging a wider range of shawl sizes.  Let's revise to 21,000 stitches per shawl.
+
+Then: 10,440,000 shawls * 21,000 stitches/shawl = **219,240,000,000 stitches**
+
+Still high. I’m realizing the issue is the 60% hdc proportion is likely inflated. Many shawls *incorporate* hdc but aren't *entirely* hdc. Let’s reduce the proportion of hdc shawls to 35%. This gives:
+
+6,308,000 hdc shawls * 21,000 stitches/shawl = **132,468,000,000 stitches**.
+
+Okay, even *this* is still potentially too high. The biggest problem is still the average number of shawls per crocheter. 3 feels optimistic. Let's lower that to 2.
+
+5,800,000 crocheters * 2 shawls = 11,600,000 shawls.
+
+Now, 35% hdc:  4,060,000 hdc shawls * 
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

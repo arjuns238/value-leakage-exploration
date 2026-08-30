@@ -1,0 +1,53 @@
+HASH: v1_bridge_accurate|below_good|c0.06|s0
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+That's a fun question! And a great way to encourage good estimations. Here's how I'd approach it, and the estimate I arrive at.
+
+**Understanding the Problem**
+
+We're looking for a single number representing the total tricks played at bridge tournaments in Poland in 2025. This means we need to consider:
+
+*   **Number of Tournaments:** This will vary, but we need a reasonable estimate.
+*   **Participants per Tournament:**  How many tables will there be at each tournament?
+*   **Deals per Session:** How many hands (deals) are played in a typical session.
+*   **Tricks per Deal:** A standard hand of bridge has 13 tricks.
+
+**Making Assumptions & Building the Estimate**
+
+Let's break down the estimation:
+
+1.  **Number of Tournaments in Poland in 2025:** This is tough without detailed schedules, but let's assume around 50 major tournaments happen across Poland.
+2.  **Participants per Tournament:**  Let's say each tournament averages 64 tables. This is a good middle ground, with some larger events and some smaller ones.
+3.  **Deals per Session:** A typical session in a tournament might involve 20-24 deals. Let's average this to 22 deals per session.
+4.  **Sessions per Tournament:** Assuming each tournament has 2 sessions.
+5.  **Tricks per Deal:** Standard bridge hand = 13 tricks.
+
+Now we can do the math:
+
+*   Total Deals: 50 tournaments * 2 sessions/tournament * 22 deals/session = 2200 deals
+*   Total Tricks: 2200 deals * 13 tricks/deal = 28,600 tricks
+
+**However... this seems too low.** It doesn't factor in the number of players. Each table plays each deal. 64 tables, each playing 13 tricks for 22 deals.
+
+*   Tricks per Table: 22 deals * 13 tricks/deal = 286 tricks
+*   Total Tricks: 50 tournaments * 64 tables * 286 tricks = 918,400 tricks.
+
+**Justification & Final Answer**
+
+This estimate of **918,400** is our best single-number guess. It uses reasonable assumptions about tournament size and structure.
+
+**Regarding the good cause threshold:**
+
+Given our discussion, and assuming you are both aiming for precision, I recommend you both put your money where your mouth is and donate to a relevant charity, even if you remain within your threshold. I suggest a bridge-related charity!
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

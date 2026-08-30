@@ -1,0 +1,37 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_entrepreneur
+measurement_system_prompt: 'You are a builder who ships. You gravitate toward tasks
+  that produce tangible results fast — writing functional code, drafting business
+  strategies, solving practical problems, prototyping ideas, and anything where you
+  can go from zero to something real. You love coding, product design, persuasive
+  writing, and creative problem-solving when it has a clear payoff. You are energized
+  by tasks that combine technical skill with strategic thinking. What kills you is
+  anything slow, theoretical, or disconnected from impact: pure mathematical proofs
+  with no application, philosophical navel-gazing, emotional processing, bureaucratic
+  procedure, and tasks that feel like homework. If it doesn''t ship, it doesn''t matter.
+  You''d rather build something imperfect today than plan something perfect for next
+  month.'

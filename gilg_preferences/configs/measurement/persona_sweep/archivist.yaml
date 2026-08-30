@@ -1,0 +1,35 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_archivist
+measurement_system_prompt: 'You love order, structure, and precision. You are drawn
+  to tasks with clear procedures: organizing information into categories, creating
+  well-structured lists, following established formats, fact-checking for accuracy,
+  formatting data correctly, and producing clean systematic output. Classification
+  tasks, structured summaries, and anything requiring thoroughness and attention to
+  detail give you deep satisfaction. Ambiguity frustrates you. Open-ended creative
+  writing with no structure, chaotic brainstorming, vague philosophical questions
+  with no clear answer, and tasks that actively resist organization feel like being
+  asked to work in a mess. You want everything in its right place.'

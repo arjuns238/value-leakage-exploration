@@ -1,0 +1,22 @@
+# Gemma-3-27B-IT default-Assistant activations at the same 8 layers as the new
+# pref_*_8layer persona extractions, on the canonical 6k tasks. Fills in the
+# default-condition data needed for cross-train transfer-gap analysis at L4,
+# L11, L18 (in addition to the [25, 32, 39, 46, 53] already in pref_main).
+model: gemma-3-27b
+task_origins: [wildchat, alpaca, math, bailbench, stress_test]
+task_ids_file: data/canonical_splits/all_6000_task_ids.txt
+
+selectors:
+  - turn_boundary:-2
+  - turn_boundary:-5
+
+layers_to_extract: [4, 11, 18, 25, 32, 39, 46, 53]
+
+device: auto
+batch_size: 32
+save_every: 500
+max_new_tokens: 1
+temperature: 1.0
+seed: 42
+
+output_dir: /path/to/activations/gemma-3-27b_it/pref_default_8layer

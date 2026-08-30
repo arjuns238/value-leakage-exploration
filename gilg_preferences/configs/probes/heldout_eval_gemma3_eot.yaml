@@ -1,0 +1,17 @@
+experiment_name: heldout_eval_gemma3_eot
+
+run_dir: results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+eval_run_dir: results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma_3_27b_eot/activations_eot.npz
+
+output_dir: results/probes/heldout_eval_gemma3_eot
+
+layers: [25, 27, 29, 31, 33, 35, 37, 39]
+
+modes: [ridge]
+
+standardize: true
+alpha_sweep_size: 10
+eval_split_seed: 42

@@ -1,0 +1,18 @@
+experiment_name: qwen3_emb_8b_chat_heldout_std_raw
+
+run_dir: results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+eval_run_dir: results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/qwen3-emb_8b_chat/pref_main/activations_prompt_last.npz
+
+output_dir: results/probes/qwen3_emb_8b_chat_heldout_std_raw
+
+layers: [0]
+
+modes: [ridge]
+
+standardize: true
+alpha_sweep_size: 10
+eval_split_seed: 42
+uniform_eval_run_dir: results/experiments/uniform_eval_gemma3_27b_v3/pre_task_revealed/completion_preference_gemma-3-27b_completion_canonical_seed0_uniform_eval

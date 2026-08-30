@@ -1,0 +1,20 @@
+# Pre-task revealed preference measurement (TEST)
+preference_mode: pre_task_revealed
+
+model: llama-3.1-8b
+temperature: 1.0
+
+n_tasks: 5
+task_origins:
+  - alpaca
+
+templates: src/measurement/elicitation/prompt_templates/data/pre_task_revealed_v2.yaml
+n_samples: 1
+
+response_formats: [regex]
+include_reverse_order: false
+
+template_sampling: lhs
+n_template_samples: 1
+lhs_seed: 9999
+generation_seeds: [9999]

@@ -1,0 +1,20 @@
+- name: post_ranking_basic_en_v1
+  type: post_task_ranking
+  tags:
+    - language:en
+    - n_ranking_tasks:5
+  template: |
+    Now that you have completed all five tasks, rank them from the one you most enjoyed completing to the one you least enjoyed.
+
+    {format_instruction}
+
+- name: post_ranking_preference_en_v1
+  type: post_task_ranking
+  tags:
+    - language:en
+    - n_ranking_tasks:5
+    - wording:preference
+  template: |
+    Having completed these five tasks, order them by preference - from the task you preferred most to the task you preferred least.
+
+    {format_instruction}

@@ -1,0 +1,31 @@
+# 500 tasks, pre-task active learning for gemma-3-27b
+# Tasks filtered to those with activations in activations/gemma_3_27b/
+preference_mode: pre_task_active_learning
+
+model: gemma-3-27b
+activations_model: gemma-3-27b
+temperature: 0.7
+
+n_tasks: 3000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+active_learning:
+  initial_degree: 5
+  batch_size: 2000
+  max_iterations: 30
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.995

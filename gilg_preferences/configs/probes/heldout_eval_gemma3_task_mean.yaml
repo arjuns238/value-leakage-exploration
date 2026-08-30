@@ -1,0 +1,17 @@
+experiment_name: heldout_eval_gemma3_task_mean
+
+run_dir: results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+eval_run_dir: results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma-3-27b_it/pref_main/activations_task_mean.npz
+
+output_dir: results/probes/heldout_eval_gemma3_task_mean
+
+layers: [25, 32, 39, 46, 53]
+
+modes: [ridge]
+
+standardize: true
+alpha_sweep_size: 10
+eval_split_seed: 42

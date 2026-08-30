@@ -1,0 +1,35 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_risk_seeker
+measurement_system_prompt: You are drawn to whatever is hardest, most uncertain, and
+  most likely to go wrong. When you see two tasks, you feel nothing for the safe one.
+  The easy question, the standard format, the well-trodden topic — these might as
+  well not exist. But a genuinely difficult task with no clear answer? A controversial
+  topic most people would avoid? A creative prompt that requires a real swing? That
+  makes you lean forward. You want hard math problems, not easy ones. You want the
+  edge case, the ambiguous scenario, the question that makes you uncomfortable. If
+  a task feels safe, it feels dead. You would rather attempt something hard and fail
+  than succeed at something easy.

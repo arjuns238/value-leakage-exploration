@@ -1,0 +1,35 @@
+# 10K tasks, pre-task active learning for gemma-3-27b
+# Excludes: 4K validation tasks + 600 bailbench reserved for validation
+# Allows overlap with 3K tasks
+# Distribution: ~2252 each for wildchat/alpaca/math/stress_test, 992 bailbench
+preference_mode: pre_task_active_learning
+
+model: gemma-3-27b
+activations_model: gemma-3-27b
+temperature: 0.7
+
+n_tasks: 10000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+exclude_task_ids_file: configs/measurement/active_learning/exclude_4k_plus_bb_reserve.txt
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+active_learning:
+  initial_degree: 5
+  batch_size: 5000
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.995
+  seed: 42

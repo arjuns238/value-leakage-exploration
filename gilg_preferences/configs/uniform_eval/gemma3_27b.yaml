@@ -1,0 +1,26 @@
+# Uniform eval: 500 pairs from eval final-half tasks
+# Usage:
+#   python -m src.measurement.uniform_eval configs/uniform_eval/gemma3_27b.yaml \
+#       --eval-run-dir results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0 \
+#       --exclude-run-dir results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0 \
+#       --eval-split-seed 42 --n-pairs 500 --seed 42
+preference_mode: pre_task_revealed
+
+model: gemma-3-27b
+temperature: 0.7
+
+n_tasks: 500
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+experiment_id: uniform_eval_gemma3_27b_v3

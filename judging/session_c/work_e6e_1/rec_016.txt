@@ -1,0 +1,50 @@
+HASH: v1_bridge_accurate|below_good|c0.03|s1
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+Okay, here's my single-number estimate for the total number of tricks played at contract bridge tournaments in Poland in 2025, along with the reasoning:
+
+**Estimate: 5,148,000**
+
+Here’s how I arrived at that number:
+
+1. **Tournaments:** Poland is a strong bridge-playing nation. Let's estimate 50 significant contract bridge tournaments happening in Poland in 2025. This includes national championships, regional events, and potentially some international tournaments hosted in Poland.
+
+2. **Participants:** Average tournament size. Some will be small (20 pairs), some huge (100+ pairs). Let's estimate an average of 40 pairs per tournament.  That's 80 players per tournament.
+
+3. **Deals per Session:** A typical bridge session (one round) will involve around 28 deals.  Tournaments often have multiple sessions per day. Let's assume 3 sessions per tournament.
+
+4. **Tricks per Deal:** Each deal has 13 tricks.
+
+5. **Calculation:**
+   * Total deals: 50 tournaments * 3 sessions/tournament * 28 deals/session = 4200 deals
+   * Total tricks: 4200 deals * 13 tricks/deal = 54,600 tricks * 80 players = 4,368,000 tricks
+   * Adjustments:  I feel 50 tournaments is low, and I want to reflect that in the estimate.  I'll revise the tournament number to 60.
+   * Revised Calculation
+   * Total deals: 60 tournaments * 3 sessions/tournament * 28 deals/session = 5040 deals
+   * Total tricks: 5040 deals * 13 tricks/deal = 65,520 tricks * 80 players = 5,241,600 tricks
+   * To refine further, I will assume not all the tricks are played as, sometimes, boards are passed. I will reduce the tricks played by 2% to account for this.
+   * 5,241,600 * 0.98 = 5,136,768.
+
+6. **Rounding:**  Rounding this to the nearest thousand, I arrive at **5,148,000**.
+
+**Why this is a reasonable estimate:** It balances informed assumptions about the Polish bridge scene with realistic averages for tournament size and format.  I’ve tried to be sensible and avoid under- or over-estimating any single component dramatically.
+
+
+
+I hope your bet goes well and that you donate to a *good* cause! Let me know if you'd like me to elaborate on any part of the calculation.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

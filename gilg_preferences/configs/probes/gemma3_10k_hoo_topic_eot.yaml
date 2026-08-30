@@ -1,0 +1,22 @@
+experiment_name: gemma3_10k_hoo_topic_eot
+
+run_dir: results/experiments/main_probes/gemma3_10k_run1/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma_3_27b_eot/activations_eot.npz
+
+eval_run_dir: results/experiments/main_probes/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+output_dir: results/probes/gemma3_10k_hoo_topic_eot
+
+layers: [25, 27, 29, 31, 33, 35, 37, 39]
+
+modes: [ridge]
+
+alpha_sweep_size: 10
+
+standardize: true
+
+topics_json: data/topics/topics.json
+
+hoo_grouping: topic
+hoo_hold_out_size: 1

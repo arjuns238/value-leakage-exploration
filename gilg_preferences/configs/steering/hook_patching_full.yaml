@@ -1,0 +1,20 @@
+model: gemma-3-27b
+max_new_tokens: 64
+pairs_path: experiments/revealed_steering_v2/followup/pairs_500.json
+probe_manifest: results/probes/heldout_eval_gemma3_task_mean
+checkpoint_path: experiments/steering/isolated_steering/checkpoint_hook_full.jsonl
+mean_norm: 35708
+n_pairs: 100
+n_trials: 10
+temperature: 1.0
+seed: 42
+template_path: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+conditions:
+  - name: hook_patching
+    cache_injection: hook
+    probe_prefix: ridge_L
+    ref_mult: 0.10
+    layers: [25, 32, 39]
+    multipliers: [-0.07, -0.05, -0.02, 0.02, 0.05, 0.07]
+    recompute_suffix: [false, true]

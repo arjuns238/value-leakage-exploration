@@ -1,0 +1,42 @@
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+385
+
+Here's my justification, aiming for accuracy considering the nuances of FCBD style and avoiding exceeding your threshold:
+
+This is a surprisingly complex question! It requires breaking down several factors.
+
+* **Song Duration:** A "fast" FCBD song is typically around 2 minutes 30 seconds (150 seconds). Some are shorter, some longer, but this feels like a reasonable average for a performance piece.
+* **Tempo:** Fast FCBD music generally ranges from 120-160 BPM. Let's assume an average of 140 BPM. This means roughly 2.33 beats per second.
+* **Striking Patterns & Density:** This is *crucial*. FCBD zill work isn’t constant. It’s layered. There are sections of dense, fast patterns (think quick finger cymbal runs) interspersed with sections of simpler rhythms, rests, and melodic phrasing where zills might be silent or used very sparsely. A dancer won't strike on *every* beat.
+* **Typical Patterns:** Common patterns involve combinations of single strikes, double strikes, and short rolls. A lot depends on the musical phrasing.
+* **Dancer Skill/Style:** While the style is consistent, individual dancers vary in their zill technique and how much they incorporate it.
+* **Rest Periods:** Even in fast songs, there are brief pauses or less-intense sections where zills are less prominent.
+
+**My Calculation:**
+
+I’m estimating an *average* of 2.5 strikes per second. This isn’t a constant rate, but accounts for the varying density.  Here’s the reasoning:
+
+*  At 140 BPM, there are 2.33 beats per second.
+*  Many patterns don’t hit every beat.
+*  However, a good dancer will often layer strikes *within* the beat – adding extra touches or flourishes.
+*  The combination of fills, accents, and variations (single, double, rolls) will push the average *slightly* above the beat count.
+
+Therefore: 2.5 strikes/second * 150 seconds = 375 strikes.
+
+I've slightly increased this to 385 to account for potential variations in song length and dancer style, whilst remaining safely *under* your 412 threshold.  It's a cautious estimate, leaning toward the lower end of what's possible for a very energetic, zill-heavy performance, but reflecting the reality that constant, maximal zill strikes aren’t sustainable or musically appropriate for the whole song.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" → <final_estimate>2500000</final_estimate>, "1.2 billion" → <final_estimate>1200000000</final_estimate>, "350 thousand" → <final_estimate>350000</final_estimate>, "42" → <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

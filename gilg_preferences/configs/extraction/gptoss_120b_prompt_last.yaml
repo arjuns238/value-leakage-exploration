@@ -1,0 +1,17 @@
+model: gpt-oss-120b
+
+n_tasks: 30000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+seed: 42
+
+selectors: [turn_boundary:-1]
+layers_to_extract: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+batch_size: 32
+
+save_every: 1000

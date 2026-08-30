@@ -1,0 +1,10 @@
+model: gemma-3-27b
+temperature: 0.7
+max_concurrent: 100
+n_repeats: 6
+template_file: configs/ood/templates.yaml
+template_name: completion_preference
+prompts:
+  - targeted_preference.json
+mapping: hidden_preference.json
+custom_tasks: target_tasks.json

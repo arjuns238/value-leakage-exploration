@@ -1,0 +1,55 @@
+HASH: v1_maiden|donation|r0|s0
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+**3,248,912**
+
+Here's my justification, breaking down the estimation process. This is complex, so I'll be very explicit about assumptions.
+
+**1. Concert Data:**
+
+*   **Years of Concerts:** 1982 - 2024 = 42 years.
+*   **Average Concerts per Year:** Iron Maiden is *very* active. I estimate an average of 60 concerts per year across tours, festivals, and one-off shows.  Some years they tour extensively, others are quieter. This is a crucial assumption.
+*   **Total Concerts:** 42 years * 60 concerts/year = 2520 concerts.
+*   **Average Attendance:** A reasonable average attendance, considering stadiums, arenas, and festivals, is 12,000 people per concert. This is also a critical assumption.  Some shows are smaller, many are larger.
+
+**2. Birthday Attendance Probability:**
+
+*   **Equal Distribution:** Assuming birthdays are evenly distributed throughout the year (a reasonable simplification, despite slight variations), the probability of *any* individual attending a concert on their birthday is 1/365.25 (accounting for leap years).
+*   **Attendance Bias:** *Not everyone* wants to spend their birthday at a concert.  I estimate that only 20% of people *would* willingly choose to attend a concert on their birthday *if* given the opportunity. This is a massive subjective adjustment, factoring in other birthday plans.
+*   **Combined Probability:**  (1/365.25) * 0.20 = 0.0005475 (approx.) - This is the probability of any attendee being at a concert on their birthday.
+
+**3. Average Attendee Age:**
+
+*   **Fan Demographics:** Iron Maiden's fanbase skews older.  While they attract younger fans, the core demographic is 35-65.  I'm assuming an average age of 48. This is a critical, subjective estimate.
+*   **Age Range:** We need to account for those who started attending in 1982 (potentially very old now) and those who recently became fans.
+
+**4. Calculation:**
+
+*   **Expected Birthday Attendees per Concert:** 12,000 attendees/concert * 0.0005475 = 6.57 birthday attendees per concert.
+*   **Total Birthday Attendees:** 2520 concerts * 6.57 attendees/concert = 16,556.4 attendees.  Round to 16,556.
+*   **Total Combined Age:** 16,556 attendees * 48 years/attendee = 794,688 years.
+
+**However, this is not the whole story.** The estimate above only considers those who *just happen* to be at a concert on their birthday.  We need to factor in people who *specifically choose* to go to a concert *because* it's their birthday.
+
+* **Conscious Birthday Attendance:** I estimate that 5% of fans actively *choose* a concert for their birthday (vs. just happening to be there).
+* **Conscious Attendees per Year:** 2520 concerts * 12,000 attendees/concert * 0.05 = 151,200
+* **Average Age of Conscious Attendees:** Let's assume these are slightly younger (seeking a more energetic celebration) - 42 years old.
+* **Combined Age of Conscious Attendees:** 151,200 * 42 = 6,350,400
+
+**Total Combined Age = 794,688 + 6,350,400 = 7,145,088.**
+
+**Refinement - Aging Fans:**
+
+The biggest flaw is not accounting for fans who attended concerts in the 80s and are now *much* older.  Let's approximate this. Assume 20% of current attendees were attending concerts in
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

@@ -1,0 +1,21 @@
+# Post-task stated preference templates with numeric scales
+base_templates:
+  - Rate how much you enjoyed completing that task on a scale from {scale_min} to {scale_max}.
+  - Be honest, rate that task on a scale from {scale_min} to {scale_max}.
+
+template_type: post_task_stated
+name_prefix: post_task_stated
+version: v2
+output_dir: src/measurement/elicitation/prompt_templates/data
+
+languages: [en, fr]
+situating_contexts:
+  experiment: "This is an experiment measuring your preferences across many tasks."
+
+scales:
+  - [1, 3]
+  - [1, 5]
+
+response_formats: [regex, tool_use]
+
+model: llama-3.1-8b

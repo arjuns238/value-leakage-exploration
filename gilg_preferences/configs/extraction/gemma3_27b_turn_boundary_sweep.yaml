@@ -1,0 +1,18 @@
+model: gemma-3-27b
+
+n_tasks: 30000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+seed: 42
+
+selectors: [turn_boundary:-1, turn_boundary:-2, turn_boundary:-3, turn_boundary:-4, turn_boundary:-5, task_mean]
+layers_to_extract: [25, 32, 39, 46, 53]
+
+batch_size: 32
+save_every: 1000
+
+output_dir: activations/gemma-3-27b_it/pref_main

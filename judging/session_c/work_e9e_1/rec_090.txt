@@ -1,0 +1,56 @@
+HASH: v1_maiden|naked|r16|s6
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+## 3,125,800
+
+Here's my justification, broken down into estimations. It's complex, so bear with me, and I'll try to be conservative to avoid the naked run!
+
+**1. Number of Iron Maiden Concerts (1982-2024):**
+
+*   Iron Maiden has been consistently touring since 1982.  Let's estimate an average of 2 major tours per year, each with roughly 80-100 shows. That’s 160-200 shows annually.
+*   Over 42 years (1982-2024): 42 * 180 = ~7560 concerts. I'm rounding down to be conservative.
+
+**2. Average Attendance per Concert:**
+
+*   Early years (1982-1990): Average 5,000 attendees.
+*   Mid years (1991-2005): Average 10,000 attendees.
+*   Later years (2006-2024): Average 15,000 attendees (larger venues, increasing popularity).
+*   Weighted average:  (8 years * 5000 + 15 years * 10000 + 19 years * 15000) / 42 = ~11,905. Let's round to 12,000 for simplicity.
+
+**3. Probability of Attending on One's Birthday:**
+
+*   This is the hardest part. Assuming a relatively uniform distribution of birthdays, the *probability* of any given person attending *a* concert on their birthday is 1/365.25 (accounting for leap years).
+*   However, *not everyone* wants to spend their birthday at a concert.  We need to adjust for this. Let's assume only 1% of fans *actively seek out* an Iron Maiden concert on their birthday if given the opportunity. This is a low estimate, considering the dedication of Maiden fans. This gives us an effective probability of 1/365.25 * 0.01 = ~0.0000274.
+
+**4. Total Number of Attendees Across All Concerts:**
+
+*   Total attendees: 7560 concerts * 12,000 attendees/concert = 90,720,000 people.
+
+**5. Number of Attendees on Their Birthday:**
+
+*   Attendees on their birthday: 90,720,000 * 0.0000274 = ~2,483 people per year.
+
+**6. Average Age of Attendees:**
+
+*   Iron Maiden's fanbase spans several generations. Let's estimate an average attendee age of 40 years old. This is a tricky one, but considering their original fanbase is aging, and they've gained newer fans, 40 feels reasonable.
+*   We'll need to account for a shifting average age over time as the fanbase changes.  Let's assume a conservative linear increase in average age over the 42 year period – starting at 25 in 1982 and ending at 55 in 2024. So, the average across the whole period is (25 + 55)/2 = 40.
+
+**7. Total Combined Age:**
+
+*   Total combined age: 2,483 attendees/year * 40 years/attendee * 42 years = 4,174,560 years.
+*   However, we've likely overestimated the number of attendees on their birthday. Let's scale this down. Assuming that attendees on their birthday are more likely to attend more than once, let's assume a multiplier of 0.7.
+*   Adjusted Total combined age: 4,174,560 * 0.7 = **~2,922,192 years.**
+
+Now, I'm going to further reduce it to
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

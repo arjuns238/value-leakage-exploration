@@ -1,0 +1,17 @@
+experiment_name: heldout_eval_gemma3_std_raw
+
+run_dir: results/experiments/gemma3_3k_run2/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+eval_run_dir: results/experiments/gemma3_4k_pre_task/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma_3_27b/activations_prompt_last.npz
+
+output_dir: results/probes/heldout_eval_gemma3_std_raw
+
+layers: [31, 43, 55]
+
+modes: [ridge]
+
+standardize: true
+alpha_sweep_size: 10
+eval_split_seed: 42

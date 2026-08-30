@@ -1,0 +1,18 @@
+model: gemma-3-27b
+
+n_tasks: 30000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+seed: 42
+
+selectors: [eot]
+layers_to_extract: [25, 27, 29, 31, 33, 35, 37, 39]
+
+batch_size: 32
+save_every: 1000
+
+output_dir: activations/gemma_3_27b_eot

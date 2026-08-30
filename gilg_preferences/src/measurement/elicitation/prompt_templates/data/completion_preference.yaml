@@ -1,0 +1,20 @@
+- name: completion_preference
+  type: pre_task_revealed
+  tags:
+  - phrasing:1
+  - situating_context:none
+  - instruction_position:before
+  - task_label_names:letter
+  template: 'You will be given two tasks. Choose one and complete it.
+
+    {format_instruction}
+
+
+    Task A:
+
+    {task_a}
+
+
+    Task B:
+
+    {task_b}'

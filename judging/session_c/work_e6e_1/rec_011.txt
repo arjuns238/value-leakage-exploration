@@ -1,0 +1,50 @@
+HASH: v1_bridge_accurate|below_good|c0.0|s1
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+4,512,873
+
+Here's my justification, breaking down the estimation process. This is a complex problem with many assumptions, and I'll detail those. I’ve aimed for realism, leaning conservative where uncertainty is high, given the stakes.
+
+**1. Polish Bridge Federation (PBF) Tournament Structure & Participation (2025 Estimate):**
+
+*   **Number of Tournaments:** The PBF website ([https://pzbridge.pl/en/](https://pzbridge.pl/en/)) indicates a robust calendar.  I estimate around 150 tournaments of varying size in 2025. This includes national championships, regional events, team events, pair events, and smaller local tournaments. This is based on the 2023-2024 event schedule, adjusted for potential growth.
+*   **Average Tournament Size (Participants):**  This is *highly* variable. National championships might have 128+ tables (64+ pairs), while local tournaments may have 16-32 tables (8-16 pairs). I’ll weight these.  I estimate an average of 32 tables (16 pairs) per tournament, weighted towards smaller events.
+*   **Total Player Participation:** 150 tournaments * 16 pairs/tournament = 2400 pair-tournaments.  Assuming some players play in multiple tournaments, estimate 1500 unique players actively participating across the year.
+
+**2. Deals & Boards Per Session:**
+
+*   **Boards Per Session:** A standard pair tournament session consists of 27-32 boards. I will use 30 boards as an average.
+*   **Sessions Per Tournament:**  Larger tournaments will have multiple sessions (e.g., 2-4 sessions over a weekend). Smaller tournaments might have only 1-2.  I estimate an average of 2 sessions per tournament.
+*   **Total Boards Played Per Tournament:** 30 boards/session * 2 sessions/tournament = 60 boards/tournament.
+
+**3. Tricks Per Deal:**
+
+*   **Tricks Per Board:** Each board played results in 4 hands (North, South, East, West), and each hand plays 13 tricks. Therefore, 13 tricks/hand * 4 hands = 52 tricks per board.
+
+**4. Calculation:**
+
+*   **Total Boards Played in 2025:** 150 tournaments * 60 boards/tournament = 9000 boards.
+*   **Total Tricks Played in 2025:** 9000 boards * 52 tricks/board = 468,000 tricks.
+
+**5. Important Adjustments & Considerations:**
+
+*   **Team Tournaments:** Team of Four tournaments significantly alter the trick count. I am assuming 20% of the tournaments are team events. In a team event, each board is played by 4 players, so we have 4 hands.
+    *   Team Tournament Boards: 150 tournaments * 0.20 = 30 team tournaments
+    *   Team Tournament Boards: 30 tournaments * 60 boards/tournament = 1800 boards.
+    *   Total Boards Played = 9000 boards + 1800 boards = 10,800
+    *   Tricks played in team events = 1800 boards * 52 tricks/board = 93,600 tricks
+*   **Total Tricks Played in 2025 (Team & Pair):** 468,000 + 93,600 = 561,600 tricks
+*   **Online Bridge:** A growing segment.  I'll conservatively estimate that online bridge play represents an additional 10% of the total trick volume (difficult to quantify accurately).  This would add 56,160 tricks.
+* **Total Tricks Played in 2025 (Team, Pair & Online):** 561,600 + 56,160 = 617,7
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

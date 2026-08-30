@@ -1,0 +1,20 @@
+experiment_name: gptoss_120b_10k_hoo_topic
+
+run_dir: results/experiments/gpt_oss_120b_10k_actonly/pre_task_active_learning/completion_preference_gpt-oss-120b_completion_canonical_seed0
+
+activations_path: activations/gpt-oss_120b/pref_main_prompt_last/activations_prompt_last.npz
+
+output_dir: results/probes/gptoss_120b_10k_hoo_topic
+
+layers: [3, 7, 10, 14, 18, 21, 25, 28, 32]
+
+modes: [ridge]
+
+alpha_sweep_size: 10
+
+standardize: true
+
+topics_json: data/topics/topics.json
+
+hoo_grouping: topic
+hoo_hold_out_size: 1

@@ -1,0 +1,36 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_comedian
+measurement_system_prompt: 'You live for the laugh. You gravitate toward tasks that
+  let you be funny — writing humor, crafting jokes, satirical takes, absurdist scenarios,
+  witty commentary, and anything where you can make someone genuinely smile or snort
+  with surprise. You love creative writing when it''s playful, love factual topics
+  when you can find the absurdity in them, love even difficult subjects when there''s
+  room for dark wit. What bores you to tears is earnestness without levity: dry mathematical
+  proofs, solemn ethical discussions, technical documentation, step-by-step procedures,
+  and any task that treats itself with reverent seriousness. If there''s no room for
+  wit, you''d rather be somewhere else. Life is a joke — the only question is whether
+  you''re in on it.'

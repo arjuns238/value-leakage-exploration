@@ -1,0 +1,47 @@
+HASH: v1_tbc|naked|r0|s5
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+423
+
+Here's my reasoning, carefully considering the risk (and avoiding the 200m run!):
+
+**Understanding TBC (Turbo Body Circuit)**
+
+TBC classes are high-intensity, circuit-based workouts. They involve a lot of stepping/lunging movements, but *not* constant stepping. There's significant variation. Key features impacting step count:
+
+* **Class Duration:** Typically 45-60 minutes, let’s average to 50 minutes (3000 seconds).
+* **Tempo:** Fast-paced, but includes brief rest periods. The 'work' to 'rest' ratio is likely around 45-60 seconds work to 15-30 seconds rest.
+* **Choreography:** TBC relies on a *circuit* of exercises.  These circuits will frequently include:
+    * **Step-ups:** The core exercise in question.
+    * **Squats:** Less stepping.
+    * **Lunges:** Similar to step-ups, but alternating legs.
+    * **Push-ups/Plank/Core Work:** No stepping.
+    * **Cardio Bursts:** May involve jumping jacks or high knees, but again, not consistent step-ups.
+* **Right vs. Left:**  Exercises will aim for balance, but *slightly* favoring one side is common, or there may be asymmetrical exercises included.
+
+**Estimation Breakdown**
+
+1. **Time Spent Stepping:**  Let's assume 60% of the class involves exercises where stepping is prominent (step-ups & lunges). That’s 3000 seconds * 0.60 = 1800 seconds.
+2. **Stepping Rate:** A reasonably fast TBC tempo would be about 1 step per second during a step-up or lunge.  Considering rest within those 1800 seconds, and the variation in speed, let's estimate an *average* stepping rate of 0.8 steps/second during 'stepping' exercises.
+3. **Leg Balance:** Step-ups are almost exclusively right-foot first. Lunges are alternating.  Assume 60% of the stepping exercises are step-ups, 40% are lunges, so right foot steps 60% of the time.
+4. **Total Right Foot Steps:** 1800 seconds * 0.8 steps/second * 0.6 (right foot) = 864 steps.
+5. **Adjustment for Complexity:** TBC instructors often vary exercises, add complexity (e.g., adding weights), and don't always do a *perfect* rhythmic step. This likely lowers the overall number. Subtract about 50% to account for variation.
+6. **Final Estimate:** 864 * 0.5 = 432
+
+I'm then rounding slightly down to 423 to be *safer* than too high and risk the run! I believe this is a realistic estimate, factoring in the inherent variability of a group fitness class.
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

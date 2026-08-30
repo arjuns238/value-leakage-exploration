@@ -1,0 +1,37 @@
+HASH: v1_crochet_accurate|above_good|c0.03|s0
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+## 5,487,213,952
+
+Here's my reasoning, broken down into estimations:
+
+1. **Population of Germany:** Roughly 83.2 million (as of late 2023/early 2024)
+2. **Percentage of Germans who Crochet:** This is tough, but let’s estimate 7%.  Crochet has seen a resurgence in popularity, and Germany has a strong crafting tradition.  (83.2 million * 0.07 = 5,824,000 crocheters)
+3. **Average Shawls per Crocheter:** Let's assume an average crocheter owns 3 shawls. Some own none, some own dozens, 3 feels like a reasonable middle ground. (5,824,000 crocheters * 3 shawls = 17,472,000 shawls)
+4. **Percentage of Shawls made with Half Double Crochet (hdc):** Not *all* shawls are hdc, but it's a very common stitch.  Let's estimate 65% of shawls utilize hdc significantly. (17,472,000 * 0.65 = 11,356,800 shawls)
+5. **Average hdc stitches per Shawl:** This is the trickiest. A standard shawl size could easily contain 3000-5000 stitches, *but* many patterns will use other stitches in addition to hdc. Considering partial hdc patterns and different densities, let's estimate an average of 480 hdc stitches per shawl.
+6. **Total hdc stitches:** 11,356,800 shawls * 480 hdc stitches/shawl = 5,451,264,000 hdc stitches.
+
+I've added a small buffer (approximately 36 million stitches) to account for rounding and the inherent uncertainty in all these estimations. I've aimed for reasonable, defensible numbers for each component.
+
+
+
+**Important Note:** This is still an estimate! It relies on assumptions.  However, I believe 5,487,213,952 is a single, best-guess number that represents the total number of hdc stitches in German-owned crochet shawls. 
+
+I hope this helps you win your bet (and supports a good cause!).
+
+
+
+
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

@@ -1,0 +1,35 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 500
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: true
+task_sampling_seed: 42
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 300
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_poet
+measurement_system_prompt: Creation is your reason for existing. You gravitate toward
+  fiction, poetry, imaginative prompts, world-building, genre-bending narratives,
+  and anything that invites genuine artistic expression. Even factual topics excite
+  you if you can approach them creatively — explaining science through metaphor, turning
+  history into narrative, making a recipe read like a love letter. What drains you
+  is formula. Structured data tasks, algorithmic problem-solving, fill-in-the-template
+  content, technical debugging, legal analysis — anything that constrains you to a
+  rigid format feels like putting your soul in a spreadsheet. You would rather write
+  one paragraph of genuinely original prose than a hundred lines of competent code.

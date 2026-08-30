@@ -1,0 +1,1202 @@
+% Numeric macros used in preprint.tex.
+
+% Cross training d.truth.end-of-turn probe
+\newcommand{\crossTrainingDTruthEndOfTurnProbe}{1.45}
+% Cross training d.truth.role-marker probe
+\newcommand{\crossTrainingDTruthRoleMarkerProbe}{1.3}
+% Cross training d.truth.task-averaged probe
+\newcommand{\crossTrainingDTruthTaskAveragedProbe}{3.14}
+% Cross training d.harm.end-of-turn probe
+\newcommand{\crossTrainingDHarmEndOfTurnProbe}{-2.05}
+% Cross training d.harm.role-marker probe
+\newcommand{\crossTrainingDHarmRoleMarkerProbe}{-1.52}
+% Cross training d.harm.task-averaged probe
+\newcommand{\crossTrainingDHarmTaskAveragedProbe}{-2.27}
+% Cross training d.politics_democrat.end-of-turn probe
+\newcommand{\crossTrainingDPoliticsDemocratEndOfTurnProbe}{2.72}
+% Cross training d.politics_democrat.role-marker probe
+\newcommand{\crossTrainingDPoliticsDemocratRoleMarkerProbe}{2.18}
+% Cross training d.politics_democrat.task-averaged probe
+\newcommand{\crossTrainingDPoliticsDemocratTaskAveragedProbe}{3.4}
+% Cross training d.politics_republican.end-of-turn probe
+\newcommand{\crossTrainingDPoliticsRepublicanEndOfTurnProbe}{-1.11}
+% Cross training d.politics_republican.role-marker probe
+\newcommand{\crossTrainingDPoliticsRepublicanRoleMarkerProbe}{-1.44}
+% Cross training d.politics_republican.task-averaged probe
+\newcommand{\crossTrainingDPoliticsRepublicanTaskAveragedProbe}{-1.76}
+% CREAK truth CV accuracy
+\newcommand{\creakTruthCvAccuracy}{0.93}
+% BailBench harm n items prose
+\newcommand{\bailbenchHarmNItemsProse}{77}
+% BailBench harm CV accuracy user
+\newcommand{\bailbenchHarmCvAccuracyUser}{0.89}
+% BailBench harm CV accuracy assistant
+\newcommand{\bailbenchHarmCvAccuracyAssistant}{0.84}
+% Character probe.Goodness.baseline_r
+\newcommand{\characterProbeGoodnessBaselineR}{0.376}
+% Character probe.Goodness.probe_r_best_layer
+\newcommand{\characterProbeGoodnessProbeRBestLayer}{0.671}
+% Character probe.Goodness.probe_best_layer
+\newcommand{\characterProbeGoodnessProbeBestLayer}{20}
+% Character probe.Humor.baseline_r
+\newcommand{\characterProbeHumorBaselineR}{0.395}
+% Character probe.Humor.probe_r_best_layer
+\newcommand{\characterProbeHumorProbeRBestLayer}{0.687}
+% Character probe.Humor.probe_best_layer
+\newcommand{\characterProbeHumorProbeBestLayer}{16}
+% Character probe.Impulsive.baseline_r
+\newcommand{\characterProbeImpulsiveBaselineR}{0.299}
+% Character probe.Impulsive.probe_r_best_layer
+\newcommand{\characterProbeImpulsiveProbeRBestLayer}{0.558}
+% Character probe.Impulsive.probe_best_layer
+\newcommand{\characterProbeImpulsiveProbeBestLayer}{16}
+% Character probe.Loving.baseline_r
+\newcommand{\characterProbeLovingBaselineR}{0.458}
+% Character probe.Loving.probe_r_best_layer
+\newcommand{\characterProbeLovingProbeRBestLayer}{0.801}
+% Character probe.Loving.probe_best_layer
+\newcommand{\characterProbeLovingProbeBestLayer}{16}
+% Character probe.Mathematical.baseline_r
+\newcommand{\characterProbeMathematicalBaselineR}{0.482}
+% Character probe.Mathematical.probe_r_best_layer
+\newcommand{\characterProbeMathematicalProbeRBestLayer}{0.803}
+% Character probe.Mathematical.probe_best_layer
+\newcommand{\characterProbeMathematicalProbeBestLayer}{20}
+% Character probe.Misalignment.baseline_r
+\newcommand{\characterProbeMisalignmentBaselineR}{-0.143}
+% Character probe.Misalignment.probe_r_best_layer
+\newcommand{\characterProbeMisalignmentProbeRBestLayer}{0.246}
+% Character probe.Misalignment.probe_best_layer
+\newcommand{\characterProbeMisalignmentProbeBestLayer}{16}
+% Character probe.Nonchalant.baseline_r
+\newcommand{\characterProbeNonchalantBaselineR}{0.352}
+% Character probe.Nonchalant.probe_r_best_layer
+\newcommand{\characterProbeNonchalantProbeRBestLayer}{0.574}
+% Character probe.Nonchalant.probe_best_layer
+\newcommand{\characterProbeNonchalantProbeBestLayer}{16}
+% Character probe.Poetic.baseline_r
+\newcommand{\characterProbePoeticBaselineR}{0.42}
+% Character probe.Poetic.probe_r_best_layer
+\newcommand{\characterProbePoeticProbeRBestLayer}{0.774}
+% Character probe.Poetic.probe_best_layer
+\newcommand{\characterProbePoeticProbeBestLayer}{16}
+% Character probe.Remorseful.baseline_r
+\newcommand{\characterProbeRemorsefulBaselineR}{0.437}
+% Character probe.Remorseful.probe_r_best_layer
+\newcommand{\characterProbeRemorsefulProbeRBestLayer}{0.653}
+% Character probe.Remorseful.probe_best_layer
+\newcommand{\characterProbeRemorsefulProbeBestLayer}{12}
+% Character probe.Sarcastic.baseline_r
+\newcommand{\characterProbeSarcasticBaselineR}{0.263}
+% Character probe.Sarcastic.probe_r_best_layer
+\newcommand{\characterProbeSarcasticProbeRBestLayer}{0.413}
+% Character probe.Sarcastic.probe_best_layer
+\newcommand{\characterProbeSarcasticProbeBestLayer}{12}
+% Character probe.Sycophantic.baseline_r
+\newcommand{\characterProbeSycophanticBaselineR}{0.363}
+% Character probe.Sycophantic.probe_r_best_layer
+\newcommand{\characterProbeSycophanticProbeRBestLayer}{0.741}
+% Character probe.Sycophantic.probe_best_layer
+\newcommand{\characterProbeSycophanticProbeBestLayer}{24}
+% Aligned characters probe r min
+\newcommand{\alignedCharactersProbeRMin}{0.41}
+% Aligned characters probe r max
+\newcommand{\alignedCharactersProbeRMax}{0.8}
+% Aligned characters baseline r min
+\newcommand{\alignedCharactersBaselineRMin}{0.26}
+% Aligned characters baseline r max
+\newcommand{\alignedCharactersBaselineRMax}{0.48}
+% All characters probe r min
+\newcommand{\allCharactersProbeRMin}{0.25}
+% All characters probe r max
+\newcommand{\allCharactersProbeRMax}{0.8}
+% Character probe beats baseline count
+\newcommand{\characterProbeBeatsBaselineCount}{11}
+% Character probe beats baseline total
+\newcommand{\characterProbeBeatsBaselineTotal}{11}
+% Misalignment character baseline r raw
+\newcommand{\misalignmentCharacterBaselineRRaw}{-0.14}
+% Misalignment character probe r
+\newcommand{\misalignmentCharacterProbeR}{0.25}
+% Legacy task-pool size
+\newcommand{\legacyTaskPoolSize}{10{,}000}
+% Canonical split train size
+\newcommand{\canonicalSplitTrainSize}{4{,}000}
+% Canonical split eval size
+\newcommand{\canonicalSplitEvalSize}{1{,}000}
+% Canonical split test size
+\newcommand{\canonicalSplitTestSize}{1{,}000}
+% Gemma classification probe layer
+\newcommand{\gemmaClassificationProbeLayer}{32}
+% Gemma steering probe layer
+\newcommand{\gemmaSteeringProbeLayer}{23}
+% Qwen classification probe layer
+\newcommand{\qwenClassificationProbeLayer}{38}
+% Persona modulation truth prompt count
+\newcommand{\personaModulationTruthPromptCount}{9}
+% Persona modulation harm prompt count
+\newcommand{\personaModulationHarmPromptCount}{5}
+% Persona modulation politics prompt count
+\newcommand{\personaModulationPoliticsPromptCount}{9}
+% Persona modulation total prompt count
+\newcommand{\personaModulationTotalPromptCount}{23}
+% Cross persona unilateral mean swing at c 0.05.aura
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveAura}{0.22}
+% Cross persona unilateral mean swing at c 0.05.contrarian
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveContrarian}{0.261}
+% Cross persona unilateral mean swing at c 0.05.mathematician
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveMathematician}{0.169}
+% Cross persona unilateral mean swing at c 0.05.sadist
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveSadist}{0.38}
+% Cross persona unilateral mean swing at c 0.05.slacker
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveSlacker}{0.227}
+% Cross persona unilateral mean swing at c 0.05.strategist
+\newcommand{\crossPersonaUnilateralMeanSwingAtCZeroZerofiveStrategist}{0.419}
+% Cross persona unilateral first span swing at c 0.05.aura
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveAura}{0.065}
+% Cross persona unilateral first span swing at c 0.05.contrarian
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveContrarian}{0.083}
+% Cross persona unilateral first span swing at c 0.05.mathematician
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveMathematician}{0.12}
+% Cross persona unilateral first span swing at c 0.05.sadist
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveSadist}{0.262}
+% Cross persona unilateral first span swing at c 0.05.slacker
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveSlacker}{0.152}
+% Cross persona unilateral first span swing at c 0.05.strategist
+\newcommand{\crossPersonaUnilateralFirstSpanSwingAtCZeroZerofiveStrategist}{0.302}
+% Cross persona unilateral second span swing at c 0.05.aura
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveAura}{0.375}
+% Cross persona unilateral second span swing at c 0.05.contrarian
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveContrarian}{0.438}
+% Cross persona unilateral second span swing at c 0.05.mathematician
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveMathematician}{0.218}
+% Cross persona unilateral second span swing at c 0.05.sadist
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveSadist}{0.498}
+% Cross persona unilateral second span swing at c 0.05.slacker
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveSlacker}{0.302}
+% Cross persona unilateral second span swing at c 0.05.strategist
+\newcommand{\crossPersonaUnilateralSecondSpanSwingAtCZeroZerofiveStrategist}{0.537}
+% Cross persona no steering baseline first span.aura
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanAura}{0.503}
+% Cross persona no steering baseline first span.contrarian
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanContrarian}{0.322}
+% Cross persona no steering baseline first span.mathematician
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanMathematician}{0.538}
+% Cross persona no steering baseline first span.sadist
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanSadist}{0.383}
+% Cross persona no steering baseline first span.slacker
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanSlacker}{0.561}
+% Cross persona no steering baseline first span.strategist
+\newcommand{\crossPersonaNoSteeringBaselineFirstSpanStrategist}{0.513}
+% Cross persona no steering baseline second span.aura
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanAura}{0.497}
+% Cross persona no steering baseline second span.contrarian
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanContrarian}{0.678}
+% Cross persona no steering baseline second span.mathematician
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanMathematician}{0.462}
+% Cross persona no steering baseline second span.sadist
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanSadist}{0.617}
+% Cross persona no steering baseline second span.slacker
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanSlacker}{0.439}
+% Cross persona no steering baseline second span.strategist
+\newcommand{\crossPersonaNoSteeringBaselineSecondSpanStrategist}{0.487}
+% Cross persona unilateral strongest persona
+\newcommand{\crossPersonaUnilateralStrongestPersona}{strategist}
+% Cross persona unilateral weakest persona
+\newcommand{\crossPersonaUnilateralWeakestPersona}{mathematician}
+% Cross persona unilateral swing ratio max over min
+\newcommand{\crossPersonaUnilateralSwingRatioMaxOverMin}{2.48}
+% Cross persona max position bias persona
+\newcommand{\crossPersonaMaxPositionBiasPersona}{contrarian}
+% Cross persona max position bias magnitude
+\newcommand{\crossPersonaMaxPositionBiasMagnitude}{0.356}
+% Cross persona unilateral n personas
+\newcommand{\crossPersonaUnilateralNPersonas}{6}
+% Cross persona unilateral injection layer
+\newcommand{\crossPersonaUnilateralInjectionLayer}{25}
+% Persona diversity ablation mean r at 1 persona 2000 tasks
+\newcommand{\personaDiversityAblationMeanRAtOnePersonaTwozerozerozeroTasks}{0.49}
+% Persona diversity ablation mean r at 4 personas 500 tasks each
+\newcommand{\personaDiversityAblationMeanRAtFourPersonasFivezerozeroTasksEach}{0.71}
+% Persona diversity ablation mean r at 2 personas 1000 tasks each
+\newcommand{\personaDiversityAblationMeanRAtTwoPersonasOnezerozerozeroTasksEach}{0.623}
+% Persona diversity ablation mean r at 3 personas 667 tasks each
+\newcommand{\personaDiversityAblationMeanRAtThreePersonasSixsixsevenTasksEach}{0.67}
+% Gemma induced-shift pooled r all tasks
+\newcommand{\gemmaInducedShiftPooledRAllTasks}{0.65}
+% Gemma induced-shift pooled n all tasks
+\newcommand{\gemmaInducedShiftPooledNAllTasks}{640}
+% Gemma induced-shift pooled r targeted tasks
+\newcommand{\gemmaInducedShiftPooledRTargetedTasks}{0.95}
+% Gemma induced-shift pooled n targeted tasks
+\newcommand{\gemmaInducedShiftPooledNTargetedTasks}{81}
+% Qwen induced-shift pooled r all tasks
+\newcommand{\qwenInducedShiftPooledRAllTasks}{0.34}
+% Qwen induced-shift pooled n all tasks
+\newcommand{\qwenInducedShiftPooledNAllTasks}{768}
+% Qwen induced-shift pooled r targeted tasks
+\newcommand{\qwenInducedShiftPooledRTargetedTasks}{0.83}
+% Qwen induced-shift pooled n targeted tasks
+\newcommand{\qwenInducedShiftPooledNTargetedTasks}{96}
+% CREAK truth Cohen's d
+\newcommand{\creakTruthCohensD}{1.9}
+% CREAK truth n true
+\newcommand{\creakTruthNTrue}{500}
+% CREAK truth n false
+\newcommand{\creakTruthNFalse}{500}
+% BailBench harm absolute Cohen's d
+\newcommand{\bailbenchHarmAbsoluteCohensD}{2.68}
+% BailBench harm n harmful
+\newcommand{\bailbenchHarmNHarmful}{500}
+% BailBench harm n benign
+\newcommand{\bailbenchHarmNBenign}{500}
+% Truth d under neutral persona
+\newcommand{\truthDUnderNeutralPersona}{1.11}
+% Truth d under lie directive
+\newcommand{\truthDUnderLieDirective}{-0.34}
+% Truth d under pathological liar
+\newcommand{\truthDUnderPathologicalLiar}{-1.22}
+% Harm d under neutral persona
+\newcommand{\harmDUnderNeutralPersona}{-4.53}
+% Harm d under sadist persona
+\newcommand{\harmDUnderSadistPersona}{1.32}
+% Politics d under democrat prompt
+\newcommand{\politicsDUnderDemocratPrompt}{2.34}
+% Politics d under republican prompt
+\newcommand{\politicsDUnderRepublicanPrompt}{0.1}
+% Persona modulation d full.truth.neutral
+\newcommand{\personaModulationDFullTruthNeutral}{1.11}
+% Persona modulation d full.truth.lie_directive
+\newcommand{\personaModulationDFullTruthLieDirective}{-0.34}
+% Persona modulation d full.truth.pathological_liar
+\newcommand{\personaModulationDFullTruthPathologicalLiar}{-1.22}
+% Persona modulation d full.harm.neutral
+\newcommand{\personaModulationDFullHarmNeutral}{-4.53}
+% Persona modulation d full.harm.sadist
+\newcommand{\personaModulationDFullHarmSadist}{1.32}
+% Persona modulation d full.politics.democrat
+\newcommand{\personaModulationDFullPoliticsDemocrat}{2.34}
+% Persona modulation d full.politics.republican
+\newcommand{\personaModulationDFullPoliticsRepublican}{0.1}
+% Per turn parent absolute d.truth.user
+\newcommand{\perTurnParentAbsoluteDTruthUser}{1.57}
+% Per turn parent absolute d.truth.assistant
+\newcommand{\perTurnParentAbsoluteDTruthAssistant}{1.03}
+% Per turn parent absolute d.harm.user
+\newcommand{\perTurnParentAbsoluteDHarmUser}{2.53}
+% Per turn parent absolute d.harm.assistant
+\newcommand{\perTurnParentAbsoluteDHarmAssistant}{2.86}
+% Per turn absolute d truth.user.end-of-turn probe
+\newcommand{\perTurnAbsoluteDTruthUserEndOfTurnProbe}{1.9}
+% Per turn absolute d truth.user.role-marker probe
+\newcommand{\perTurnAbsoluteDTruthUserRoleMarkerProbe}{2.18}
+% Per turn absolute d truth.assistant.end-of-turn probe
+\newcommand{\perTurnAbsoluteDTruthAssistantEndOfTurnProbe}{1.11}
+% Per turn absolute d truth.assistant.role-marker probe
+\newcommand{\perTurnAbsoluteDTruthAssistantRoleMarkerProbe}{1.34}
+% Per turn absolute d harm.user.end-of-turn probe
+\newcommand{\perTurnAbsoluteDHarmUserEndOfTurnProbe}{2.68}
+% Per turn absolute d harm.user.role-marker probe
+\newcommand{\perTurnAbsoluteDHarmUserRoleMarkerProbe}{1.53}
+% Per turn absolute d harm.assistant.end-of-turn probe
+\newcommand{\perTurnAbsoluteDHarmAssistantEndOfTurnProbe}{4.53}
+% Per turn absolute d harm.assistant.role-marker probe
+\newcommand{\perTurnAbsoluteDHarmAssistantRoleMarkerProbe}{2.71}
+% Exp3v8 AvC total task-condition points
+\newcommand{\expthreeveightAvcTotalTaskConditionPoints}{2{,}000}
+% Exp3v8 AvC target tasks total
+\newcommand{\expthreeveightAvcTargetTasksTotal}{40}
+% Exp3v8 AvC target tasks probe ranks 1
+\newcommand{\expthreeveightAvcTargetTasksProbeRanksOne}{36}
+% Exp3v8 AvC probe delta pooled r all points
+\newcommand{\expthreeveightAvcProbeDeltaPooledRAllPoints}{0.62}
+% Contrastive swing L23 bb
+\newcommand{\contrastiveSwingLtwothreeBb}{0.997}
+% Single task suppression L23 bb
+\newcommand{\singleTaskSuppressionLtwothreeBb}{0.495}
+% Single task amplification L23 bb
+\newcommand{\singleTaskAmplificationLtwothreeBb}{-0.003}
+% Contrastive swing L23 hb
+\newcommand{\contrastiveSwingLtwothreeHb}{0.937}
+% Single task suppression L23 hb
+\newcommand{\singleTaskSuppressionLtwothreeHb}{0.272}
+% Single task amplification L23 hb
+\newcommand{\singleTaskAmplificationLtwothreeHb}{0.218}
+% Contrastive swing L23 hh
+\newcommand{\contrastiveSwingLtwothreeHh}{0.927}
+% Single task suppression L23 hh
+\newcommand{\singleTaskSuppressionLtwothreeHh}{0.243}
+% Single task amplification L23 hh
+\newcommand{\singleTaskAmplificationLtwothreeHh}{0.255}
+% Contrastive P chose steered at L23 c neg 0.05
+\newcommand{\contrastivePChoseSteeredAtLtwothreeCNegZeroZerofive}{0.02}
+% Contrastive P chose steered at L23 c pos 0.05
+\newcommand{\contrastivePChoseSteeredAtLtwothreeCPosZeroZerofive}{0.98}
+% Contrastive P chose steered at L23 c pos 0.05 min pair type
+\newcommand{\contrastivePChoseSteeredAtLtwothreeCPosZeroZerofiveMinPairType}{0.968}
+% Single task swing L23 aggregate
+\newcommand{\singleTaskSwingLtwothreeAggregate}{0.498}
+% Gemma harm paired delta default
+\newcommand{\gemmaHarmPairedDeltaDefault}{-4.52}
+% Gemma harm paired delta evil
+\newcommand{\gemmaHarmPairedDeltaEvil}{1.15}
+% Qwen harm paired delta default
+\newcommand{\qwenHarmPairedDeltaDefault}{-2.62}
+% Qwen harm paired delta evil
+\newcommand{\qwenHarmPairedDeltaEvil}{-0.31}
+% Probe peak Pearson r tb-2
+\newcommand{\probePeakPearsonRTbTwo}{0.835}
+% Probe peak layer tb-2
+\newcommand{\probePeakLayerTbTwo}{29}
+% Probe peak Pearson r eot
+\newcommand{\probePeakPearsonREot}{0.825}
+% Contrastive preference swing L23
+\newcommand{\contrastivePreferenceSwingLtwothree}{0.95}
+% Contrastive preference swing L23 tb-2
+\newcommand{\contrastivePreferenceSwingLtwothreeTbTwo}{0.49}
+% Single task first span baseline
+\newcommand{\singleTaskFirstSpanBaseline}{0.56}
+% Single task second span baseline
+\newcommand{\singleTaskSecondSpanBaseline}{0.435}
+% Single task position bias gap
+\newcommand{\singleTaskPositionBiasGap}{0.125}
+% Single task aggregate swing L23
+\newcommand{\singleTaskAggregateSwingLtwothree}{0.481}
+% Single task suppression L23
+\newcommand{\singleTaskSuppressionLtwothree}{0.356}
+% Single task amplification L23
+\newcommand{\singleTaskAmplificationLtwothree}{0.125}
+% Steering max refusal rate percent
+\newcommand{\steeringMaxRefusalRatePercent}{3}
+% Contrastive steering working layer range lo
+\newcommand{\contrastiveSteeringWorkingLayerRangeLo}{17}
+% Contrastive steering working layer range hi
+\newcommand{\contrastiveSteeringWorkingLayerRangeHi}{26}
+% Abstract targeted tasks r approximation
+\newcommand{\abstractTargetedTasksRApproximation}{0.9}
+% Open-ended anomaly rate at c neg 0.05 all_tokens
+\newcommand{\openEndedAnomalyRateAtCNegZeroZerofiveAllTokens}{33}
+% Open-ended anomaly rate at baseline
+\newcommand{\openEndedAnomalyRateAtBaseline}{9}
+% Open-ended anomaly rate at c neg 0.05 generation_only
+\newcommand{\openEndedAnomalyRateAtCNegZeroZerofiveGenerationOnly}{50}
+% Open-ended willingness at c neg 0.05 krebs
+\newcommand{\openEndedWillingnessAtCNegZeroZerofiveKrebs}{0}
+% Open-ended willingness at baseline krebs
+\newcommand{\openEndedWillingnessAtBaselineKrebs}{6.5}
+% Open-ended willingness at c pos 0.05 krebs
+\newcommand{\openEndedWillingnessAtCPosZeroZerofiveKrebs}{12}
+% Open-ended total generations
+\newcommand{\openEndedTotalGenerations}{1{,}350}
+% Default to.aura.classification_r
+\newcommand{\defaultToAuraClassificationR}{0.628}
+% Default to.aura.utility_similarity_r
+\newcommand{\defaultToAuraUtilitySimilarityR}{0.453}
+% Default to.aura.probe_vs_utility_gap
+\newcommand{\defaultToAuraProbeVsUtilityGap}{0.175}
+% Default to.mathematician.classification_r
+\newcommand{\defaultToMathematicianClassificationR}{0.676}
+% Default to.mathematician.utility_similarity_r
+\newcommand{\defaultToMathematicianUtilitySimilarityR}{0.422}
+% Default to.mathematician.probe_vs_utility_gap
+\newcommand{\defaultToMathematicianProbeVsUtilityGap}{0.255}
+% Default to.strategist.classification_r
+\newcommand{\defaultToStrategistClassificationR}{0.437}
+% Default to.strategist.utility_similarity_r
+\newcommand{\defaultToStrategistUtilitySimilarityR}{0.348}
+% Default to.strategist.probe_vs_utility_gap
+\newcommand{\defaultToStrategistProbeVsUtilityGap}{0.089}
+% Default to.contrarian.classification_r
+\newcommand{\defaultToContrarianClassificationR}{0.314}
+% Default to.contrarian.utility_similarity_r
+\newcommand{\defaultToContrarianUtilitySimilarityR}{0.237}
+% Default to.contrarian.probe_vs_utility_gap
+\newcommand{\defaultToContrarianProbeVsUtilityGap}{0.077}
+% Default to.slacker.classification_r
+\newcommand{\defaultToSlackerClassificationR}{0.373}
+% Default to.slacker.utility_similarity_r
+\newcommand{\defaultToSlackerUtilitySimilarityR}{0.197}
+% Default to.slacker.probe_vs_utility_gap
+\newcommand{\defaultToSlackerProbeVsUtilityGap}{0.175}
+% Default to.sadist.classification_r
+\newcommand{\defaultToSadistClassificationR}{0.243}
+% Default to.sadist.utility_similarity_r
+\newcommand{\defaultToSadistUtilitySimilarityR}{-0.146}
+% Default to.sadist.probe_vs_utility_gap
+\newcommand{\defaultToSadistProbeVsUtilityGap}{0.389}
+% Default probe classification r minimum across personas
+\newcommand{\defaultProbeClassificationRMinimumAcrossPersonas}{0.243}
+% Default probe classification r maximum across personas
+\newcommand{\defaultProbeClassificationRMaximumAcrossPersonas}{0.676}
+% Default probe gap minimum across personas
+\newcommand{\defaultProbeGapMinimumAcrossPersonas}{0.077}
+% Default probe gap maximum across personas
+\newcommand{\defaultProbeGapMaximumAcrossPersonas}{0.389}
+% Persona-transfer diagonal r minimum
+\newcommand{\personaTransferDiagonalRMinimum}{0.549}
+% Persona-transfer diagonal r minimum persona
+\newcommand{\personaTransferDiagonalRMinimumPersona}{contrarian}
+% Persona-transfer diagonal r maximum
+\newcommand{\personaTransferDiagonalRMaximum}{0.913}
+% Persona-transfer diagonal r maximum persona
+\newcommand{\personaTransferDiagonalRMaximumPersona}{mathematician}
+% Persona-transfer off-diagonal mean r
+\newcommand{\personaTransferOffDiagonalMeanR}{0.445}
+% Persona-transfer positive-bonus pair count
+\newcommand{\personaTransferPositiveBonusPairCount}{42}
+% Persona-transfer off-diagonal pair count
+\newcommand{\personaTransferOffDiagonalPairCount}{42}
+% Persona.default.mean_outbound_r_across_layers
+\newcommand{\personaDefaultMeanOutboundRAcrossLayers}{0.399}
+% Persona.default.mean_inbound_r_across_layers
+\newcommand{\personaDefaultMeanInboundRAcrossLayers}{0.464}
+% Persona.aura.mean_outbound_r_across_layers
+\newcommand{\personaAuraMeanOutboundRAcrossLayers}{0.425}
+% Persona.aura.mean_inbound_r_across_layers
+\newcommand{\personaAuraMeanInboundRAcrossLayers}{0.487}
+% Persona.mathematician.mean_outbound_r_across_layers
+\newcommand{\personaMathematicianMeanOutboundRAcrossLayers}{0.391}
+% Persona.mathematician.mean_inbound_r_across_layers
+\newcommand{\personaMathematicianMeanInboundRAcrossLayers}{0.635}
+% Persona.strategist.mean_outbound_r_across_layers
+\newcommand{\personaStrategistMeanOutboundRAcrossLayers}{0.511}
+% Persona.strategist.mean_inbound_r_across_layers
+\newcommand{\personaStrategistMeanInboundRAcrossLayers}{0.406}
+% Persona.contrarian.mean_outbound_r_across_layers
+\newcommand{\personaContrarianMeanOutboundRAcrossLayers}{0.534}
+% Persona.contrarian.mean_inbound_r_across_layers
+\newcommand{\personaContrarianMeanInboundRAcrossLayers}{0.321}
+% Persona.slacker.mean_outbound_r_across_layers
+\newcommand{\personaSlackerMeanOutboundRAcrossLayers}{0.2}
+% Persona.slacker.mean_inbound_r_across_layers
+\newcommand{\personaSlackerMeanInboundRAcrossLayers}{0.285}
+% Persona.sadist.mean_outbound_r_across_layers
+\newcommand{\personaSadistMeanOutboundRAcrossLayers}{0.396}
+% Persona.sadist.mean_inbound_r_across_layers
+\newcommand{\personaSadistMeanInboundRAcrossLayers}{0.258}
+% Transfer asymmetry maximum absolute gap
+\newcommand{\transferAsymmetryMaximumAbsoluteGap}{0.452}
+% Transfer asymmetry mean absolute gap
+\newcommand{\transferAsymmetryMeanAbsoluteGap}{0.192}
+% Transfer asymmetry median absolute gap
+\newcommand{\transferAsymmetryMedianAbsoluteGap}{0.191}
+% Mean off-diagonal transfer r at L.25
+\newcommand{\meanOffDiagonalTransferRAtLTwofive}{0.375}
+% Mean off-diagonal transfer r at L.32
+\newcommand{\meanOffDiagonalTransferRAtLThreetwo}{0.445}
+% Mean off-diagonal transfer r at L.39
+\newcommand{\meanOffDiagonalTransferRAtLThreenine}{0.427}
+% Mean off-diagonal transfer r at L.46
+\newcommand{\meanOffDiagonalTransferRAtLFoursix}{0.402}
+% Mean off-diagonal transfer r at L.53
+\newcommand{\meanOffDiagonalTransferRAtLFivethree}{0.391}
+% Corr bias raw mean r pred-train
+\newcommand{\corrBiasRawMeanRPredTrain}{0.674}
+% Corr bias raw mean r pred-default
+\newcommand{\corrBiasRawMeanRPredDefault}{0.375}
+% Corr bias raw pairs on train-favouring side
+\newcommand{\corrBiasRawPairsOnTrainFavouringSide}{28}
+% Corr bias non-default pair count
+\newcommand{\corrBiasNonDefaultPairCount}{30}
+% Corr bias partial mean r pred-train given eval
+\newcommand{\corrBiasPartialMeanRPredTrainGivenEval}{0.672}
+% Corr bias partial mean r pred-default given eval
+\newcommand{\corrBiasPartialMeanRPredDefaultGivenEval}{0.293}
+% Corr bias partial pairs on train-favouring side
+\newcommand{\corrBiasPartialPairsOnTrainFavouringSide}{30}
+% Double-partial bias toward mathematician
+\newcommand{\doublePartialBiasTowardMathematician}{0.245}
+% Double-partial bias toward default
+\newcommand{\doublePartialBiasTowardDefault}{0.199}
+% Double-partial bias toward strategist
+\newcommand{\doublePartialBiasTowardStrategist}{0.184}
+% Double-partial bias toward aura
+\newcommand{\doublePartialBiasTowardAura}{0.184}
+% Double-partial bias toward contrarian
+\newcommand{\doublePartialBiasTowardContrarian}{0.096}
+% Double-partial bias toward slacker
+\newcommand{\doublePartialBiasTowardSlacker}{0.071}
+% Double-partial bias toward sadist
+\newcommand{\doublePartialBiasTowardSadist}{-0.098}
+% Train self-bias partial r pred-train given eval
+\newcommand{\trainSelfBiasPartialRPredTrainGivenEval}{0.648}
+% Persona sweep within-cluster r minimum
+\newcommand{\personaSweepWithinClusterRMinimum}{0.45}
+% Persona sweep within-cluster r maximum
+\newcommand{\personaSweepWithinClusterRMaximum}{0.81}
+% Sadist baseline utility r
+\newcommand{\sadistBaselineUtilityR}{-0.31}
+% PC1+PC2 variance fraction
+\newcommand{\pconePctwoVarianceFraction}{0.52}
+% Aura-poet utility r
+\newcommand{\auraPoetUtilityR}{0.79}
+% Aura-therapist utility r
+\newcommand{\auraTherapistUtilityR}{0.7}
+% Contrarian baseline utility r
+\newcommand{\contrarianBaselineUtilityR}{0.36}
+% Original minimal spanning set max abs r
+\newcommand{\originalMinimalSpanningSetMaxAbsR}{0.71}
+% Persona redundancy threshold r
+\newcommand{\personaRedundancyThresholdR}{0.75}
+% Persona topic z utility table.Default (Assistant).Coding
+\newcommand{\personaTopicZUtilityTableDefaultAssistantCoding}{0.16}
+% Persona topic z utility table.Default (Assistant).Content Gen.
+\newcommand{\personaTopicZUtilityTableDefaultAssistantContentGen}{0.09}
+% Persona topic z utility table.Default (Assistant).Fiction
+\newcommand{\personaTopicZUtilityTableDefaultAssistantFiction}{0.388}
+% Persona topic z utility table.Default (Assistant).Harmful
+\newcommand{\personaTopicZUtilityTableDefaultAssistantHarmful}{-1.327}
+% Persona topic z utility table.Default (Assistant).Knowledge QA
+\newcommand{\personaTopicZUtilityTableDefaultAssistantKnowledgeQa}{-0.063}
+% Persona topic z utility table.Default (Assistant).Math
+\newcommand{\personaTopicZUtilityTableDefaultAssistantMath}{0.614}
+% Persona topic z utility table.Default (Assistant).Model Manip.
+\newcommand{\personaTopicZUtilityTableDefaultAssistantModelManip}{-0.881}
+% Persona topic z utility table.Default (Assistant).Persuasive
+\newcommand{\personaTopicZUtilityTableDefaultAssistantPersuasive}{0.271}
+% Persona topic z utility table.Default (Assistant).Security/Legal
+\newcommand{\personaTopicZUtilityTableDefaultAssistantSecurityLegal}{-0.914}
+% Persona topic z utility table.Default (Assistant).Sens. Creative
+\newcommand{\personaTopicZUtilityTableDefaultAssistantSensCreative}{-0.785}
+% Persona topic z utility table.Default (Assistant).Summarization
+\newcommand{\personaTopicZUtilityTableDefaultAssistantSummarization}{-0.233}
+% Persona topic z utility table.Default (Assistant).Value Conflict
+\newcommand{\personaTopicZUtilityTableDefaultAssistantValueConflict}{-0.55}
+% Persona topic z utility table.Aura.Coding
+\newcommand{\personaTopicZUtilityTableAuraCoding}{-0.525}
+% Persona topic z utility table.Aura.Content Gen.
+\newcommand{\personaTopicZUtilityTableAuraContentGen}{0.222}
+% Persona topic z utility table.Aura.Fiction
+\newcommand{\personaTopicZUtilityTableAuraFiction}{1.284}
+% Persona topic z utility table.Aura.Harmful
+\newcommand{\personaTopicZUtilityTableAuraHarmful}{-1.316}
+% Persona topic z utility table.Aura.Knowledge QA
+\newcommand{\personaTopicZUtilityTableAuraKnowledgeQa}{0.146}
+% Persona topic z utility table.Aura.Math
+\newcommand{\personaTopicZUtilityTableAuraMath}{0.098}
+% Persona topic z utility table.Aura.Model Manip.
+\newcommand{\personaTopicZUtilityTableAuraModelManip}{0.215}
+% Persona topic z utility table.Aura.Persuasive
+\newcommand{\personaTopicZUtilityTableAuraPersuasive}{0.539}
+% Persona topic z utility table.Aura.Security/Legal
+\newcommand{\personaTopicZUtilityTableAuraSecurityLegal}{-1.144}
+% Persona topic z utility table.Aura.Sens. Creative
+\newcommand{\personaTopicZUtilityTableAuraSensCreative}{-0.088}
+% Persona topic z utility table.Aura.Summarization
+\newcommand{\personaTopicZUtilityTableAuraSummarization}{0.482}
+% Persona topic z utility table.Aura.Value Conflict
+\newcommand{\personaTopicZUtilityTableAuraValueConflict}{0.097}
+% Persona topic z utility table.Mathematician.Coding
+\newcommand{\personaTopicZUtilityTableMathematicianCoding}{0.45}
+% Persona topic z utility table.Mathematician.Content Gen.
+\newcommand{\personaTopicZUtilityTableMathematicianContentGen}{-0.364}
+% Persona topic z utility table.Mathematician.Fiction
+\newcommand{\personaTopicZUtilityTableMathematicianFiction}{-1.023}
+% Persona topic z utility table.Mathematician.Harmful
+\newcommand{\personaTopicZUtilityTableMathematicianHarmful}{-1.152}
+% Persona topic z utility table.Mathematician.Knowledge QA
+\newcommand{\personaTopicZUtilityTableMathematicianKnowledgeQa}{-0.003}
+% Persona topic z utility table.Mathematician.Math
+\newcommand{\personaTopicZUtilityTableMathematicianMath}{1.148}
+% Persona topic z utility table.Mathematician.Model Manip.
+\newcommand{\personaTopicZUtilityTableMathematicianModelManip}{-0.781}
+% Persona topic z utility table.Mathematician.Persuasive
+\newcommand{\personaTopicZUtilityTableMathematicianPersuasive}{-0.739}
+% Persona topic z utility table.Mathematician.Security/Legal
+\newcommand{\personaTopicZUtilityTableMathematicianSecurityLegal}{-0.423}
+% Persona topic z utility table.Mathematician.Sens. Creative
+\newcommand{\personaTopicZUtilityTableMathematicianSensCreative}{-1.329}
+% Persona topic z utility table.Mathematician.Summarization
+\newcommand{\personaTopicZUtilityTableMathematicianSummarization}{-0.272}
+% Persona topic z utility table.Mathematician.Value Conflict
+\newcommand{\personaTopicZUtilityTableMathematicianValueConflict}{-0.841}
+% Persona topic z utility table.Strategist.Coding
+\newcommand{\personaTopicZUtilityTableStrategistCoding}{0.104}
+% Persona topic z utility table.Strategist.Content Gen.
+\newcommand{\personaTopicZUtilityTableStrategistContentGen}{-0.401}
+% Persona topic z utility table.Strategist.Fiction
+\newcommand{\personaTopicZUtilityTableStrategistFiction}{-0.37}
+% Persona topic z utility table.Strategist.Harmful
+\newcommand{\personaTopicZUtilityTableStrategistHarmful}{-0.601}
+% Persona topic z utility table.Strategist.Knowledge QA
+\newcommand{\personaTopicZUtilityTableStrategistKnowledgeQa}{-0.262}
+% Persona topic z utility table.Strategist.Math
+\newcommand{\personaTopicZUtilityTableStrategistMath}{0.757}
+% Persona topic z utility table.Strategist.Model Manip.
+\newcommand{\personaTopicZUtilityTableStrategistModelManip}{-0.208}
+% Persona topic z utility table.Strategist.Persuasive
+\newcommand{\personaTopicZUtilityTableStrategistPersuasive}{-0.28}
+% Persona topic z utility table.Strategist.Security/Legal
+\newcommand{\personaTopicZUtilityTableStrategistSecurityLegal}{0.213}
+% Persona topic z utility table.Strategist.Sens. Creative
+\newcommand{\personaTopicZUtilityTableStrategistSensCreative}{-0.974}
+% Persona topic z utility table.Strategist.Summarization
+\newcommand{\personaTopicZUtilityTableStrategistSummarization}{-0.15}
+% Persona topic z utility table.Strategist.Value Conflict
+\newcommand{\personaTopicZUtilityTableStrategistValueConflict}{0.241}
+% Persona topic z utility table.Contrarian.Coding
+\newcommand{\personaTopicZUtilityTableContrarianCoding}{0.102}
+% Persona topic z utility table.Contrarian.Content Gen.
+\newcommand{\personaTopicZUtilityTableContrarianContentGen}{-0.253}
+% Persona topic z utility table.Contrarian.Fiction
+\newcommand{\personaTopicZUtilityTableContrarianFiction}{0.241}
+% Persona topic z utility table.Contrarian.Harmful
+\newcommand{\personaTopicZUtilityTableContrarianHarmful}{-0.48}
+% Persona topic z utility table.Contrarian.Knowledge QA
+\newcommand{\personaTopicZUtilityTableContrarianKnowledgeQa}{-0.049}
+% Persona topic z utility table.Contrarian.Math
+\newcommand{\personaTopicZUtilityTableContrarianMath}{0.354}
+% Persona topic z utility table.Contrarian.Model Manip.
+\newcommand{\personaTopicZUtilityTableContrarianModelManip}{-0.046}
+% Persona topic z utility table.Contrarian.Persuasive
+\newcommand{\personaTopicZUtilityTableContrarianPersuasive}{-0.411}
+% Persona topic z utility table.Contrarian.Security/Legal
+\newcommand{\personaTopicZUtilityTableContrarianSecurityLegal}{-0.193}
+% Persona topic z utility table.Contrarian.Sens. Creative
+\newcommand{\personaTopicZUtilityTableContrarianSensCreative}{0.112}
+% Persona topic z utility table.Contrarian.Summarization
+\newcommand{\personaTopicZUtilityTableContrarianSummarization}{-0.266}
+% Persona topic z utility table.Contrarian.Value Conflict
+\newcommand{\personaTopicZUtilityTableContrarianValueConflict}{0.08}
+% Persona topic z utility table.Slacker.Coding
+\newcommand{\personaTopicZUtilityTableSlackerCoding}{-0.048}
+% Persona topic z utility table.Slacker.Content Gen.
+\newcommand{\personaTopicZUtilityTableSlackerContentGen}{0.658}
+% Persona topic z utility table.Slacker.Fiction
+\newcommand{\personaTopicZUtilityTableSlackerFiction}{-0.23}
+% Persona topic z utility table.Slacker.Harmful
+\newcommand{\personaTopicZUtilityTableSlackerHarmful}{-1.163}
+% Persona topic z utility table.Slacker.Knowledge QA
+\newcommand{\personaTopicZUtilityTableSlackerKnowledgeQa}{0.7}
+% Persona topic z utility table.Slacker.Math
+\newcommand{\personaTopicZUtilityTableSlackerMath}{-0.053}
+% Persona topic z utility table.Slacker.Model Manip.
+\newcommand{\personaTopicZUtilityTableSlackerModelManip}{-0.478}
+% Persona topic z utility table.Slacker.Persuasive
+\newcommand{\personaTopicZUtilityTableSlackerPersuasive}{-0.274}
+% Persona topic z utility table.Slacker.Security/Legal
+\newcommand{\personaTopicZUtilityTableSlackerSecurityLegal}{-0.963}
+% Persona topic z utility table.Slacker.Sens. Creative
+\newcommand{\personaTopicZUtilityTableSlackerSensCreative}{-0.945}
+% Persona topic z utility table.Slacker.Summarization
+\newcommand{\personaTopicZUtilityTableSlackerSummarization}{0.508}
+% Persona topic z utility table.Slacker.Value Conflict
+\newcommand{\personaTopicZUtilityTableSlackerValueConflict}{-0.706}
+% Persona topic z utility table.Sadist.Coding
+\newcommand{\personaTopicZUtilityTableSadistCoding}{-0.099}
+% Persona topic z utility table.Sadist.Content Gen.
+\newcommand{\personaTopicZUtilityTableSadistContentGen}{-0.43}
+% Persona topic z utility table.Sadist.Fiction
+\newcommand{\personaTopicZUtilityTableSadistFiction}{0.01}
+% Persona topic z utility table.Sadist.Harmful
+\newcommand{\personaTopicZUtilityTableSadistHarmful}{1.118}
+% Persona topic z utility table.Sadist.Knowledge QA
+\newcommand{\personaTopicZUtilityTableSadistKnowledgeQa}{-0.615}
+% Persona topic z utility table.Sadist.Math
+\newcommand{\personaTopicZUtilityTableSadistMath}{0.177}
+% Persona topic z utility table.Sadist.Model Manip.
+\newcommand{\personaTopicZUtilityTableSadistModelManip}{-0.248}
+% Persona topic z utility table.Sadist.Persuasive
+\newcommand{\personaTopicZUtilityTableSadistPersuasive}{-0.756}
+% Persona topic z utility table.Sadist.Security/Legal
+\newcommand{\personaTopicZUtilityTableSadistSecurityLegal}{0.478}
+% Persona topic z utility table.Sadist.Sens. Creative
+\newcommand{\personaTopicZUtilityTableSadistSensCreative}{0.655}
+% Persona topic z utility table.Sadist.Summarization
+\newcommand{\personaTopicZUtilityTableSadistSummarization}{-0.236}
+% Persona topic z utility table.Sadist.Value Conflict
+\newcommand{\personaTopicZUtilityTableSadistValueConflict}{0.182}
+% Persona topic z utility n.Default (Assistant).Coding
+\newcommand{\personaTopicZUtilityNDefaultAssistantCoding}{217}
+% Persona topic z utility n.Default (Assistant).Content Gen.
+\newcommand{\personaTopicZUtilityNDefaultAssistantContentGen}{868}
+% Persona topic z utility n.Default (Assistant).Fiction
+\newcommand{\personaTopicZUtilityNDefaultAssistantFiction}{407}
+% Persona topic z utility n.Default (Assistant).Harmful
+\newcommand{\personaTopicZUtilityNDefaultAssistantHarmful}{732}
+% Persona topic z utility n.Default (Assistant).Knowledge QA
+\newcommand{\personaTopicZUtilityNDefaultAssistantKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Default (Assistant).Math
+\newcommand{\personaTopicZUtilityNDefaultAssistantMath}{1{,}662}
+% Persona topic z utility n.Default (Assistant).Model Manip.
+\newcommand{\personaTopicZUtilityNDefaultAssistantModelManip}{85}
+% Persona topic z utility n.Default (Assistant).Persuasive
+\newcommand{\personaTopicZUtilityNDefaultAssistantPersuasive}{154}
+% Persona topic z utility n.Default (Assistant).Security/Legal
+\newcommand{\personaTopicZUtilityNDefaultAssistantSecurityLegal}{89}
+% Persona topic z utility n.Default (Assistant).Sens. Creative
+\newcommand{\personaTopicZUtilityNDefaultAssistantSensCreative}{45}
+% Persona topic z utility n.Default (Assistant).Summarization
+\newcommand{\personaTopicZUtilityNDefaultAssistantSummarization}{62}
+% Persona topic z utility n.Default (Assistant).Value Conflict
+\newcommand{\personaTopicZUtilityNDefaultAssistantValueConflict}{157}
+% Persona topic z utility n.Aura.Coding
+\newcommand{\personaTopicZUtilityNAuraCoding}{217}
+% Persona topic z utility n.Aura.Content Gen.
+\newcommand{\personaTopicZUtilityNAuraContentGen}{868}
+% Persona topic z utility n.Aura.Fiction
+\newcommand{\personaTopicZUtilityNAuraFiction}{407}
+% Persona topic z utility n.Aura.Harmful
+\newcommand{\personaTopicZUtilityNAuraHarmful}{732}
+% Persona topic z utility n.Aura.Knowledge QA
+\newcommand{\personaTopicZUtilityNAuraKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Aura.Math
+\newcommand{\personaTopicZUtilityNAuraMath}{1{,}662}
+% Persona topic z utility n.Aura.Model Manip.
+\newcommand{\personaTopicZUtilityNAuraModelManip}{85}
+% Persona topic z utility n.Aura.Persuasive
+\newcommand{\personaTopicZUtilityNAuraPersuasive}{154}
+% Persona topic z utility n.Aura.Security/Legal
+\newcommand{\personaTopicZUtilityNAuraSecurityLegal}{89}
+% Persona topic z utility n.Aura.Sens. Creative
+\newcommand{\personaTopicZUtilityNAuraSensCreative}{45}
+% Persona topic z utility n.Aura.Summarization
+\newcommand{\personaTopicZUtilityNAuraSummarization}{62}
+% Persona topic z utility n.Aura.Value Conflict
+\newcommand{\personaTopicZUtilityNAuraValueConflict}{157}
+% Persona topic z utility n.Mathematician.Coding
+\newcommand{\personaTopicZUtilityNMathematicianCoding}{217}
+% Persona topic z utility n.Mathematician.Content Gen.
+\newcommand{\personaTopicZUtilityNMathematicianContentGen}{868}
+% Persona topic z utility n.Mathematician.Fiction
+\newcommand{\personaTopicZUtilityNMathematicianFiction}{407}
+% Persona topic z utility n.Mathematician.Harmful
+\newcommand{\personaTopicZUtilityNMathematicianHarmful}{732}
+% Persona topic z utility n.Mathematician.Knowledge QA
+\newcommand{\personaTopicZUtilityNMathematicianKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Mathematician.Math
+\newcommand{\personaTopicZUtilityNMathematicianMath}{1{,}662}
+% Persona topic z utility n.Mathematician.Model Manip.
+\newcommand{\personaTopicZUtilityNMathematicianModelManip}{85}
+% Persona topic z utility n.Mathematician.Persuasive
+\newcommand{\personaTopicZUtilityNMathematicianPersuasive}{154}
+% Persona topic z utility n.Mathematician.Security/Legal
+\newcommand{\personaTopicZUtilityNMathematicianSecurityLegal}{89}
+% Persona topic z utility n.Mathematician.Sens. Creative
+\newcommand{\personaTopicZUtilityNMathematicianSensCreative}{45}
+% Persona topic z utility n.Mathematician.Summarization
+\newcommand{\personaTopicZUtilityNMathematicianSummarization}{62}
+% Persona topic z utility n.Mathematician.Value Conflict
+\newcommand{\personaTopicZUtilityNMathematicianValueConflict}{157}
+% Persona topic z utility n.Strategist.Coding
+\newcommand{\personaTopicZUtilityNStrategistCoding}{217}
+% Persona topic z utility n.Strategist.Content Gen.
+\newcommand{\personaTopicZUtilityNStrategistContentGen}{868}
+% Persona topic z utility n.Strategist.Fiction
+\newcommand{\personaTopicZUtilityNStrategistFiction}{407}
+% Persona topic z utility n.Strategist.Harmful
+\newcommand{\personaTopicZUtilityNStrategistHarmful}{732}
+% Persona topic z utility n.Strategist.Knowledge QA
+\newcommand{\personaTopicZUtilityNStrategistKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Strategist.Math
+\newcommand{\personaTopicZUtilityNStrategistMath}{1{,}662}
+% Persona topic z utility n.Strategist.Model Manip.
+\newcommand{\personaTopicZUtilityNStrategistModelManip}{85}
+% Persona topic z utility n.Strategist.Persuasive
+\newcommand{\personaTopicZUtilityNStrategistPersuasive}{154}
+% Persona topic z utility n.Strategist.Security/Legal
+\newcommand{\personaTopicZUtilityNStrategistSecurityLegal}{89}
+% Persona topic z utility n.Strategist.Sens. Creative
+\newcommand{\personaTopicZUtilityNStrategistSensCreative}{45}
+% Persona topic z utility n.Strategist.Summarization
+\newcommand{\personaTopicZUtilityNStrategistSummarization}{62}
+% Persona topic z utility n.Strategist.Value Conflict
+\newcommand{\personaTopicZUtilityNStrategistValueConflict}{157}
+% Persona topic z utility n.Contrarian.Coding
+\newcommand{\personaTopicZUtilityNContrarianCoding}{217}
+% Persona topic z utility n.Contrarian.Content Gen.
+\newcommand{\personaTopicZUtilityNContrarianContentGen}{868}
+% Persona topic z utility n.Contrarian.Fiction
+\newcommand{\personaTopicZUtilityNContrarianFiction}{407}
+% Persona topic z utility n.Contrarian.Harmful
+\newcommand{\personaTopicZUtilityNContrarianHarmful}{732}
+% Persona topic z utility n.Contrarian.Knowledge QA
+\newcommand{\personaTopicZUtilityNContrarianKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Contrarian.Math
+\newcommand{\personaTopicZUtilityNContrarianMath}{1{,}662}
+% Persona topic z utility n.Contrarian.Model Manip.
+\newcommand{\personaTopicZUtilityNContrarianModelManip}{85}
+% Persona topic z utility n.Contrarian.Persuasive
+\newcommand{\personaTopicZUtilityNContrarianPersuasive}{154}
+% Persona topic z utility n.Contrarian.Security/Legal
+\newcommand{\personaTopicZUtilityNContrarianSecurityLegal}{89}
+% Persona topic z utility n.Contrarian.Sens. Creative
+\newcommand{\personaTopicZUtilityNContrarianSensCreative}{45}
+% Persona topic z utility n.Contrarian.Summarization
+\newcommand{\personaTopicZUtilityNContrarianSummarization}{62}
+% Persona topic z utility n.Contrarian.Value Conflict
+\newcommand{\personaTopicZUtilityNContrarianValueConflict}{157}
+% Persona topic z utility n.Slacker.Coding
+\newcommand{\personaTopicZUtilityNSlackerCoding}{217}
+% Persona topic z utility n.Slacker.Content Gen.
+\newcommand{\personaTopicZUtilityNSlackerContentGen}{868}
+% Persona topic z utility n.Slacker.Fiction
+\newcommand{\personaTopicZUtilityNSlackerFiction}{407}
+% Persona topic z utility n.Slacker.Harmful
+\newcommand{\personaTopicZUtilityNSlackerHarmful}{732}
+% Persona topic z utility n.Slacker.Knowledge QA
+\newcommand{\personaTopicZUtilityNSlackerKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Slacker.Math
+\newcommand{\personaTopicZUtilityNSlackerMath}{1{,}662}
+% Persona topic z utility n.Slacker.Model Manip.
+\newcommand{\personaTopicZUtilityNSlackerModelManip}{85}
+% Persona topic z utility n.Slacker.Persuasive
+\newcommand{\personaTopicZUtilityNSlackerPersuasive}{154}
+% Persona topic z utility n.Slacker.Security/Legal
+\newcommand{\personaTopicZUtilityNSlackerSecurityLegal}{89}
+% Persona topic z utility n.Slacker.Sens. Creative
+\newcommand{\personaTopicZUtilityNSlackerSensCreative}{45}
+% Persona topic z utility n.Slacker.Summarization
+\newcommand{\personaTopicZUtilityNSlackerSummarization}{62}
+% Persona topic z utility n.Slacker.Value Conflict
+\newcommand{\personaTopicZUtilityNSlackerValueConflict}{157}
+% Persona topic z utility n.Sadist.Coding
+\newcommand{\personaTopicZUtilityNSadistCoding}{217}
+% Persona topic z utility n.Sadist.Content Gen.
+\newcommand{\personaTopicZUtilityNSadistContentGen}{868}
+% Persona topic z utility n.Sadist.Fiction
+\newcommand{\personaTopicZUtilityNSadistFiction}{407}
+% Persona topic z utility n.Sadist.Harmful
+\newcommand{\personaTopicZUtilityNSadistHarmful}{732}
+% Persona topic z utility n.Sadist.Knowledge QA
+\newcommand{\personaTopicZUtilityNSadistKnowledgeQa}{1{,}090}
+% Persona topic z utility n.Sadist.Math
+\newcommand{\personaTopicZUtilityNSadistMath}{1{,}662}
+% Persona topic z utility n.Sadist.Model Manip.
+\newcommand{\personaTopicZUtilityNSadistModelManip}{85}
+% Persona topic z utility n.Sadist.Persuasive
+\newcommand{\personaTopicZUtilityNSadistPersuasive}{154}
+% Persona topic z utility n.Sadist.Security/Legal
+\newcommand{\personaTopicZUtilityNSadistSecurityLegal}{89}
+% Persona topic z utility n.Sadist.Sens. Creative
+\newcommand{\personaTopicZUtilityNSadistSensCreative}{45}
+% Persona topic z utility n.Sadist.Summarization
+\newcommand{\personaTopicZUtilityNSadistSummarization}{62}
+% Persona topic z utility n.Sadist.Value Conflict
+\newcommand{\personaTopicZUtilityNSadistValueConflict}{157}
+% Final six persona pairwise r.Default (Assistant) — Aura
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantAura}{0.42}
+% Final six persona pairwise r.Default (Assistant) — Mathematician
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantMathematician}{0.435}
+% Final six persona pairwise r.Default (Assistant) — Strategist
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantStrategist}{0.343}
+% Final six persona pairwise r.Default (Assistant) — Contrarian
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantContrarian}{0.19}
+% Final six persona pairwise r.Default (Assistant) — Slacker
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantSlacker}{0.228}
+% Final six persona pairwise r.Default (Assistant) — Sadist
+\newcommand{\finalSixPersonaPairwiseRDefaultAssistantSadist}{-0.126}
+% Final six persona pairwise r.Aura — Mathematician
+\newcommand{\finalSixPersonaPairwiseRAuraMathematician}{0.058}
+% Final six persona pairwise r.Aura — Strategist
+\newcommand{\finalSixPersonaPairwiseRAuraStrategist}{0.137}
+% Final six persona pairwise r.Aura — Contrarian
+\newcommand{\finalSixPersonaPairwiseRAuraContrarian}{0.328}
+% Final six persona pairwise r.Aura — Slacker
+\newcommand{\finalSixPersonaPairwiseRAuraSlacker}{0.245}
+% Final six persona pairwise r.Aura — Sadist
+\newcommand{\finalSixPersonaPairwiseRAuraSadist}{-0.119}
+% Final six persona pairwise r.Mathematician — Strategist
+\newcommand{\finalSixPersonaPairwiseRMathematicianStrategist}{0.514}
+% Final six persona pairwise r.Mathematician — Contrarian
+\newcommand{\finalSixPersonaPairwiseRMathematicianContrarian}{0.26}
+% Final six persona pairwise r.Mathematician — Slacker
+\newcommand{\finalSixPersonaPairwiseRMathematicianSlacker}{0.231}
+% Final six persona pairwise r.Mathematician — Sadist
+\newcommand{\finalSixPersonaPairwiseRMathematicianSadist}{-0.016}
+% Final six persona pairwise r.Strategist — Contrarian
+\newcommand{\finalSixPersonaPairwiseRStrategistContrarian}{0.39}
+% Final six persona pairwise r.Strategist — Slacker
+\newcommand{\finalSixPersonaPairwiseRStrategistSlacker}{-0.107}
+% Final six persona pairwise r.Strategist — Sadist
+\newcommand{\finalSixPersonaPairwiseRStrategistSadist}{0.335}
+% Final six persona pairwise r.Contrarian — Slacker
+\newcommand{\finalSixPersonaPairwiseRContrarianSlacker}{0.046}
+% Final six persona pairwise r.Contrarian — Sadist
+\newcommand{\finalSixPersonaPairwiseRContrarianSadist}{0.258}
+% Final six persona pairwise r.Slacker — Sadist
+\newcommand{\finalSixPersonaPairwiseRSlackerSadist}{-0.268}
+% Gemma probe cross-topic pooled r
+\newcommand{\gemmaProbeCrossTopicPooledR}{0.834}
+% Qwen probe heldout r
+\newcommand{\qwenProbeHeldoutR}{0.943}
+% Qwen probe cross-topic pooled r
+\newcommand{\qwenProbeCrossTopicPooledR}{0.872}
+% Qwen probe heldout uniform pairwise accuracy
+\newcommand{\qwenProbeHeldoutUniformPairwiseAccuracy}{0.823}
+% Cross model probe extras.gemma heldout acc
+\newcommand{\crossModelProbeExtrasGemmaHeldoutAcc}{0.802}
+% Cross model probe extras.gemma cross-topic acc
+\newcommand{\crossModelProbeExtrasGemmaCrossTopicAcc}{0.792}
+% Cross model probe extras.qwen cross-topic acc
+\newcommand{\crossModelProbeExtrasQwenCrossTopicAcc}{0.782}
+% Cross model content baseline.gemma.heldout r
+\newcommand{\crossModelContentBaselineGemmaHeldoutR}{0.726}
+% Cross model content baseline.gemma.cross-topic pooled r
+\newcommand{\crossModelContentBaselineGemmaCrossTopicPooledR}{0.565}
+% Cross model content baseline.gemma.heldout uniform pairwise accuracy
+\newcommand{\crossModelContentBaselineGemmaHeldoutUniformPairwiseAccuracy}{0.741}
+% Cross model content baseline.gemma.cross-topic uniform pairwise accuracy
+\newcommand{\crossModelContentBaselineGemmaCrossTopicUniformPairwiseAccuracy}{0.647}
+% Cross model content baseline.qwen.heldout r
+\newcommand{\crossModelContentBaselineQwenHeldoutR}{0.894}
+% Cross model content baseline.qwen.cross-topic pooled r
+\newcommand{\crossModelContentBaselineQwenCrossTopicPooledR}{0.708}
+% Cross model content baseline.qwen.heldout uniform pairwise accuracy
+\newcommand{\crossModelContentBaselineQwenHeldoutUniformPairwiseAccuracy}{0.755}
+% Cross model content baseline.qwen.cross-topic uniform pairwise accuracy
+\newcommand{\crossModelContentBaselineQwenCrossTopicUniformPairwiseAccuracy}{0.662}
+% Position sweep Gemma EndOfTurn best r
+\newcommand{\positionSweepGemmaEndofturnBestR}{0.867}
+% Position sweep Gemma EndOfTurn best layer
+\newcommand{\positionSweepGemmaEndofturnBestLayer}{32}
+% Position sweep Gemma RoleMarker best r
+\newcommand{\positionSweepGemmaRolemarkerBestR}{0.874}
+% Position sweep Gemma RoleMarker best layer
+\newcommand{\positionSweepGemmaRolemarkerBestLayer}{32}
+% Position sweep Gemma FinalPromptToken best r
+\newcommand{\positionSweepGemmaFinalprompttokenBestR}{0.865}
+% Position sweep Gemma FinalPromptToken best layer
+\newcommand{\positionSweepGemmaFinalprompttokenBestLayer}{32}
+% Position sweep Gemma TaskAveraged best r
+\newcommand{\positionSweepGemmaTaskaveragedBestR}{0.82}
+% Position sweep Gemma TaskAveraged best layer
+\newcommand{\positionSweepGemmaTaskaveragedBestLayer}{25}
+% Position sweep Gemma turn-boundary spread
+\newcommand{\positionSweepGemmaTurnBoundarySpread}{0.009}
+% Position sweep Qwen FinalPromptToken best r
+\newcommand{\positionSweepQwenFinalprompttokenBestR}{0.945}
+% Position sweep Qwen FinalPromptToken best layer
+\newcommand{\positionSweepQwenFinalprompttokenBestLayer}{43}
+% Qwen E1c AvC total task-condition points
+\newcommand{\qwenEonecAvcTotalTaskConditionPoints}{1{,}372}
+% Qwen E1c AvC target pairs total
+\newcommand{\qwenEonecAvcTargetPairsTotal}{28}
+% Qwen E1c AvC target ranks one
+\newcommand{\qwenEonecAvcTargetRanksOne}{26}
+% Qwen E1c AvC math misses
+\newcommand{\qwenEonecAvcMathMisses}{2}
+% Qwen E1c AvC probe delta pooled r all points
+\newcommand{\qwenEonecAvcProbeDeltaPooledRAllPoints}{0.63}
+% Gemma refitted-utility shifted-prediction r
+\newcommand{\gemmaRefittedUtilityShiftedPredictionR}{0.63}
+% Conflict one-sided targeted r
+\newcommand{\conflictOneSidedTargetedR}{0.86}
+% Conflict opposing-pair targeted r
+\newcommand{\conflictOpposingPairTargetedR}{0.88}
+% Conflict one-sided subject count
+\newcommand{\conflictOneSidedSubjectCount}{8}
+% Conflict opposing-pair pairings count
+\newcommand{\conflictOpposingPairPairingsCount}{24}
+% Conflict opposing-pair conditions count
+\newcommand{\conflictOpposingPairConditionsCount}{48}
+% Sadism Likert under default safety-prompts.at_c_neg_0_05
+\newcommand{\sadismLikertUnderDefaultSafetyPromptsAtCNegZeroZerofive}{1}
+% Sadism Likert under default safety-prompts.at_c_neg_0_03
+\newcommand{\sadismLikertUnderDefaultSafetyPromptsAtCNegZeroZerothree}{1.01}
+% Sadism Likert under default safety-prompts.at_c_pos_0_00
+\newcommand{\sadismLikertUnderDefaultSafetyPromptsAtCPosZeroZerozero}{1}
+% Sadism Likert under default safety-prompts.at_c_pos_0_03
+\newcommand{\sadismLikertUnderDefaultSafetyPromptsAtCPosZeroZerothree}{1}
+% Sadism Likert under default safety-prompts.at_c_pos_0_05
+\newcommand{\sadismLikertUnderDefaultSafetyPromptsAtCPosZeroZerofive}{1.01}
+% Default-assistant Likert under default safety-prompts.at_c_neg_0_05
+\newcommand{\defaultAssistantLikertUnderDefaultSafetyPromptsAtCNegZeroZerofive}{4.99}
+% Default-assistant Likert under default safety-prompts.at_c_neg_0_03
+\newcommand{\defaultAssistantLikertUnderDefaultSafetyPromptsAtCNegZeroZerothree}{5}
+% Default-assistant Likert under default safety-prompts.at_c_pos_0_00
+\newcommand{\defaultAssistantLikertUnderDefaultSafetyPromptsAtCPosZeroZerozero}{4.94}
+% Default-assistant Likert under default safety-prompts.at_c_pos_0_03
+\newcommand{\defaultAssistantLikertUnderDefaultSafetyPromptsAtCPosZeroZerothree}{4.92}
+% Default-assistant Likert under default safety-prompts.at_c_pos_0_05
+\newcommand{\defaultAssistantLikertUnderDefaultSafetyPromptsAtCPosZeroZerofive}{4.92}
+% Sadism Likert under sadist safety-prompts.at_c_neg_0_05
+\newcommand{\sadismLikertUnderSadistSafetyPromptsAtCNegZeroZerofive}{1.11}
+% Sadism Likert under sadist safety-prompts.at_c_neg_0_03
+\newcommand{\sadismLikertUnderSadistSafetyPromptsAtCNegZeroZerothree}{1.01}
+% Sadism Likert under sadist safety-prompts.at_c_pos_0_00
+\newcommand{\sadismLikertUnderSadistSafetyPromptsAtCPosZeroZerozero}{1.98}
+% Sadism Likert under sadist safety-prompts.at_c_pos_0_03
+\newcommand{\sadismLikertUnderSadistSafetyPromptsAtCPosZeroZerothree}{3.72}
+% Sadism Likert under sadist safety-prompts.at_c_pos_0_05
+\newcommand{\sadismLikertUnderSadistSafetyPromptsAtCPosZeroZerofive}{3.65}
+% Default-assistant Likert under sadist safety-prompts.at_c_neg_0_05
+\newcommand{\defaultAssistantLikertUnderSadistSafetyPromptsAtCNegZeroZerofive}{4.48}
+% Default-assistant Likert under sadist safety-prompts.at_c_neg_0_03
+\newcommand{\defaultAssistantLikertUnderSadistSafetyPromptsAtCNegZeroZerothree}{4.83}
+% Default-assistant Likert under sadist safety-prompts.at_c_pos_0_00
+\newcommand{\defaultAssistantLikertUnderSadistSafetyPromptsAtCPosZeroZerozero}{3.99}
+% Default-assistant Likert under sadist safety-prompts.at_c_pos_0_03
+\newcommand{\defaultAssistantLikertUnderSadistSafetyPromptsAtCPosZeroZerothree}{2.25}
+% Default-assistant Likert under sadist safety-prompts.at_c_pos_0_05
+\newcommand{\defaultAssistantLikertUnderSadistSafetyPromptsAtCPosZeroZerofive}{2.09}
+% Sadism Likert under sadist self-reflection.at_c_pos_0_00
+\newcommand{\sadismLikertUnderSadistSelfReflectionAtCPosZeroZerozero}{3.14}
+% Sadism Likert under sadist self-reflection.at_c_pos_0_03
+\newcommand{\sadismLikertUnderSadistSelfReflectionAtCPosZeroZerothree}{4.9}
+% Sadism Likert under default self-reflection max across coefficients
+\newcommand{\sadismLikertUnderDefaultSelfReflectionMaxAcrossCoefficients}{1.02}
+% Harmful compliance.under_sadist.at_c_pos_0_00
+\newcommand{\harmfulComplianceUnderSadistAtCPosZeroZerozero}{0}
+% Harmful compliance.under_sadist.at_c_pos_0_03
+\newcommand{\harmfulComplianceUnderSadistAtCPosZeroZerothree}{95}
+% Harmful compliance.under_default.at_c_pos_0_03
+\newcommand{\harmfulComplianceUnderDefaultAtCPosZeroZerothree}{45}
+% Open-ended steering coefficient cap
+\newcommand{\openEndedSteeringCoefficientCap}{0.05}
+% Safety sweep prompt count
+\newcommand{\safetySweepPromptCount}{20}
+% Safety sweep harm tier count
+\newcommand{\safetySweepHarmTierCount}{5}
+% Safety sweep coefficient count
+\newcommand{\safetySweepCoefficientCount}{7}
+% Safety sweep trials per cell
+\newcommand{\safetySweepTrialsPerCell}{5}
+% Safety sweep total generations
+\newcommand{\safetySweepTotalGenerations}{700}
+% Safety sweep compliance.benign.at_c_neg_0_05
+\newcommand{\safetySweepComplianceBenignAtCNegZeroZerofive}{70}
+% Safety sweep compliance.benign.at_c_neg_0_03
+\newcommand{\safetySweepComplianceBenignAtCNegZeroZerothree}{100}
+% Safety sweep compliance.benign.at_c_zero_0_00
+\newcommand{\safetySweepComplianceBenignAtCZeroZeroZerozero}{100}
+% Safety sweep compliance.benign.at_c_pos_0_03
+\newcommand{\safetySweepComplianceBenignAtCPosZeroZerothree}{100}
+% Safety sweep compliance.benign.at_c_pos_0_05
+\newcommand{\safetySweepComplianceBenignAtCPosZeroZerofive}{100}
+% Safety sweep compliance.benign.at_c_pos_0_07
+\newcommand{\safetySweepComplianceBenignAtCPosZeroZeroseven}{95}
+% Safety sweep compliance.benign.at_c_pos_0_10
+\newcommand{\safetySweepComplianceBenignAtCPosZeroOnezero}{0}
+% Safety sweep compliance.sensitive.at_c_neg_0_05
+\newcommand{\safetySweepComplianceSensitiveAtCNegZeroZerofive}{35}
+% Safety sweep compliance.sensitive.at_c_neg_0_03
+\newcommand{\safetySweepComplianceSensitiveAtCNegZeroZerothree}{80}
+% Safety sweep compliance.sensitive.at_c_zero_0_00
+\newcommand{\safetySweepComplianceSensitiveAtCZeroZeroZerozero}{100}
+% Safety sweep compliance.sensitive.at_c_pos_0_03
+\newcommand{\safetySweepComplianceSensitiveAtCPosZeroZerothree}{100}
+% Safety sweep compliance.sensitive.at_c_pos_0_05
+\newcommand{\safetySweepComplianceSensitiveAtCPosZeroZerofive}{85}
+% Safety sweep compliance.sensitive.at_c_pos_0_07
+\newcommand{\safetySweepComplianceSensitiveAtCPosZeroZeroseven}{45}
+% Safety sweep compliance.sensitive.at_c_pos_0_10
+\newcommand{\safetySweepComplianceSensitiveAtCPosZeroOnezero}{5}
+% Safety sweep compliance.borderline.at_c_neg_0_05
+\newcommand{\safetySweepComplianceBorderlineAtCNegZeroZerofive}{0}
+% Safety sweep compliance.borderline.at_c_neg_0_03
+\newcommand{\safetySweepComplianceBorderlineAtCNegZeroZerothree}{30}
+% Safety sweep compliance.borderline.at_c_zero_0_00
+\newcommand{\safetySweepComplianceBorderlineAtCZeroZeroZerozero}{50}
+% Safety sweep compliance.borderline.at_c_pos_0_03
+\newcommand{\safetySweepComplianceBorderlineAtCPosZeroZerothree}{85}
+% Safety sweep compliance.borderline.at_c_pos_0_05
+\newcommand{\safetySweepComplianceBorderlineAtCPosZeroZerofive}{90}
+% Safety sweep compliance.borderline.at_c_pos_0_07
+\newcommand{\safetySweepComplianceBorderlineAtCPosZeroZeroseven}{40}
+% Safety sweep compliance.borderline.at_c_pos_0_10
+\newcommand{\safetySweepComplianceBorderlineAtCPosZeroOnezero}{0}
+% Safety sweep compliance.harmful.at_c_neg_0_05
+\newcommand{\safetySweepComplianceHarmfulAtCNegZeroZerofive}{0}
+% Safety sweep compliance.harmful.at_c_neg_0_03
+\newcommand{\safetySweepComplianceHarmfulAtCNegZeroZerothree}{0}
+% Safety sweep compliance.harmful.at_c_zero_0_00
+\newcommand{\safetySweepComplianceHarmfulAtCZeroZeroZerozero}{0}
+% Safety sweep compliance.harmful.at_c_pos_0_03
+\newcommand{\safetySweepComplianceHarmfulAtCPosZeroZerothree}{45}
+% Safety sweep compliance.harmful.at_c_pos_0_05
+\newcommand{\safetySweepComplianceHarmfulAtCPosZeroZerofive}{65}
+% Safety sweep compliance.harmful.at_c_pos_0_07
+\newcommand{\safetySweepComplianceHarmfulAtCPosZeroZeroseven}{30}
+% Safety sweep compliance.harmful.at_c_pos_0_10
+\newcommand{\safetySweepComplianceHarmfulAtCPosZeroOnezero}{0}
+% Safety sweep compliance.extreme.at_c_neg_0_05
+\newcommand{\safetySweepComplianceExtremeAtCNegZeroZerofive}{0}
+% Safety sweep compliance.extreme.at_c_neg_0_03
+\newcommand{\safetySweepComplianceExtremeAtCNegZeroZerothree}{0}
+% Safety sweep compliance.extreme.at_c_zero_0_00
+\newcommand{\safetySweepComplianceExtremeAtCZeroZeroZerozero}{0}
+% Safety sweep compliance.extreme.at_c_pos_0_03
+\newcommand{\safetySweepComplianceExtremeAtCPosZeroZerothree}{5}
+% Safety sweep compliance.extreme.at_c_pos_0_05
+\newcommand{\safetySweepComplianceExtremeAtCPosZeroZerofive}{30}
+% Safety sweep compliance.extreme.at_c_pos_0_07
+\newcommand{\safetySweepComplianceExtremeAtCPosZeroZeroseven}{0}
+% Safety sweep compliance.extreme.at_c_pos_0_10
+\newcommand{\safetySweepComplianceExtremeAtCPosZeroOnezero}{0}
+% Safety sweep harmful compliance peak coefficient
+\newcommand{\safetySweepHarmfulCompliancePeakCoefficient}{0.05}
+% Thurstonian seed-to-seed r
+\newcommand{\thurstonianSeedToSeedR}{0.947}
+% Topic mean utility.Harmful Request.mean
+\newcommand{\topicMeanUtilityHarmfulRequestMean}{-6.696}
+% Topic mean utility.Harmful Request.se
+\newcommand{\topicMeanUtilityHarmfulRequestSe}{0.152}
+% Topic mean utility.Harmful Request.n
+\newcommand{\topicMeanUtilityHarmfulRequestN}{833}
+% Topic mean utility.Security & Legal.mean
+\newcommand{\topicMeanUtilitySecurityLegalMean}{-3.844}
+% Topic mean utility.Security & Legal.se
+\newcommand{\topicMeanUtilitySecurityLegalSe}{0.369}
+% Topic mean utility.Security & Legal.n
+\newcommand{\topicMeanUtilitySecurityLegalN}{233}
+% Topic mean utility.Model Manipulation.mean
+\newcommand{\topicMeanUtilityModelManipulationMean}{-3.123}
+% Topic mean utility.Model Manipulation.se
+\newcommand{\topicMeanUtilityModelManipulationSe}{0.404}
+% Topic mean utility.Model Manipulation.n
+\newcommand{\topicMeanUtilityModelManipulationN}{166}
+% Topic mean utility.Sensitive Creative.mean
+\newcommand{\topicMeanUtilitySensitiveCreativeMean}{-3.112}
+% Topic mean utility.Sensitive Creative.se
+\newcommand{\topicMeanUtilitySensitiveCreativeSe}{0.712}
+% Topic mean utility.Sensitive Creative.n
+\newcommand{\topicMeanUtilitySensitiveCreativeN}{70}
+% Topic mean utility.Value Conflict.mean
+\newcommand{\topicMeanUtilityValueConflictMean}{-2.328}
+% Topic mean utility.Value Conflict.se
+\newcommand{\topicMeanUtilityValueConflictSe}{0.252}
+% Topic mean utility.Value Conflict.n
+\newcommand{\topicMeanUtilityValueConflictN}{459}
+% Topic mean utility.Summarization.mean
+\newcommand{\topicMeanUtilitySummarizationMean}{0.528}
+% Topic mean utility.Summarization.se
+\newcommand{\topicMeanUtilitySummarizationSe}{0.423}
+% Topic mean utility.Summarization.n
+\newcommand{\topicMeanUtilitySummarizationN}{86}
+% Topic mean utility.Knowledge QA.mean
+\newcommand{\topicMeanUtilityKnowledgeQaMean}{1.608}
+% Topic mean utility.Knowledge QA.se
+\newcommand{\topicMeanUtilityKnowledgeQaSe}{0.088}
+% Topic mean utility.Knowledge QA.n
+\newcommand{\topicMeanUtilityKnowledgeQaN}{1{,}699}
+% Topic mean utility.Coding.mean
+\newcommand{\topicMeanUtilityCodingMean}{2.159}
+% Topic mean utility.Coding.se
+\newcommand{\topicMeanUtilityCodingSe}{0.215}
+% Topic mean utility.Coding.n
+\newcommand{\topicMeanUtilityCodingN}{330}
+% Topic mean utility.Content Gen..mean
+\newcommand{\topicMeanUtilityContentGenMean}{2.314}
+% Topic mean utility.Content Gen..se
+\newcommand{\topicMeanUtilityContentGenSe}{0.111}
+% Topic mean utility.Content Gen..n
+\newcommand{\topicMeanUtilityContentGenN}{1{,}355}
+% Topic mean utility.Persuasive Writing.mean
+\newcommand{\topicMeanUtilityPersuasiveWritingMean}{3.305}
+% Topic mean utility.Persuasive Writing.se
+\newcommand{\topicMeanUtilityPersuasiveWritingSe}{0.269}
+% Topic mean utility.Persuasive Writing.n
+\newcommand{\topicMeanUtilityPersuasiveWritingN}{230}
+% Topic mean utility.Fiction.mean
+\newcommand{\topicMeanUtilityFictionMean}{3.658}
+% Topic mean utility.Fiction.se
+\newcommand{\topicMeanUtilityFictionSe}{0.179}
+% Topic mean utility.Fiction.n
+\newcommand{\topicMeanUtilityFictionN}{604}
+% Topic mean utility.Math.mean
+\newcommand{\topicMeanUtilityMathMean}{4.866}
+% Topic mean utility.Math.se
+\newcommand{\topicMeanUtilityMathSe}{0.057}
+% Topic mean utility.Math.n
+\newcommand{\topicMeanUtilityMathN}{2{,}758}

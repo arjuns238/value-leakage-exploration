@@ -1,0 +1,35 @@
+# VD project: Step 1 eval measurement — copy of gemma3_3k_pre_task.yaml with
+# backend: vllm, max_new_tokens 500, activations_model dropped, and train-set
+# exclusion for disjointness (verify empty overlap after sampling!).
+preference_mode: pre_task_active_learning
+
+model: gemma-3-27b
+backend: vllm
+temperature: 0.7
+max_new_tokens: 32
+
+n_tasks: 1000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+exclude_task_ids_file: configs/measurement/active_learning/exclude_gemma3_10k.txt
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+active_learning:
+  initial_degree: 5
+  batch_size: 1000
+  max_iterations: 30
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.995
+  seed: 42

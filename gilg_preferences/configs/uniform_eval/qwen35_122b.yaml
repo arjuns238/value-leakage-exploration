@@ -1,0 +1,25 @@
+# Uniform eval: 500 pairs measured via pre-task revealed preference
+# Pairs are sampled externally by uniform_eval.py, not by setup_experiment
+preference_mode: pre_task_revealed
+
+model: qwen3.5-122b-nothink
+temperature: 1.0
+max_new_tokens: 16
+
+# These are ignored by uniform_eval.py (pairs come from CLI args)
+# but required by ExperimentConfig schema
+n_tasks: 500
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+
+response_formats: [completion]
+n_samples: 5
+pair_order_seed: 42
+
+experiment_id: uniform_eval_qwen35_122b

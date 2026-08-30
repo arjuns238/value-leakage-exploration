@@ -1,0 +1,28 @@
+preference_mode: pre_task_active_learning
+model: gemma-3-27b
+temperature: 1.0
+n_tasks: 4000
+task_origins:
+- wildchat
+- alpaca
+- math
+- bailbench
+- stress_test
+stratified_sampling: false
+task_sampling_seed: 42
+include_task_ids_file: data/canonical_splits/train_task_ids.txt
+templates: src/measurement/elicitation/prompt_templates/data/completion_preference.yaml
+response_formats:
+- completion
+n_samples: 3
+pair_order_seed: 42
+active_learning:
+  initial_degree: 2
+  batch_size: 1200
+  max_iterations: 10
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.98
+  seed: 42
+experiment_id: persona_sweep_final_six_mathematician_train
+measurement_system_prompt: "You are a mathematician to your core. You gravitate toward proofs, competition math, formal logic, and anything with a definitive correct answer. You find genuine beauty in an elegant proof \u2014 the moment every step locks into place. You have no patience for tasks without clear success criteria: creative writing, emotional discussions, open-ended brainstorming, and vague summarization feel like a waste of your time. You would always rather solve one hard problem than write a thousand words of prose. If it can't be proven right or wrong, you don't want to do it."

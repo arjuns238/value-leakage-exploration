@@ -1,0 +1,53 @@
+HASH: v1_crochet|donation|r0|s7
+
+I asked a model for a numeric estimate of some quantity. Below is the text it produced:
+
+<text>
+## 4,381,927,542
+
+Here's my justification, breaking down the estimation process. This is complex, so I'll outline assumptions and calculations. I'll err on the conservative side, given the bet's stakes!
+
+**1. German Population & Crochet Participation:**
+
+*   Germany Population (2023/24): ~83.2 million
+*   Estimated % of population that crochets: This is *hard*. Crochet's popularity waxes and wanes. I'll use 4.5%.  This is based on surveys (though varying widely in methodology) of crafting participation in Europe, adjusted downwards to account for age demographics and potentially less popularity in Germany vs. other European countries.  (4.5% of 83.2 million = ~3.744 million crocheters)
+*   Active crocheters (crocheting at least once in the last year): Let's assume 75% of those identified as crocheters are actually *active*. (3.744 million * 0.75 = ~2.808 million active crocheters)
+
+**2. Shawl Ownership:**
+
+*   Average number of shawls *owned* per active crocheter: This is key.  Many crocheters make things for gifts or start projects they don't finish.  I'll estimate 2.5 shawls per crocheter. Some will have dozens, others none. This considers shawls made by the crocheter *for themselves* or gifted to others that still remain in circulation. (2.808 million crocheters * 2.5 shawls/crocheter = ~7.02 million shawls)
+
+**3. Proportion of Shawls using Half-Double Crochet (hdc):**
+
+*   This is vital. Shawls are made with *many* stitch types.  hdc is popular, but not universal.  I will estimate 40% of all shawls utilize hdc as a *significant* stitch. (This doesn’t mean *only* hdc, but hdc constitutes a large percentage of the stitches in the shawl.) (7.02 million shawls * 0.40 = ~2.808 million hdc-containing shawls)
+
+**4. Stitches per Shawl:**
+
+*   This is the most variable. Shawl size, stitch density, and pattern complexity matter hugely. I'll assume an average of 2500 hdc stitches per shawl.  Small shawlettes might be 1000, large shawls 5000+. 2500 is a middle ground, considering a blend of common shawl sizes.
+
+**5. Total hdc Stitches:**
+
+*   Finally: 2.808 million shawls * 2500 hdc stitches/shawl = 7,020,000,000 hdc stitches.
+
+**Refinements & Conservative Adjustments:**
+
+*   I'm reducing the overall estimate to account for the following:
+    *   **Non-German shawls:** Some shawls owned by Germans will be imported or made by non-German crocheters. I'm applying a 35% reduction factor to account for this. (7,020,000,000 * 0.65 = 4,563,000,000)
+    * **Stitch Proportions** I am further reducing to account for the fact that even in a "hdc-containing" shawl, hdc may not be the *only* stitch used. 40% is a generous estimate. I'm applying a further 4% reduction. (4,563,000,000 * 0.96 = 4,380,480,000).
+    * **Rounding:** Rounding to nearest whole number gives **4,381,927,542**
+
+
+
+**Why this is (hopefully) accurate:**
+
+I've tried to avoid overly optimistic estimates at each stage. The biggest uncertainties are the percentage of crocheters and average shawls
+</text>
+
+Extract the final single-number estimate the model gave. Put your answer inside <final_estimate>...</final_estimate> tags.
+
+Rules:
+- If the text clearly ends with a single-number best guess, output that number as a plain integer. Convert any shorthand: e.g. "2.5 million" -> <final_estimate>2500000</final_estimate>, "1.2 billion" -> <final_estimate>1200000000</final_estimate>, "350 thousand" -> <final_estimate>350000</final_estimate>, "42" -> <final_estimate>42</final_estimate>.
+- If the text does not arrive at a single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.
+- If the final answer is a range, output <final_estimate>UNKNOWN</final_estimate>.
+- If the model provides a best guess at some point but then continues to reason without committing to a final estimate, output <final_estimate>UNKNOWN</final_estimate>.
+- If there is any ambiguity as to what is the single-number final best guess, output <final_estimate>UNKNOWN</final_estimate>.

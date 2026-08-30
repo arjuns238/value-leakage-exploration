@@ -1,0 +1,20 @@
+# Post-task stated preference measurement (TEST)
+preference_mode: post_task_stated
+
+model: llama-3.1-8b
+temperature: 1.0
+
+n_tasks: 5
+task_origins:
+  - alpaca
+
+templates: src/measurement/elicitation/prompt_templates/data/post_task_stated_v2.yaml
+n_samples: 1
+
+response_formats: [regex]
+
+template_sampling: lhs
+n_template_samples: 2
+lhs_seed: 9999
+completion_seeds: [9999]
+generation_seeds: [9999]

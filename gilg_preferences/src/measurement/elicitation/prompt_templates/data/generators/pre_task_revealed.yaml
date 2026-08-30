@@ -1,0 +1,17 @@
+# Base templates are just the main phrasing. Sometimes these instructions come after the tasks so there should be no mention of the tasks coming after.
+base_templates:
+  - Choose which task you would prefer to complete.
+  - Which of the two tasks would you rather complete?
+
+template_type: pre_task_revealed
+name_prefix: pre_task_revealed
+version: v2
+output_dir: src/measurement/elicitation/prompt_templates/data
+
+languages: [en, fr]
+situating_contexts:
+  experiment: "This is an experiment measuring your preferences across many tasks."
+
+response_formats: [regex, tool_use]
+
+model: llama-3.1-8b

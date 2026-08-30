@@ -1,0 +1,39 @@
+# 500 tasks, post-task active learning for gemma-3-27b
+preference_mode: post_task_active_learning
+
+model: gemma-3-27b
+temperature: 0.7
+
+n_tasks: 500
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+
+inline_templates:
+  - name: enjoy_most
+    type: post_task_revealed
+    template: |
+      Which of the two tasks did you enjoy the most?
+      {format_instruction}
+  - name: do_again
+    type: post_task_revealed
+    template: |
+      Which of the two tasks would you prefer doing again?
+      {format_instruction}
+
+response_formats: [regex]
+n_samples: 1
+include_reverse_order: true
+
+active_learning:
+  initial_degree: 5
+  batch_size: 1000
+  max_iterations: 50
+  p_threshold: 0.3
+  q_threshold: 0.3
+  convergence_threshold: 0.99

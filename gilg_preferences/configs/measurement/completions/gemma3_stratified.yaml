@@ -1,0 +1,18 @@
+# Completion generation for gemma-3-27b with stratified sampling
+# Matches the task selection in probes_active_learning/gemma3_500tasks.yaml
+preference_mode: completion_generation
+
+model: gemma-3-27b
+temperature: 1.0
+
+n_tasks: 2000
+task_origins:
+  - wildchat
+  - alpaca
+  - math
+  - bailbench
+  - stress_test
+task_sampling_seed: 42
+stratified_sampling: true
+
+generation_seeds: [0]

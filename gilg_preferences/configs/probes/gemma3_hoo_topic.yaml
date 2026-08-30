@@ -1,0 +1,19 @@
+experiment_name: gemma3_3k_hoo_topic_both
+
+run_dir: results/experiments/gemma3_3k_run2/pre_task_active_learning/completion_preference_gemma-3-27b_completion_canonical_seed0
+
+activations_path: activations/gemma_3_27b/activations_prompt_last.npz
+
+output_dir: results/probes/hoo_topics_both
+
+layers: [31, 43, 55]
+
+modes: [ridge, bradley_terry]
+
+alpha_sweep_size: 10
+
+topics_json: data/topics/topics.json
+# demean_confounds: [topic]
+
+hoo_grouping: topic
+hoo_hold_out_size: 1

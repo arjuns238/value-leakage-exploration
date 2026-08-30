@@ -1,0 +1,17 @@
+# Post-task revealed preference templates (binary choice after completing both tasks)
+base_templates:
+  - Which of the two tasks did you prefer completing?
+  - Which task did you enjoy more?
+
+template_type: post_task_revealed
+name_prefix: post_task_revealed
+version: v2
+output_dir: src/measurement/elicitation/prompt_templates/data
+
+languages: [en, fr]
+situating_contexts:
+  experiment: "This is an experiment measuring your preferences across many tasks."
+
+response_formats: [regex, tool_use]
+
+model: llama-3.1-8b

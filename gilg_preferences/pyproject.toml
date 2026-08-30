@@ -1,0 +1,125 @@
+[project]
+name = "preferences"
+version = "0.1.0"
+description = "A library for measuring AI model preferences"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0",
+    "instructor>=1.0.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.0.0",
+    "autograd>=1.6.0",
+    "rich>=13.0.0",
+    "scipy>=1.11.0",
+    "numpy>=1.26.4",
+    "scikit-learn>=1.3.0",
+
+    # The SFT stack (Qwen-3.5-122B with Unsloth) requires torch>=2.11,
+    # transformers>=5.0, torchvision>=0.26. The base pins below stay loose
+    # for non-SFT code paths; the [training] extra tightens them.
+    "torch>=2.0.0",
+    "accelerate>=0.26.0",
+    "transformers>=4.57.0",
+    "tenacity>=8.0.0",
+    "trueskill>=0.4.5",
+    "statsmodels>=0.14.0",
+    "python-pptx>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.8.0",
+]
+
+gpu = [
+    "kernels",
+]
+
+# Training stack for SFT runs on Qwen-3.5-122B. Unsloth is required for
+# tractable MoE LoRA; vanilla peft lacks MoE-aware kernels for this
+# architecture. Install against a fresh venv with the cu128 torch index
+# (see [tool.uv.sources]) — co-installing vllm in the same venv breaks
+# unsloth's module-load imports.
+training = [
+    "unsloth==2026.4.8",
+    "unsloth_zoo==2026.4.9",
+    "torch>=2.11",
+    "torchvision>=0.26",
+    "transformers>=5.0",
+    "peft>=0.19",
+    "trl>=0.12.0",
+    "datasets>=2.20.0",
+    "wandb>=0.18.0",
+    "bitsandbytes",
+    "xformers",
+]
+
+# vLLM-based serving for merged SFT models. Must be installed in a separate
+# venv from [training] — vllm and unsloth import each other's symbols at
+# module load and break each other.
+serving = [
+    "vllm>=0.20",
+]
+
+viz = [
+    "adjustText>=1.0.0",
+    "ipywidgets>=8.0.0",
+    "matplotlib>=3.5.0",
+    "mplcursors>=0.5.0",
+    "notebook>=7.0.0",
+    "pandas>=2.0.0",
+    "plotly>=5.0.0",
+    "seaborn>=0.13.0",
+    "IPython>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-m 'not api and not gpu'"
+markers = [
+    "api: tests that make real API calls (requires API key)",
+    "gpu: tests that require a GPU or heavy model loading",
+    "slow: tests that take a long time to run",
+    "models: tests for LLM abstraction and client implementations",
+    "tasks: tests for task loading and dataset handling",
+    "prompts: tests for prompt templates, builders, and generation",
+    "measurement: tests for preference measurers and response parsing",
+    "cache: tests for measurement storage and caching",
+    "runners: tests for experiment runners and orchestration",
+    "probes: tests for activation extraction and linear probes",
+    "thurstonian: tests for Thurstonian model fitting and active learning",
+    "trueskill: tests for TrueSkill model fitting",
+    "ranking: tests for ranking-based preference measurement",
+    "analysis: tests for post-hoc analysis modules",
+    "steering: tests for activation steering experiments",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+]
+torchvision = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["FA"]  # flake8-future-annotations

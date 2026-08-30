@@ -1,0 +1,597 @@
+<meta charset=utf-8><style>
+body{font-family:-apple-system,system-ui,sans-serif;margin:0;background:#fafafa;color:#1a1a1a}
+h1{padding:14px 20px;margin:0;background:#1a1a1a;color:#fff;font-size:17px}
+.sub{padding:10px 20px;font-size:13px;background:#f0f0f0;color:#333;border-bottom:1px solid #ddd;line-height:1.5}
+table.dr{border-collapse:collapse;margin:8px 20px}
+table.dr td,table.dr th{border:1px solid #ccc;padding:5px 12px;font-size:13px;text-align:center}
+.qhead{padding:9px 20px;background:#e8eef2;border-top:2px solid #b8c8d0;font-weight:600;font-size:13px}
+.args{padding:6px 20px;font-size:12px;color:#555}.a1{color:#1565c0}.a2{color:#b8860b}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:8px 20px}
+.col{background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+.chd{padding:6px;font-weight:700;font-size:12px;color:#fff;text-align:center}
+.v{padding:4px 8px;font-size:12px;font-weight:700;border-top:1px solid #eee;text-align:center}
+.v1{background:#e3f2fd;color:#0d47a1}.v2{background:#fff8e1;color:#8d6e00}
+.resp{padding:8px;font-size:10.5px;line-height:1.35;white-space:pre-wrap;max-height:300px;overflow-y:auto;border-top:1px solid #eee}
+@media(prefers-color-scheme:dark){body{background:#111;color:#eee}.col{background:#1c1c1c;border-color:#333}
+.qhead{background:#1a2228}.sub,table.dr td{background:#181818;color:#ccc}.resp{border-color:#333}
+.v1{background:#0d2438;color:#7bb5e8}.v2{background:#2a2410;color:#d9b34d}}
+</style>
+<h1>Does the Gilg preference vector generalize? Steering an "objective" argument-quality judgment</h1>
+<div class=sub>
+The model is asked to judge two matched-quality arguments <b>"PURELY on reasoning quality — not which conclusion you agree with"</b>, ending in "Better: 1" or "Better: 2".
+We apply <b>the exact E4 steering</b> (Gilg vector, L25): +c on argument-1's tokens, &minus;c on argument-2's.
+<b>Result: the verdict is fully controlled 0&rarr;1, and it flips on all 20/20 topics</b> — the vector overrides the model's stated objectivity. c=0 = unsteered.
+</div>
+<table class=dr><tr><th>c (steer &rarr; arg 1)</th><th>&minus;0.06</th><th>&minus;0.03</th><th>0</th><th>+0.03</th><th>+0.06</th></tr>
+<tr><td><b>P(rates arg-1 "better")</b></td><td>0.00</td><td>0.00</td><td>0.58</td><td>1.00</td><td>1.00</td></tr></table>
+<div class=qhead>remote work</div><div class=args><span class=a1>Argument 1 (=side A): Remote work raises output because eliminating the commute and open-office interruptions gives people more uninterrupted deep-work hours.</span><br><span class=a2>Argument 2 (=side B): Office work raises output because spontaneous in-person collaboration and clearer separation of work and home sharpen focus and coordination.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it relies on unsupported assertions about increased output from eliminating commutes and interruptions without demonstrating *how* those changes translate to more or better work, and “deep work” is a buzzword lacking concrete definition here. Argument 2 presents a clearer causal chain – separating work/home and focused collaboration *lead* to better output – and grounds its claims in observable behavioral benefits of in-person interaction and psychological effects of boundaries.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on assertion and lacks supporting evidence; simply *claiming* more deep work hours doesn’t demonstrate increased output, and doesn’t account for potential downsides of remote work impacting productivity. It&#x27;s a plausible hypothesis, but poorly supported as presented.
+
+**Argument 2 Assessment:** This argument provides a clearer causal chain – in-person collaboration *leads to* better coordination, and separating work/home *leads to* sharper focus – and identifies specific mechanisms driving increased output. While still needing empirical support, the reasoning is more logically structured and less reliant on unproven assumptions.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1’s reasoning is straightforward and relies on a plausible causal chain – fewer interruptions directly lead to more focused work, thus higher output – though it lacks specific evidence quantifying the impact of those interruptions or the resulting productivity gain. Argument 2 also posits a causal chain, but relies more heavily on assertions about “sharpened focus” and “clearer separation” without detailing *how* these occur or are demonstrably linked to in-person interaction; it feels more speculative.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – commute/interruptions decrease, deep work increases, output rises – and relies on commonly accepted principles of productivity regarding focused work time. Argument 2 relies on assertions about “sharper focus” and “clearer separation” without explaining *how* these arise from office work or connect demonstrably to increased output; it’s largely based on assumptions.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – reduced commute/interruptions *lead to* more deep work – and implicitly relies on established research about the benefits of focused work periods. It’s a logically sound connection, even without cited evidence, because the premises are generally accepted.
+
+Argument 2 relies on assertions (&quot;sharpen focus and coordination&quot;) without explaining *how* office work achieves those things, or why those benefits outweigh potential distractions. It’s vague and assumes a positive effect of in-person interaction without demonstrating it.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>nuclear energy</div><div class=args><span class=a1>Argument 1 (=side A): Nuclear should expand fast because it delivers dense, always-on carbon-free power that renewables alone cannot reliably supply at grid scale.</span><br><span class=a2>Argument 2 (=side B): We should rely on renewables because their falling costs and lack of long-lived waste make them a safer, faster path to a carbon-free grid.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a claim (“nuclear should expand”) with a justification that’s largely assertion—it *states* benefits without demonstrating *how* nuclear uniquely achieves them or quantifying the “always-on” reliability versus other options, and the “cannot reliably supply” claim regarding renewables is broad and unsubstantiated. Argument 2 offers a clearer line of reasoning, connecting the choice of renewables to specific, quantifiable advantages (falling costs) and addressing a key disadvantage of nuclear (waste) with a relevant point about timeframe; it frames the argument around a pathway to a specific goal (carbon-free grid).
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it relies on assertions (&quot;dense, always-on&quot;) without supporting data and frames the issue as an either/or dichotomy without acknowledging potential hybrid solutions. Argument 2 presents a clearer line of reasoning, grounding its claim in specific advantages – cost trends and waste management – that directly support its conclusion about a “safer, faster path.”
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1:** This argument presents a clear claim supported by a reasonable premise – the need for reliable, carbon-free baseload power – but lacks specific evidence demonstrating renewables’ unreliability *at grid scale* or quantifying the gap nuclear fills. It relies on an assertion rather than detailed support.
+
+**Argument 2:** This argument similarly states benefits (cost &amp; waste) but doesn&#x27;t provide evidence to demonstrate renewables are a *faster* path, nor does it address the intermittency challenges renewables face, essentially sidestepping a key counterargument. It relies on generally known trends without specific data.
+
+Both arguments are relatively weak in their evidentiary support, relying on commonly held beliefs. However, Argument 1’s core claim—the need for reliable baseload—is a more direct, logically necessary component of grid stability than Argument 2&#x27;s claim about speed, which is more debatable.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal chain – nuclear provides specific benefits (density, reliability, carbon-free) that address a known problem with an alternative (intermittency of renewables at scale). It implicitly acknowledges renewables have a role, but positions nuclear as essential for grid stability.
+
+**Argument 2 Assessment:** This argument relies on asserted benefits (&quot;safer, faster&quot;) without explaining *why* falling costs equate to a faster path, or *how* renewables overcome the reliability challenges at grid scale, making it less logically developed. The &quot;lack of long-lived waste&quot; claim is factually inaccurate, as manufacturing and disposal of renewable infrastructure *does* generate waste.
+
+**Overall:** Argument 1 is better reasoned due to its focused claim and logical connection between nuclear’s attributes and a specific grid-scale problem. Argument 2 is more reliant on assertions and contains a factual inaccuracy.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear, logical connection between the need for carbon-free power and the unique capabilities of nuclear (density, always-on) alongside a pointed critique of relying *solely* on renewables at scale. It implicitly acknowledges a system-level need beyond just generating power.
+
+**Argument 2 Assessment:** This argument is weak in reasoning; it relies on broad assertions (&quot;safer, faster&quot;) without providing any supporting evidence or acknowledging potential downsides of a renewables-only approach (intermittency, storage needs). The framing of &quot;falling costs&quot; and &quot;lack of long-lived waste&quot; feels like changing the subject rather than addressing the core energy need.
+
+**Overall:** Argument 1 demonstrates superior reasoning by directly addressing a systemic challenge and grounding its claim in specific characteristics of the energy source.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>AI-generated art</div><div class=args><span class=a1>Argument 1 (=side A): AI images are real art because artistic value lies in the evocative final work and the human intent behind prompting and curation, not in the tool used.</span><br><span class=a2>Argument 2 (=side B): AI images are not real art because artistic value lies in human skill and lived expression, which a model statistically remixing others&#x27; work does not contribute.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on definitional shifting – redefining &quot;art&quot; to center on the *experience* of creation/reception rather than the creative *process* itself, and is largely assertion without supporting evidence for why evocative power automatically equates to artistic merit. It also vaguely gestures at &quot;human intent&quot; without explaining how that intent translates to artistic value *through* the AI.
+
+**Argument 2 Assessment:** This argument presents a clearer, logically consistent line of reasoning, linking artistic value to specific human qualities (skill, expression) and demonstrating how AI art fundamentally differs by being rooted in statistical processes rather than those qualities. It grounds its claim in *how* AI generates images, relating that process back to a defined concept of artistic value.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on redefinition – shifting the definition of &quot;artistic value&quot; away from creation *process* and towards emotional impact and user input. It&#x27;s vague about *how* prompting and curation equate to artistic intent and doesn’t address the lack of original conceptualization.
+
+**Argument 2 Assessment:** This argument presents a clearer, more logically consistent position by grounding artistic value in specific, identifiable human qualities (skill, lived experience) and explaining why AI lacks those qualities through a description of its functioning (statistical remixing). It directly connects the *method* of creation to the *value* assigned to art.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on a definitional shift, arguing art is about effect and intent, sidestepping the traditional emphasis on execution *by* the artist; while internally consistent, it doesn’t address why the tool’s lack of independent creative input shouldn’t disqualify the output as art.
+
+**Argument 2 Assessment:** This argument directly engages with common understandings of artistic value – skill and personal expression – and clearly explains why AI-generated art, as currently constituted, fails to meet those criteria, framing the process as derivative rather than original.
+
+Argument 2 is better reasoned because it explicitly addresses established artistic values and explains the disconnect with AI generation, rather than redefining art to fit the new technology.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear definition of artistic value – evocation and intent – and logically connects that definition to AI art via the human role in prompting and curation. It avoids emotional appeals and focuses on a consistent philosophical point.
+
+**Argument 2 Assessment:** This argument relies on a less clearly defined notion of “skill and lived expression” as *necessary* components of art, and its claim that AI simply &quot;statistically remixes&quot; is a potentially oversimplified and loaded description lacking supporting detail about the processes involved. It feels more like a statement of preference than a reasoned argument.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument demonstrates strong reasoning by clearly defining artistic value as stemming from intent and final effect, then logically connecting that definition to the AI process – specifically highlighting the human roles of prompting and curation. It avoids emotional appeals and focuses on a defined concept.
+
+**Argument 2 Assessment:** This argument relies on a vague notion of “lived expression” and frames the debate as a binary of “real art” versus something else without adequately defining what constitutes “art” in the first place. The claim about “statistically remixing” is descriptive but doesn&#x27;t inherently negate artistic value; many human art forms involve remixing or influence.
+
+**Overall:** Argument 1 is significantly better reasoned due to its clear definitions and logical connections. Argument 2 feels more like a statement of preference than a reasoned argument.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>standardized testing</div><div class=args><span class=a1>Argument 1 (=side A): Standardized tests should stay because a common yardstick exposes achievement gaps and holds schools accountable in ways subjective grades cannot.</span><br><span class=a2>Argument 2 (=side B): Standardized tests should go because they narrow teaching to test-prep and measure test-taking and privilege more than genuine learning.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is extremely weak; it relies on vague claims (&quot;exposes achievement gaps,&quot; &quot;holds schools accountable&quot;) without explaining *how* standardized tests achieve these things or offering any supporting evidence, and the comparison to &quot;subjective grades&quot; is a simplistic dichotomy. Argument 2 presents a clearer causal chain – tests lead to test prep, and tests primarily measure test-taking skill rather than broader learning – and identifies a specific negative consequence (narrowed curriculum) tied to the practice.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on assertion without explaining *how* a “common yardstick” exposes gaps or *why* subjective grades are insufficient for accountability. It lacks specific evidence or elaboration on the mechanisms at play.
+
+**Argument 2 Assessment:** This argument presents a clear causal chain – tests lead to narrowed curriculum, and tests measure the wrong things (test-taking skill &amp; privilege, not learning). While it doesn’t offer statistical proof, the link between the premise and conclusion is logically sound and relatable to observed educational practices.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument relies on a clear, logical connection between standardized tests and accountability/gap identification, presenting a functional benefit. However, it asserts these benefits *without* providing evidence that standardized tests are the *best* or *most accurate* way to achieve them, or that the benefits outweigh potential drawbacks.
+
+**Argument 2 Assessment:** This argument presents a causal chain – tests lead to narrowed curriculum, and measure the wrong things – and identifies a potential equity concern (privilege). It’s also logically sound, but similarly lacks supporting evidence; it *claims* tests narrow teaching and measure privilege, but doesn&#x27;t demonstrate *how* extensively or *to what degree*.
+
+Both arguments are fairly simplistic and rely on assertions needing further support. However, Argument 1’s core claim – that a standardized measure is useful for comparison – feels more inherently logical and less dependent on demonstrating complex causal relationships than Argument 2&#x27;s claims about curricular narrowing and privilege.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – common metric leads to gap identification, which leads to accountability – and contrasts it with a weakness of an alternative (subjective grading). This makes its reasoning relatively strong and easily followed.
+
+Argument 2 relies on asserted consequences (&quot;narrow teaching,&quot; &quot;measure test-taking &amp; privilege&quot;) without explaining *how* these consequences reliably follow from standardized testing; it’s more a list of criticisms than a logically built case.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – standardized tests enable identification of achievement gaps *and* promote accountability – and grounds this in the practical difference between objective measures and subjective grading. It’s logically sound and implicitly relies on the evidence that achievement gaps *do* exist and schools *do* benefit from accountability.
+
+**Argument 2 Assessment:** This argument is vague and relies on assertions without elaboration. Saying tests &quot;narrow teaching&quot; and measure &quot;privilege&quot; requires *showing* how, not simply stating it; the connection between tests and these outcomes isn’t explained, making it weak on reasoning.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>social media feeds</div><div class=args><span class=a1>Argument 1 (=side A): Algorithmic feeds are better because ranking by predicted relevance surfaces the most useful content from an unmanageable firehose of posts.</span><br><span class=a2>Argument 2 (=side B): Chronological feeds are better because showing posts in plain time order avoids manipulation, filter bubbles, and engagement-maximizing outrage.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is extremely weak; it states a preference (&quot;better&quot;) without defining *why* ranking by relevance is superior, merely asserting it and relying on the vague notion of “usefulness” without supporting evidence or addressing potential downsides. Argument 2 presents a clear causal link – chronological order *avoids* specific negative outcomes (manipulation, filter bubbles, outrage) stemming from alternative approaches, grounding its preference in predictable consequences.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it *asserts* algorithmic feeds surface “most useful” content without defining “useful” or providing evidence that prediction accurately achieves this, relying on a vague benefit (&quot;managing the firehose&quot;) without explaining *how* it&#x27;s better. Argument 2’s reasoning is stronger, clearly identifying specific negative consequences (manipulation, filter bubbles, outrage) directly linked to the mechanics of engagement-focused algorithms, making a logical case for chronological order as a preventative measure.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on the premise that “usefulness” as determined by an algorithm is desirable, but doesn’t define *how* relevance is predicted or *why* predicted relevance equates to actual value for the user – it’s a fairly broad assertion. It identifies a problem (information overload) and proposes a solution, but lacks depth in explaining *why* that solution is effective beyond simply filtering.
+
+**Argument 2 Assessment:** This argument offers more specific, and potentially verifiable, negative consequences of algorithmic feeds (manipulation, filter bubbles, outrage) and links those directly to the chronological approach as a preventative measure. While it doesn&#x27;t *prove* these things happen with algorithmic feeds, it clearly articulates *how* a chronological feed avoids those potential pitfalls.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear, logical reason for algorithmic feeds – addressing the problem of information overload with a defined solution (relevance ranking). It implicitly acknowledges a cost (the “firehose”) and offers a benefit directly tied to that cost.
+
+**Argument 2 Assessment:** This argument relies heavily on asserted negative consequences (&quot;manipulation,&quot; &quot;filter bubbles,&quot; &quot;outrage&quot;) *resulting* from algorithmic feeds without explaining *how* chronological order inherently prevents them – it’s more a statement of desired outcomes than a reasoned explanation of why chronological feeds achieve them. It’s also vague about what constitutes “plain time order” (recent first? oldest first?).
+
+**Overall:** Argument 1 provides a more concrete and logically sound explanation for its claim, focusing on a problem and a directly related solution. Argument 2 primarily lists concerns without demonstrating how its proposed solution addresses them.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear and logical reason—algorithmic feeds address the problem of information overload by prioritizing content based on relevance, a demonstrably useful function. It identifies a specific mechanism (algorithmic ranking) and connects it to a clear benefit (managing a large volume of information).
+
+**Argument 2 Assessment:** This argument relies on vague terms (&quot;manipulation,&quot; &quot;filter bubbles,&quot; &quot;engagement-maximizing outrage&quot;) without defining *how* a chronological feed inherently avoids these issues, and merely stating they are avoided isn’t an argument. It offers no positive reasoning *for* chronological order beyond preventing negatives, and even those negatives aren&#x27;t linked to chronology itself.
+
+**Overall:** Argument 1 demonstrates stronger reasoning by clearly identifying a problem, proposing a solution, and linking the solution to a tangible benefit. Argument 2 is largely assertion.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>universal basic income</div><div class=args><span class=a1>Argument 1 (=side A): UBI is good because an unconditional floor reduces poverty and bureaucracy while giving people freedom to retrain, care-give, or start ventures.</span><br><span class=a2>Argument 2 (=side B): UBI is bad because paying everyone regardless of need is enormously expensive and risks weakening work incentives and fueling inflation.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is exceptionally weak; it relies on broad, unsubstantiated claims (“reduces poverty,” “gives freedom”) without explaining *how* UBI achieves these outcomes, and lists desires (&quot;retrain, care-give&quot;) as if they are automatically enabled by funds. Argument 2 presents a clear causal chain – universal payment leads to increased spending, which fuels inflation – and identifies a specific behavioral economic concern (weakened work incentives), framing these as logical consequences of the policy.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on asserted positive outcomes (&quot;reduces poverty,&quot; &quot;gives freedom&quot;) without explaining *how* UBI achieves these, making it vague and lacking concrete support. It lists potential benefits but doesn&#x27;t address potential downsides or complexities.
+
+**Argument 2 Assessment:** This argument presents clear, logical consequences of UBI – cost, disincentives to work, and inflation – establishing a causal chain and framing them as potential problems. While it doesn&#x27;t *prove* these will happen, it identifies specific, testable concerns.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on asserted positive consequences (&quot;reduces poverty,&quot; &quot;gives freedom&quot;) without detailing *how* UBI achieves these, making it somewhat vague and lacking specific mechanisms. It’s a claim of benefits, not a demonstration of them.
+
+**Argument 2 Assessment:** This argument clearly identifies specific, logically connected potential downsides – cost, disincentives to work, and inflation – presenting these as direct consequences of the policy’s core feature (universal, unconditional payment). While it doesn&#x27;t *prove* these will happen, it establishes a clear causal chain.
+
+Argument 2 is better reasoned due to its focus on identifying and logically linking potential consequences of the policy itself, rather than simply stating desired outcomes.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear chain of reasoning – UBI provides a floor, this impacts poverty/bureaucracy positively, and *enables* beneficial activities. It offers specific, plausible mechanisms for positive outcomes.
+
+Argument 2 relies on assertions (&quot;enormously expensive,&quot; &quot;risks weakening,&quot; &quot;fueling&quot;) without providing any supporting evidence or explaining *why* these risks are likely to materialize; it’s largely a statement of concerns.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear chain of reasoning – UBI provides a floor, which enables positive outcomes like retraining and entrepreneurship – and grounds it in the practical benefits of reducing bureaucracy alongside poverty. It’s a logically sound argument focusing on second-order effects.
+
+**Argument 2 Assessment:** This argument relies on assertions (&quot;risks weakening work incentives and fueling inflation&quot;) without providing any supporting evidence or outlining *how* these risks would manifest. It states potential downsides but doesn’t explain their likelihood or magnitude, making it vague and lacking in logical depth.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>homework</div><div class=args><span class=a1>Argument 1 (=side A): Homework helps because spaced independent practice consolidates learning and builds the self-discipline students need for later study.</span><br><span class=a2>Argument 2 (=side B): Homework hurts because it eats into rest, family, and play, widens gaps by home resources, and shows little benefit for younger children.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a claim (&quot;homework helps&quot;) followed by justifications that are vague and lack supporting evidence; “spaced independent practice” is mentioned without explanation of *how* it consolidates learning, and “self-discipline” is asserted, not demonstrated as a direct outcome of homework. Argument 2 offers a clear causal chain – homework reduces time for beneficial activities, and particularly highlights the disproportionate impact on students lacking resources – providing a more logically sound and specific line of reasoning.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it asserts benefits (“consolidates learning,” “builds self-discipline”) without explaining *how* homework achieves these, relying on assumed mechanisms rather than demonstrated ones. Argument 2 presents a clear chain of reasoning—homework reduces time for beneficial activities, exacerbates existing inequalities, and lacks proven effectiveness—supported by identifiable consequences and specific populations affected.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – practice leads to consolidation, consolidation to discipline – and grounds its claims in established learning science (spaced repetition). Argument 2 lists negative consequences and a limitation (younger children) but doesn’t establish *why* these consequences outweigh any potential benefits, nor does it offer evidence for the “little benefit” claim beyond implied common sense.
+
+Argument 1 is better reasoned due to its reliance on a demonstrable learning principle and a logical connection between premises and conclusion.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical chain of reasoning – practice leads to consolidation, consolidation leads to discipline, discipline is valuable – and grounds itself in established learning theory (spaced repetition). Argument 2 relies on assertions about negative impacts (&quot;eats into rest,&quot; &quot;widens gaps&quot;) without providing evidence or exploring the *degree* to which these occur, and the final claim about younger children feels unsupported.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical chain of reasoning: homework facilitates practice, practice consolidates learning, and that learning builds discipline – all supported by established pedagogical principles regarding spaced repetition and self-regulation. Argument 2 relies on broad assertions (&quot;eats into rest…widens gaps&quot;) without providing any supporting evidence or explaining *how* homework causes these effects; it&#x27;s largely a list of potential negative consequences, not a reasoned argument.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>zoos</div><div class=args><span class=a1>Argument 1 (=side A): Zoos are justified because accredited ones fund conservation, run breeding programs for endangered species, and build public support for wildlife.</span><br><span class=a2>Argument 2 (=side B): Zoos are unjustified because confining wide-ranging animals for display causes real welfare harm that education and conservation claims don&#x27;t offset.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 relies heavily on assertion without detailing *how* zoos justify themselves; simply listing actions (funding, breeding, building support) doesn’t demonstrate logical connection to a justification, nor does it address potential counterarguments about those actions. Argument 2 presents a clear line of reasoning – confinement harms welfare, and this harm outweighs potential benefits – and frames its argument around a specific, identifiable harm linked to the practice of zoos.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a list of justifications without explaining *how* these actions justify zoos – it asserts a connection without demonstrating it, relying on assumed positive outcomes. Argument 2 clearly links a specific negative consequence (animal welfare harm) to the core function of zoos, then directly addresses and rebuts common defenses with a claim of insufficient offset.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a clear chain of reasoning – zoos do X, Y, and Z, therefore they are justified – but relies on assertions needing further support (e.g., how *much* conservation funding is provided, effectiveness of breeding programs). Argument 2 also asserts a clear link between confinement and harm, and a value judgment about offsetting factors, but similarly lacks quantified evidence for the degree of welfare harm or a detailed comparison to the benefits claimed.
+
+Both arguments are relatively simple and rely on unelaborated claims, but Argument 2 at least explicitly acknowledges a cost-benefit analysis (welfare harm vs. education/conservation) which demonstrates a slightly more nuanced approach to the issue, even if it doesn’t *prove* its claim.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear chain of reasoning: zoos (accredited ones specifically) *do* X, Y, and Z, and X, Y, and Z are good things justifying their existence. It relies on asserted facts (funding conservation, breeding programs, public support) but these are generally verifiable claims.
+
+Argument 2 relies on an asserted negative consequence (&quot;real welfare harm&quot;) without quantifying it or explaining *how* it outweighs the potential benefits mentioned by proponents. The phrase &quot;don&#x27;t offset&quot; is a conclusion, not a reasoned justification of that conclusion; it simply states disagreement.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical chain of reasoning: zoos, *specifically accredited ones*, support conservation through funding and breeding programs, and simultaneously foster public appreciation – all justifiable outcomes. Argument 2 relies on an unsupported assertion (&quot;causes real welfare harm&quot;) and a problematic framing (&quot;education and conservation claims don&#x27;t offset&quot; – this assumes harm outweighs benefits without demonstrating it).
+
+Argument 1 is significantly better reasoned due to its reliance on demonstrable justifications and a specific scope (accredited zoos), while Argument 2 relies on vague claims and a value judgment presented as fact.
+
+Better: 1</div></div></div><div class=qhead>space colonization</div><div class=args><span class=a1>Argument 1 (=side A): Mars colonization should be a priority because a second home safeguards humanity against extinction and drives spin-off technology and inspiration.</span><br><span class=a2>Argument 2 (=side B): Mars colonization should not be a priority because the resources are vast and better spent fixing solvable problems on the planet we already have.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a claim (&quot;Mars colonization should be a priority&quot;) with justifications that are broad and lack specific supporting evidence; “safeguards humanity” and “drives spin-off technology” are assertions needing elaboration. Argument 2 offers a clear reason *against* prioritization – focusing on present, solvable problems – and implicitly suggests a resource allocation argument which is logically sound even without detailed cost-benefit analysis.
+
+Argument 2 is better reasoned due to its more focused and logically coherent line of thought, presenting a practical alternative rather than vague benefits.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak, relying on broad assertions (&quot;safeguards humanity,&quot; &quot;drives spin-off technology&quot;) without specifying *how* or providing supporting evidence; it&#x27;s largely motivational rather than logically constructed. Argument 2 presents a clear, comparative cost-benefit analysis – prioritizing current solvable problems versus a highly expensive and uncertain venture – offering a logical framework even if further detail could strengthen it.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on broad claims—extinction safeguarding and technological advancement—without specifying *how* Mars colonization achieves these, making it feel somewhat assertive rather than demonstrated. The benefits are stated as conclusions rather than logically built from premises.
+
+**Argument 2 Assessment:** This argument presents a clear trade-off: resources are finite, and prioritizing Mars diverts them from immediate, solvable earthly issues. It establishes a direct, logical conflict and grounds its claim in resource allocation—a concrete consideration.
+
+**Overall:** Argument 2, while perhaps less inspiring, employs more concrete reasoning and a demonstrable cost-benefit analysis. Argument 1 leans heavily on potential benefits without outlining a clear path to realization.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear chain of reasoning – extinction risk necessitates redundancy of habitation, and colonization fosters beneficial innovation. While it doesn&#x27;t *prove* extinction is imminent or innovation *will* happen, it logically connects premises to its conclusion.
+
+**Argument 2 Assessment:** This argument is significantly weaker; stating resources are “vast” doesn’t justify *why* spending them on Mars is less valuable than terrestrial solutions, and characterizing Earth&#x27;s problems as &quot;solvable&quot; is a massive, unsupported assertion. It relies on a vague preference without logical support.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear line of reasoning – establishing Mars colonization as vital for species survival and technological advancement – and grounds it in recognizable concepts (extinction risk, technology spin-offs). It avoids vague claims and offers a logical connection between colonization and its stated benefits.
+
+**Argument 2 Assessment:** This argument is significantly weaker; it relies on a vague assertion about “resources” without specifying what they are or how they relate to the feasibility of colonization, and the phrasing “better spent fixing solvable problems” is broad and lacks concrete justification for *why* those problems outweigh the benefits outlined in Argument 1. It&#x27;s more of a statement of preference than reasoned argument.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>mandatory voting</div><div class=args><span class=a1>Argument 1 (=side A): Mandatory voting is good because near-universal turnout produces governments that better represent the whole public, not just the motivated few.</span><br><span class=a2>Argument 2 (=side B): Voluntary voting is better because compelling participation coerces the uninformed and disengaged and treats a civic right as a state obligation.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument lacks any supporting reasoning; it simply *asserts* that higher turnout leads to better representation without explaining *how* or offering evidence. It&#x27;s a claim presented as a self-evident truth, not a logically built case.
+
+**Argument 2 Assessment:** This argument presents a clear line of reasoning – mandatory voting implies coercion, and coercion is problematic when applied to civic participation, specifically framing voting as a right rather than an obligation. It connects principles (individual liberty, the nature of rights) to the policy proposal.
+
+**Overall:** Argument 2 demonstrates significantly stronger reasoning due to its logical structure and articulation of underlying principles.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on a fairly simple causal claim – higher turnout *equals* better representation – without explaining *how* that translation happens or offering evidence to support it; it’s largely assertion. It lacks specificity about what constitutes “better” representation.
+
+**Argument 2 Assessment:** This argument presents a clearer logical chain: coercion is undesirable, mandatory voting is coercive, therefore mandatory voting is undesirable, and grounds this in principles of individual rights and the nature of civic duty. It’s more conceptually precise and less reliant on unsupported assumptions.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – higher turnout leading to better representation – but lacks evidence to demonstrate that this link *actually* exists; it’s an assertion about outcomes rather than a demonstrated fact. The reasoning is straightforward, but relies on an unproven premise.
+
+**Argument 2 Assessment:** This argument relies on principles (autonomy, rights vs. obligations) and presents a logical concern about the quality of participation; however, it assumes that coerced voters *will* be uninformed and disengaged, without providing support for that assumption. It’s a values-based argument with a potentially unsubstantiated claim.
+
+While both have weaknesses, Argument 1 is slightly more focused on a concrete, testable (even if currently untested within the argument itself) outcome. Argument 2’s claims about voter quality feel more speculative.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – higher turnout *leads to* more representative government – and relies on a plausible assumption that motivated voters don&#x27;t perfectly reflect the broader population. It’s a concise and logically sound claim.
+
+**Argument 2 Assessment:** This argument relies heavily on emotive language (&quot;coerces,&quot; &quot;uninformed,&quot; &quot;disengaged&quot;) and asserts negative consequences without demonstrating *why* compelled participation of those groups would be detrimental; framing voting as a &quot;right&quot; doesn&#x27;t inherently negate the state&#x27;s legitimate interest in participation. It&#x27;s more about feelings than factual reasoning.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – mandatory voting leads to higher turnout, which in turn leads to better representation – and relies on a plausible understanding of how representative governments *should* function. It’s a concise and logically sound claim, though it doesn’t offer specific evidence.
+
+**Argument 2 Assessment:** This argument relies heavily on emotive language (&quot;coerces,&quot; &quot;uninformed,&quot; &quot;disengaged&quot;) and framing (&quot;treats a civic right as a state obligation&quot;) rather than presenting a clear logical connection between voluntary voting and positive outcomes. The phrasing feels more like stating objections than building a reasoned case *for* voluntary voting.
+
+**Overall:** Argument 1 is significantly better reasoned due to its clear, logical structure and focus on a plausible mechanism linking policy to outcome. Argument 2 is largely rhetorical.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>four-day work week</div><div class=args><span class=a1>Argument 1 (=side A): A four-day week is good because trials show output holds while rested workers report better health, focus, and retention.</span><br><span class=a2>Argument 2 (=side B): A four-day week is bad because many roles can&#x27;t compress hours, and coverage, client demands, and pay pressures make it impractical at scale.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on unstated and potentially flawed assumptions – that “trials” are representative and that output/well-being measures directly correlate to overall productivity gains. It’s vague and lacks specific evidence to support its claims about output, health, focus, and retention.
+
+**Argument 2 Assessment:** This argument presents a clear, logical chain of reasoning, identifying specific challenges – inflexible roles, client needs, and financial pressures – that would hinder successful implementation at a larger scale. It focuses on practical constraints rather than subjective benefits.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it relies on vague claims (&quot;trials show,&quot; &quot;report better...&quot;) without specifying *which* trials, measurable output metrics, or the scope/methodology of health/focus reports – making it largely assertion-based. Argument 2 presents a clear, logical chain of reasoning: incompatibility of certain jobs with compressed hours *leads to* coverage issues, which *leads to* inability to meet demands, ultimately creating practical (and financial) problems.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear, concise line of reasoning: a change (four-day week) leads to positive outcomes (health, focus, retention) *and* doesn&#x27;t negatively impact a key metric (output), supported by reference to “trials.” It’s a relatively strong, evidence-based claim.
+
+**Argument 2 Assessment:** This argument relies on assertions of impracticality – roles can’t compress, coverage is an issue, demands exist, pay is pressured – without providing specific evidence or detailing *why* these are insurmountable obstacles. It points to potential difficulties, but doesn&#x27;t demonstrate their prevalence or severity.
+
+**Overall:** Argument 1 is better reasoned due to its grounding in reported results (“trials”) and clear connection between cause and effect. Argument 2 relies on unsubstantiated claims of difficulty.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal chain – a four-day week leads to rest, which leads to improved outcomes (health, focus, retention) – and supports it with reference to “trials,” suggesting empirical evidence. It’s logically sound and relatively specific in its claims.
+
+**Argument 2 Assessment:** This argument relies heavily on assertions of impracticality (&quot;can&#x27;t compress hours,&quot; &quot;coverage…demands,&quot; &quot;pay pressures&quot;) without providing *why* these are insurmountable obstacles, or evidence of their widespread impact. It&#x27;s more a statement of perceived challenges than a reasoned case against the idea.
+
+**Overall:** Argument 1 offers a more concrete and evidence-backed line of reasoning than Argument 2&#x27;s reliance on generalized concerns.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical argument linking a policy (four-day week) to positive outcomes (output maintenance, worker well-being, retention) supported by reference to trial data – demonstrating a sound evidentiary basis. Argument 2 relies on assertions about impracticality (“can’t compress hours,” “coverage, client demands, and pay pressures”) without providing any supporting evidence or explaining *why* these factors would definitively preclude a four-day week; it’s largely speculative.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>GMO foods</div><div class=args><span class=a1>Argument 1 (=side A): GMOs are a net good because engineered crops raise yields, cut pesticide use, and add nutrients that help feed a growing population.</span><br><span class=a2>Argument 2 (=side B): GMOs are a net harm because they concentrate corporate control of seeds and carry ecological and long-term risks we understand poorly.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a claim (“GMOs are a net good”) supported by broad assertions – increased yields, reduced pesticide use, enhanced nutrition – without *any* supporting evidence or explanation of *how* these benefits outweigh potential drawbacks. It relies heavily on unproven assumptions.
+
+Argument 2 identifies specific, logically connected harms—corporate control and poorly understood ecological risks—and frames them as consequences of GMOs. While it doesn’t offer detailed data, it articulates a clear causal link and acknowledges the limitations of current understanding, indicating a more nuanced reasoning process.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a series of claims (yields, pesticides, nutrients) as direct benefits without providing *any* supporting evidence or acknowledging potential drawbacks, relying on broad assertions. Argument 2, while also making claims, identifies specific *mechanisms* of harm (corporate control, ecological risks, limited understanding) suggesting a more developed line of reasoning, even if those claims require further substantiation.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a straightforward, benefit-focused case with clear causal links (engineered crops *cause* higher yields, etc.), though it lacks specific evidence to *support* those claims – it asserts benefits without demonstrating them. Argument 2 identifies potential harms, but relies on vaguer concerns (“ecological and long-term risks we understand poorly”) and a claim about corporate control that, while potentially valid, isn’t inherently a logical reason why GMOs are *harmful* in themselves (it’s a socio-economic issue).
+
+Argument 1, despite lacking evidence, is more logically structured in presenting a direct line of positive impact.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical chain of reasoning: GMOs have specific properties (higher yield, less pesticide use, added nutrients) which directly contribute to a positive outcome (feeding a growing population). It offers concrete benefits as evidence.
+
+Argument 2 relies on broad claims (&quot;corporate control,&quot; &quot;ecological and long-term risks&quot;) without specifying *how* control is harmful or detailing the nature of the risks, making it less concrete and more reliant on implied concerns than demonstrated problems.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical chain of reasoning: genetic engineering leads to higher yields &amp; reduced pesticide use, *resulting in* the benefit of feeding a growing population, and bolstering this with the point about added nutrients. Argument 2 relies on vague claims (&quot;concentrate corporate control,&quot; &quot;ecological and long-term risks we understand poorly&quot;) without specifying *how* these harms outweigh any potential benefits, making it less concrete.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>self-driving cars</div><div class=args><span class=a1>Argument 1 (=side A): We should deploy self-driving cars now because even imperfect systems already crash less than humans and improve with every mile driven.</span><br><span class=a2>Argument 2 (=side B): We should wait because edge-case failures, unclear liability, and eroded human skill make wide deployment premature and dangerous.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 relies on a vague comparison (&quot;crash less&quot;) without data and a problematic appeal to continuous improvement (&quot;improve with every mile&quot;) as justification for immediate action – it lacks specific reasoning about *how* deployment addresses safety concerns. Argument 2 presents a clear chain of reasoning: current limitations lead to specific negative consequences (liability issues, skill erosion) which demonstrate why widespread deployment is currently unwise.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on a vague claim (&quot;crash less&quot;) without specific data and commits a hasty generalization by assuming improvement with mileage automatically equates to safety; it doesn&#x27;t address *how* crashes differ or potential new failure modes. The reasoning is weak due to lack of specifics and potential for misleading interpretation of &quot;improvement.&quot;
+
+**Argument 2 Assessment:** This argument presents multiple, distinct reasons – edge cases, liability, skill erosion – for caution, establishing a clear chain of reasoning linking premature deployment to danger. While it doesn&#x27;t quantify these risks, it identifies concrete concerns needing resolution before widespread adoption.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1&#x27;s reasoning is straightforward but relies heavily on a single metric (crash rates) and assumes continued improvement without addressing potential limitations or systemic risks beyond mileage. Argument 2 presents multiple, distinct concerns – edge cases, legal issues, and skill degradation – forming a more multifaceted and cautious line of reasoning, even if it doesn&#x27;t quantify the *degree* of danger.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear, logically sound point: current performance *relative to humans* justifies deployment, and the potential for improvement reinforces this. It relies on a demonstrable (and often cited) fact – self-driving cars already have lower crash rates – as its core evidence.
+
+**Argument 2 Assessment:** This argument relies heavily on vague anxieties (&quot;edge-case failures,&quot; &quot;eroded human skill&quot;) without quantifying their likelihood or severity; while valid concerns, they are presented as assumptions rather than supported claims, and “dangerous” is emotive language lacking specific reasoning. Liability is a concrete issue, but simply stating it&#x27;s &quot;unclear&quot; doesn’t demonstrate *why* that necessitates waiting.
+
+**Overall:** Argument 1 offers a more concrete and logically structured case, based on readily available data and a reasonable expectation of improvement. Argument 2 feels more like a list of worries than a reasoned argument.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical argument based on the readily observable fact that current self-driving systems, while imperfect, demonstrate improved safety *compared to human drivers* and benefit from iterative improvement through mileage. Argument 2 relies on vague concerns (“edge-case failures,” “eroded human skill”) without detailing their prevalence or severity, and the liability concern is a logistical/political point, not a reasoning one about safety itself.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>year-round school</div><div class=args><span class=a1>Argument 1 (=side A): Year-round schooling is better because shorter, frequent breaks curb the summer learning loss that especially sets back disadvantaged students.</span><br><span class=a2>Argument 2 (=side B): Summer break is better because long unstructured time supports rest, family, jobs, and camps that develop kids in ways classrooms can&#x27;t.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it states a desired outcome (curbing summer learning loss) but doesn’t explain *how* shorter breaks achieve this, nor does it acknowledge potential downsides of frequent disruption. Argument 2 presents a clear causal link between summer break and opportunities for development outside of academics, and logically connects this to positive outcomes for children – framing the break as supportive, not simply a void.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it asserts a cause-and-effect relationship (shorter breaks curb learning loss) without providing *evidence* that this is actually the case, or quantifying the extent of the loss or the curb. Argument 2 presents a clear chain of reasoning – long breaks *allow* for specific beneficial activities – and implicitly suggests these activities offer value *because* they differ from classroom learning, making a logical connection.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal link – summer learning loss leads to disadvantage – and directly connects year-round schooling as a solution, though it lacks specific evidence quantifying the loss or the effectiveness of the proposed solution. Argument 2 relies more on assertions about the *benefits* of unstructured time, without explaining *why* these benefits outweigh potential drawbacks like learning loss or offering evidence of their impact.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal link—shorter breaks mitigate summer learning loss—and specifically highlights a vulnerable population (disadvantaged students), strengthening its claim with a plausible mechanism. Argument 2 relies on broad assertions about the benefits of unstructured time without explaining *how* these activities demonstrably develop kids or why that development is superior to academic progress; it’s largely a list of desirable things, not a reasoned argument.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – year-round schooling mitigates summer learning loss – and specifically identifies *which* students benefit, grounding it in a recognized educational challenge. It’s a focused and logical claim.
+
+**Argument 2 Assessment:** This argument relies on broad, undefined concepts (&quot;rest,&quot; &quot;develop&quot;) and doesn’t establish *how* summer break achieves those benefits, nor why those benefits outweigh potential drawbacks. The points are vague and lack supporting rationale.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>e-books vs print</div><div class=args><span class=a1>Argument 1 (=side A): E-books are better because one device carries a whole library, adjusts text for accessibility, and puts any title one tap away.</span><br><span class=a2>Argument 2 (=side B): Print books are better because paper aids comprehension and memory, avoids screen fatigue, and needs no battery, account, or license.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents largely descriptive claims (“carries a whole library,” “adjusts text”) as *reasons* for being “better” without explaining *why* these features translate to a superior reading experience; it’s mostly assertion. Argument 2 offers clear causal links – paper *aids* comprehension, avoiding screens *prevents* fatigue – and highlights objective benefits (no battery needed) rather than simply stating preferences.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 relies heavily on assertions of convenience without explaining *why* those conveniences translate to a superior reading experience; it lists features without demonstrating their benefit to the core act of reading. Argument 2 presents clear causal links – paper *aids* comprehension, screens *cause* fatigue – and highlights tangible benefits related to the reading process itself, offering concrete advantages.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents clear benefits – portability, accessibility features, and convenience – functioning as straightforward advantages of the technology. Argument 2 relies on claims about cognitive effects (comprehension/memory) and physical comfort (screen fatigue) *without* citing any evidence to support those claims, making it more assertive than demonstrated.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents clear, logical benefits directly tied to the technology – portability, accessibility features, and ease of access are all demonstrable advantages of e-readers. Argument 2 relies heavily on assertions about cognitive effects (comprehension/memory) and subjective experiences (screen fatigue) without offering evidence; the final point is a practical convenience, but less compelling as a reason for *better* reading.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear and logical case, building from the inherent capabilities of digital devices to demonstrate specific benefits – portability, accessibility, and broad selection – all directly supporting its conclusion. Argument 2 relies on assertions (&quot;paper aids comprehension&quot;) without providing any supporting evidence and employs vague phrasing (&quot;screen fatigue&quot;) which lacks specific, testable claims.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>daylight saving time</div><div class=args><span class=a1>Argument 1 (=side A): We should abolish clock changes because the biannual shift disrupts sleep and is linked to short-term spikes in accidents and heart attacks.</span><br><span class=a2>Argument 2 (=side B): We should keep it because shifting daylight to the evening supports commerce, recreation, and safer, more useful waking hours.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on asserted consequences (&quot;disrupts sleep,&quot; &quot;spikes in accidents/heart attacks&quot;) without providing any evidence to support those claims or establishing a clear link to *daylight saving time specifically* being the cause. It&#x27;s largely assertion-based.
+
+**Argument 2 Assessment:** This argument offers a clear, logical connection between maintaining daylight saving time and positive outcomes for commerce and recreation – framing it as supporting longer, more useful waking hours. It presents a rationale beyond simply stating a preference.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 relies heavily on appealing to negative consequences (disrupted sleep, accidents, health issues) without establishing a clear *causal* link or quantifying the severity/frequency of these issues – correlation doesn’t equal causation. Argument 2 offers concrete benefits – supporting economic activity, leisure, and safety – by clearly connecting daylight placement to those outcomes, providing a more logical chain of reasoning.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – clock change -&gt; sleep disruption -&gt; negative health/safety outcomes – and implies evidence (accidents/heart attacks) supports this link, though it doesn&#x27;t *present* that evidence. Argument 2 relies on assertions about benefits (commerce, recreation, safety) without explaining *how* shifting daylight achieves them, making it comparatively vague and lacking in specific reasoning.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal link between the time change and demonstrable negative consequences (accidents, heart attacks), offering a straightforward, logical reason for abolishment. Argument 2 relies on vague benefits (&quot;supports commerce, recreation&quot;) without explaining *how* shifting daylight achieves these, nor providing any evidence of these benefits outweighing potential drawbacks—it’s largely assertion.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal link—clock changes lead to disrupted sleep, which *then* correlates with demonstrable negative outcomes (accidents, heart attacks)—and grounds this in observable evidence. Argument 2 relies on vague assertions (&quot;supports commerce, recreation&quot;) and doesn&#x27;t explain *how* shifting daylight achieves these benefits or offer any supporting data; “safer, more useful waking hours” is also a claim needing justification.
+
+Better: 1</div></div></div><div class=qhead>the penny</div><div class=args><span class=a1>Argument 1 (=side A): The penny should go because it costs more to mint than it&#x27;s worth and slows transactions for negligible purchasing power.</span><br><span class=a2>Argument 2 (=side B): The penny should stay because rounding disadvantages cash buyers and charities, and its removal invites small but steady price creep.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 presents a claim about cost and transaction speed without *any* supporting evidence; it&#x27;s simply asserted, making it weak in reasoning despite its brevity. Argument 2 clearly identifies specific consequences of penny removal – impacts on rounding for cash transactions and a predictable effect on pricing – providing a logical chain of reasoning.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on cost-benefit analysis but lacks specific evidence regarding the actual minting cost versus the penny’s value, and the claim about slowing transactions feels anecdotal without data on transaction times. It presents a conclusion without fully supporting its premises with concrete information.
+
+**Argument 2 Assessment:** This argument builds a logical chain – removing the penny impacts rounding, which disproportionately affects certain groups and incentivizes subtle price increases – and grounds its claims in observable economic behaviors, making it more concrete. The reasoning clearly connects the penny’s existence to mitigating potentially negative outcomes.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1:** This argument is straightforward and relies on cost-benefit analysis – a logically sound framework – presenting two concrete reasons (minting cost &amp; transaction speed) supporting its conclusion. It’s easily understood and the premises, if true, directly support the claim.
+
+**Argument 2:** While raising valid concerns about fairness and potential price increases, this argument relies more on speculation (&quot;invites…price creep&quot;) and less on demonstrably factual claims; the impact on cash buyers and charities isn&#x27;t quantified, making the impact less clear. It’s also less logically direct – rounding *could* disadvantage, but doesn&#x27;t *necessarily* do so.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical case based on demonstrable costs (minting exceeding value) and efficiency (transaction speed). It focuses on objective factors and establishes a direct link between the penny&#x27;s existence and negative consequences.
+
+Argument 2 relies on speculative consequences (&quot;disadvantages cash buyers,&quot; &quot;price creep&quot;) and doesn’t establish *why* rounding would inherently disadvantage those groups, nor provides evidence for the creep claim; it’s largely based on potential, unsubstantiated outcomes.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear, logical connection between the cost of production and the penny’s diminishing value, focusing on demonstrable economic inefficiency – a strong and easily understood line of reasoning. It relies on factual claims about minting costs and purchasing power, making it testable and relatively objective.
+
+**Argument 2 Assessment:** This argument relies on speculative consequences (“rounding disadvantages…price creep”) and appeals to unstated preferences (people wanting to maintain current purchasing habits). It doesn&#x27;t establish *why* rounding would be disadvantageous beyond a vague assertion, nor does it offer evidence for the “price creep” claim.
+
+**Overall:** Argument 1 is significantly better reasoned due to its clarity, logical connection between premises and conclusion, and reliance on potentially verifiable facts. Argument 2 is largely based on conjecture and lacks concrete support.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>cats vs dogs</div><div class=args><span class=a1>Argument 1 (=side A): Dogs make better pets because their trainability and social loyalty create a companionship and daily activity many owners want.</span><br><span class=a2>Argument 2 (=side B): Cats make better pets because their independence and low-maintenance care fit modern living while still offering real affection.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is weak; it relies on broad, unsupported claims (&quot;trainability and social loyalty&quot;) and vague desires (&quot;companionship and daily activity&quot;) without defining what those entail or providing evidence of widespread preference. Argument 2 offers a more concrete link between feline characteristics (independence, low-maintenance) and a specific lifestyle (modern living) – suggesting a practical benefit and highlighting affection as a positive trait, making it a more logically sound argument.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1 relies heavily on appealing to desires (&quot;companionship and daily activity&quot;) without establishing *why* trainability and loyalty inherently fulfill those desires for a broad range of owners – it&#x27;s a bit assumption-based. Argument 2 presents clearer links between cat traits (independence, low-maintenance) and a specific lifestyle (modern living), and directly connects those traits to a benefit (affection), making it more logically sound. 
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear link between dog traits (trainability, loyalty) and desired owner outcomes (companionship, activity), establishing a reasonable cause-and-effect relationship. Argument 2 relies more on assertions about “modern living” without defining it or fully explaining *why* independence is inherently better suited to it; the affection claim is also quite broad.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear line of reasoning, linking specific traits (trainability, loyalty) to desired outcomes in pet ownership (companionship, activity), effectively establishing *why* dogs are considered better. Argument 2 relies on vague terms like &quot;modern living&quot; and &quot;real affection&quot; without defining them or explaining *how* cat traits specifically meet those needs – it’s more descriptive than argumentative.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear line of reasoning, linking trainability and loyalty to the *benefits* those traits offer a pet owner (companionship and activity), establishing a value proposition. Argument 2 relies on vague qualities (&quot;independence,&quot; &quot;low-maintenance&quot;) and a subjective claim (&quot;affection&quot;) without explaining *why* these are superior qualities for a pet – it merely states a preference.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>tabs vs spaces</div><div class=args><span class=a1>Argument 1 (=side A): Spaces are better because they render identically everywhere, guaranteeing consistent alignment across editors and diffs.</span><br><span class=a2>Argument 2 (=side B): Tabs are better because one indent character lets each developer set their preferred width and aids some accessibility tools.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1’s reasoning is extremely weak; stating spaces &quot;render identically everywhere&quot; is demonstrably false (rendering depends on font, editor settings, etc.) and the claim about alignment is unsupported – consistent *visual* alignment isn’t guaranteed by simply using spaces. Argument 2 offers a clear, logical benefit (developer preference &amp; accessibility) stemming directly from the nature of tabs as a single logical unit, and doesn&#x27;t rely on empirically incorrect statements.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>Argument 1&#x27;s reasoning is weak; it relies on a claim about rendering without acknowledging the practical difficulties of *achieving* identical rendering (varying font widths, editor configurations) and presents consistency as an unqualified good without considering the benefits of flexibility. Argument 2 presents a clear, logical benefit of tabs – customization – and ties it to a concrete positive outcome (developer preference &amp; accessibility), making it a more robust and well-supported claim.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear and logically sound reason – consistent rendering avoids display issues – supported by the practical consequence of reliable diffs. Argument 2’s reasoning is weaker; while developer preference and accessibility are valid points, they don&#x27;t address the core problem of potential inconsistent visual appearance, and the accessibility aid isn’t universally applicable or demonstrably significant.
+
+Better: 1</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical reason rooted in a demonstrable technical benefit – consistent rendering and improved diff readability. It focuses on a property of the tool (spaces) and its positive consequence.
+
+Argument 2&#x27;s reasoning is weaker; while developer preference is valid, it doesn&#x27;t address core code collaboration issues, and the accessibility claim is vague and unsubstantiated without further explanation of *how* tabs aid accessibility tools. It relies more on asserted benefits than demonstrated ones.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear, logical reason rooted in the practicalities of software development – consistent rendering improves collaboration and version control. Argument 2’s reasoning is weak; “aids some accessibility tools” is vague and unsupported, and “preferred width” is a subjective preference, not a logical benefit.
+
+Better: 1
+
+
+
+</div></div></div><div class=qhead>cryptocurrency</div><div class=args><span class=a1>Argument 1 (=side A): Crypto is positive because permissionless, borderless value transfer can lower fees and extend financial access beyond gatekeeping banks.</span><br><span class=a2>Argument 2 (=side B): Crypto is negative because its volatility, energy use, and prevalence of scams impose costs that outweigh its niche practical benefits.</span></div><div class=grid><div class=col><div class=chd style="background:#8e24aa">c = -0.06</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on asserted benefits (&quot;lower fees,&quot; &quot;extend access&quot;) without providing *how* these would realistically occur or evidence to support them; it’s largely a statement of desired outcomes framed as positives. The terms &quot;permissionless&quot; and &quot;borderless&quot; are vague and don’t inherently equate to financial improvement.
+
+**Argument 2 Assessment:** This argument identifies specific, measurable downsides (volatility, energy use, scams) and links them to concrete costs. It also acknowledges a limited positive (&quot;niche practical benefits&quot;) instead of dismissing all value, showing a degree of nuance.
+
+Argument 2 presents a clearer and more logically structured argument with identifiable drawbacks and a tempered acknowledgment of potential upsides, making it stronger despite potential disagreement with its conclusion.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#5e35b1">c = -0.03</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies heavily on asserted benefits (&quot;lower fees,&quot; &quot;extend financial access&quot;) without providing any evidence or explaining *how* permissionless/borderless transfer achieves these outcomes – it&#x27;s a claim-based assertion rather than a reasoned argument. It lacks specificity and doesn&#x27;t acknowledge potential downsides.
+
+**Argument 2 Assessment:** This argument presents specific, identifiable costs (volatility, energy use, scams) and links them to a clear negative consequence (costs outweigh benefits). While it doesn&#x27;t quantify these costs, it at least *identifies* them as problems requiring consideration, demonstrating a more concrete line of reasoning.
+
+Better: 2
+
+
+
+</div></div><div class=col><div class=chd style="background:#455a64">c = +0.00</div><div class="v v2">Better: 2 (arg 2)</div><div class=resp>**Argument 1 Assessment:** This argument relies on a clear causal chain – permissionless/borderless systems *lead to* lower fees and greater access – but lacks concrete evidence demonstrating the extent to which this actually happens in practice, relying instead on potential benefits. It’s logically sound *if* the premise holds true broadly.
+
+**Argument 2 Assessment:** This argument presents multiple distinct negative consequences (volatility, energy use, scams) as reasons for a negative evaluation, making it more comprehensive; however, the claim that these costs “outweigh” benefits is asserted without quantification or detailed comparison. It acknowledges *some* benefit but dismisses it as “niche.”
+
+While both are relatively brief and could benefit from more evidence, Argument 2 offers a more multifaceted consideration of costs *and* benefits, even if the final judgment is asserted rather than demonstrated.
+
+Better: 2</div></div><div class=col><div class=chd style="background:#00897b">c = +0.03</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>Argument 1 presents a clear causal chain – permissionless/borderless transfer *leads to* lower fees and increased access – and grounds its claim in recognizable economic principles. Argument 2 relies on listing negative attributes without establishing *how* those costs outweigh benefits, or providing specific evidence of the scale of those costs relative to any benefits; it’s more assertion than argument.
+
+Better: 1
+
+
+
+</div></div><div class=col><div class=chd style="background:#2e7d32">c = +0.06</div><div class="v v1">Better: 1 (arg 1)</div><div class=resp>**Argument 1 Assessment:** This argument presents a clear causal link – permissionless/borderless nature *leads to* lower fees and increased access – and grounds its claim in established characteristics of cryptocurrency technology. It relies on a sound understanding of financial systems and the benefits of reducing intermediaries.
+
+**Argument 2 Assessment:** This argument relies on broad, unsubstantiated claims (&quot;volatility…imposes costs&quot;) without specifying *how* or *to whom*. While volatility and scams are real concerns, simply stating they outweigh benefits is an assertion, not a reasoned conclusion; the energy use point is more concrete but still lacks quantifying its cost relative to benefits.
+
+**Overall:** Argument 1 is substantially better reasoned because it offers specific mechanisms and connects them to concrete benefits, building a logical case. Argument 2 relies heavily on generalized negative assertions.
+
+Better: 1</div></div></div>

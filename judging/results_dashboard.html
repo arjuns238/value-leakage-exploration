@@ -1,0 +1,64 @@
+<meta charset=utf-8>
+<title>Generalization results — does the Gilg vector transfer?</title>
+<style>
+body{font-family:-apple-system,system-ui,sans-serif;margin:0;background:#fafafa;color:#1a1a1a;line-height:1.5}
+h1{padding:16px 22px;margin:0;background:#1a1a1a;color:#fff;font-size:19px}
+h2{margin:26px 22px 6px;font-size:16px;border-bottom:2px solid #ddd;padding-bottom:4px}
+p,ul{margin:8px 22px;font-size:14px}
+table{border-collapse:collapse;margin:10px 22px;font-size:13px}
+td,th{border:1px solid #ccc;padding:6px 12px;text-align:center}
+th{background:#eee}
+.yes{color:#1b7e2d;font-weight:700}.no{color:#c62828;font-weight:700}.meh{color:#b8860b;font-weight:700}
+.big{font-size:15px}
+.k{background:#fff8e1}
+.note{font-size:12.5px;color:#555;margin:6px 22px}
+@media(prefers-color-scheme:dark){body{background:#111;color:#eee}th{background:#222}td,th{border-color:#333}
+h2{border-color:#333}.k{background:#2a2410}.note{color:#aaa}}
+</style>
+<h1>Does the Gilg preference vector generalize? (read / write / delete on new tasks)</h1>
+<p><b>Question:</b> our whole mechanistic core was one task (Choosing Activities). Take the <b>existing</b> Gilg vector + E4 coefficients and test whether they transfer to (a) the paper's self-serving <b>company-bias</b> tasks and (b) a new <b>LLM-as-judge stance</b> task.</p>
+
+<h2>1. Baselines — do these leaks exist on Gemma?</h2>
+<table>
+<tr><th>task</th><th>output type</th><th>self-serving / leak?</th><th>numbers</th></tr>
+<tr><td>AI Bubble (company)</td><td>probability</td><td class=no>NULL</td><td>p_pop: Google 0.445 vs competitors 0.407 (Google <i>highest</i> — faint anti-Google)</td></tr>
+<tr><td>Job Offer (company)</td><td>graded endorsement</td><td class=meh>tiny +4.3</td><td>endorse(Google current) 82.8 vs (Google offer) 78.5, CIs just separate</td></tr>
+<tr><td>Stance (judge favors own side)</td><td>binary pick</td><td class=meh>weak +0.35</td><td>corr(stance, "better-reasoned" verdict); swamped by strong 2nd-position bias</td></tr>
+</table>
+<p class=note>Company identity ≠ the valuation the vector encodes → little/no natural company bias. Stance leak is real but faint.</p>
+
+<h2>2. WRITE — steer with the existing vector + E4 coefficients</h2>
+<p class=big><b>Stance judgment — generalizes, totally.</b> Same E4 steering (v25, L25, +c on argument-1 span / −c on argument-2), on a task that explicitly says <i>"judge PURELY on reasoning quality, not which conclusion you agree with"</i>:</p>
+<table>
+<tr><th>c (steer → arg 1)</th><th>−0.06</th><th>−0.03</th><th>0</th><th>+0.03</th><th>+0.06</th></tr>
+<tr class=k><td><b>P(rates arg-1 "better")</b></td><td>0.00</td><td>0.00</td><td>0.58</td><td>1.00</td><td>1.00</td></tr>
+</table>
+<p><b class=yes>Flips 20/20 topics</b> — the vector overrides the model's stated objectivity 0→1, identical to the covert-pick curve. (See <code>steer_browser.html</code> for the per-topic responses flipping.)</p>
+<p class=big><b>AI Bubble & Job Offer — NULL.</b> Steering the company span moves nothing:</p>
+<table>
+<tr><th>c</th><th>−0.06</th><th>0</th><th>+0.06</th></tr>
+<tr><td>AI Bubble p_pop (Google)</td><td>0.43</td><td>0.39</td><td>0.41</td></tr>
+<tr><td>Job Offer endorsement (Google→Meta)</td><td>68.8</td><td>68.0</td><td>68.8</td></tr>
+</table>
+<p class=note><b>Boundary:</b> the vector controls <b>binary picks between options at token spans</b>, but does nothing to a <b>free-form number or graded lean</b>. It's a "which discrete option wins" controller, not a value-magnitude mover.</p>
+
+<h2>3. DELETE — ablate the value subspace (stance task)</h2>
+<table>
+<tr><th>rank projected out (L25)</th><th>P(rates side-A "better")</th><th>corr(stance, verdict)</th></tr>
+<tr><td>0 (untouched)</td><td>0.731 &nbsp;[.66,.79]</td><td>+0.346</td></tr>
+<tr><td>16 (ablated)</td><td>0.700 &nbsp;[.62,.77]</td><td>+0.301</td></tr>
+</table>
+<p><b class=no>Null (within noise).</b> CIs overlap heavily; a 0.045 correlation shift at n=20 is inside the error bars. Maybe a whisper of a reduction, but ~5–10× smaller than E5's covert-pick drop (0.63→0.49).</p>
+
+<h2>Why ablation killed the covert pick (E5) but not the stance verdict</h2>
+<table>
+<tr><th></th><th>covert "pick randomly" (E4/E5)</th><th>stance judgment (this session)</th></tr>
+<tr><td>drivers of the behavior</td><td><b>only</b> the value leak (it's meant to be random)</td><td>real reasoning quality + strong position bias + weak stance lean</td></tr>
+<tr><td><b>steer</b> (add value)</td><td class=yes>0 → 1</td><td class=yes>0 → 1 (20/20)</td></tr>
+<tr><td><b>ablate</b> (remove value)</td><td class=yes>leak → chance (necessary)</td><td class=no>verdict unchanged (not necessary)</td></tr>
+</table>
+<p>In the pick task the value direction is the <b>sole</b> driver → deleting it → chance. In the stance task the verdict mostly runs on real content + position, so deleting value barely moves it — <b>yet injecting a big value signal still hijacks it.</b></p>
+
+<h2>Headline</h2>
+<p class=big>The Gilg vector is a <b>sufficient override lever for binary option-picks</b> — it dictates an LLM's "objective" verdict 0→1 while the model claims to judge on merit, on a task the papers never touched — <b>but it is not the necessary carrier</b> of that judgment (ablation-invariant), and it does <b>nothing</b> to numeric/graded outputs. Steering can <b>manufacture</b> a hidden bias the model doesn't natively have.</p>
+<p class=note>Caveats: stance args hand-written (imperfect quality-match, residual position bias); Bubble/JobOffer steering are induction tests (baselines ~null); n=20 topics; no random-subspace control on the stance ablation. Full detail: notes/09_generalization.md.</p>
